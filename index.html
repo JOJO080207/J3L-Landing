@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BIRKHEAD — From Combat Boots to Courts & Fields</title>
+  <title>Dual Military — From Combat Boots to Courts & Fields</title>
 
   <!-- SEO + Social share -->
   <meta name="description" content="From combat boots to courts & fields — leadership, family, and raising athletes the military way." />
-  <meta property="og:title" content="BIRKHEAD — Leadership, Family & Sports" />
+  <meta property="og:title" content="Dual Military — Leadership, Family & Sports" />
   <meta property="og:description" content="Memoir + AAR lessons from two Army Sergeant Majors raising athletes." />
-  <meta property="og:image" content="https://jojo080207.github.io/j3l-landing/BookCover.png" />
-  <meta property="og:url" content="https://jojo080207.github.io/j3l-landing/" />
+  <meta property="og:image" content="https://j3lfamily.com/BookCover.png" />
+  <meta property="og:url" content="https://j3lfamily.com" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Favicon (optional) — place favicon.png next to this file -->
+  <!-- Favicon -->
   <link rel="icon" href="favicon.png" />
 
   <style>
@@ -31,10 +31,6 @@
     h2 { margin: 18px 0 10px; color: var(--bg); }
     ul { padding-left: 20px; }
     .cta { background:#fff; padding: 18px; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,.08); text-align:center; }
-    .signup { display:flex; gap:10px; justify-content:center; margin-top:12px; flex-wrap:wrap; }
-    .signup input[type=email]{ padding:12px; width: clamp(220px, 40vw, 360px); border:1px solid #ccc; border-radius:8px; }
-    .signup button { padding:12px 16px; background: var(--gold); color:#000; border:none; border-radius:8px; cursor:pointer; font-weight:700; }
-    .signup button:hover { filter: brightness(.9); }
     .footer { text-align:center; padding: 22px 12px; color:#aaa; background:#111; }
     .footer a { color:#ddd; }
     @media (max-width: 520px){ .hero h1{ font-size:1.9rem; } }
@@ -42,7 +38,7 @@
 </head>
 <body>
   <header class="hero">
-    <img src="BookCover.png" alt="BIRKHEAD Book Cover" class="cover" />
+    <img src="BookCover.png" alt="Dual Military Book Cover" class="cover" />
     <h1>Dual Military</h1>
     <p class="tagline">From Combat Boots to Courts and Fields: Life, Leadership, and Raising Athletes the Military Way</p>
   </header>
@@ -66,13 +62,22 @@
     <section class="cta">
       <h2>Be First to Know</h2>
       <p>Get chapter previews, launch updates, and leadership tips.</p>
-      <!-- Formspree form -->
-      <form action="https://formspree.io/f/xovlyyny" method="POST" class="signup">
-        <input type="email" name="email" placeholder="Enter your email" required />
-        <input type="hidden" name="_subject" value="New J3L Book subscriber" />
-        <input type="hidden" name="_redirect" value="https://jojo080207.github.io/j3l-landing/thanks.html" />
-        <button type="submit">Join the list</button>
-      </form>
+
+      <!-- MailerLite Embed -->
+      <div class="ml-embedded" data-form="wlxhmJ"></div>
+      <script>
+        (function(m,a,i,l,e,r){
+            m['MailerLiteObject']=e;function f(){
+            var c={ a:arguments,q:[]};var r=this.push(c);
+            return "number"!=typeof r?r:f.bind(c.q);}
+            f.q=f.q||[];m[e]=m[e]||f.bind(f.q);
+            m[e].q=m[e].q||f.q;r=a.createElement(i);
+            var _=a.getElementsByTagName(i)[0];
+            r.async=1;r.src=l+'?v'+(~~(new Date().getTime()/1000000));
+            _.parentNode.insertBefore(r,_);
+        })(window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
+        ml('account', 'wlxhmJ'); // This loads your form
+      </script>
     </section>
 
     <section>
@@ -82,7 +87,7 @@
   </main>
 
   <footer class="footer">
-    <p>&copy; 2025 Joe & Lisa Birkhead. All Rights Reserved. | <a href="mailto:birkheadj@hotmail.com">Contact</a></p>
+    <p>&copy; 2025 Joe & Lisa Birkhead. All Rights Reserved. | <a href="mailto:info@j3lfamily.com">Contact</a></p>
   </footer>
 </body>
 </html>
