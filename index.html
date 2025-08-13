@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dual Military — From Combat Boots to Courts & Fields</title>
 
-  <!-- SEO + Social share -->
+  <!-- SEO + Social -->
   <meta name="description" content="From combat boots to courts & fields — leadership, family, and raising athletes the military way." />
+  <link rel="canonical" href="https://j3lfamily.com/" />
   <meta property="og:title" content="Dual Military — Leadership, Family & Sports" />
   <meta property="og:description" content="Memoir + AAR lessons from two Army Sergeant Majors raising athletes." />
   <meta property="og:image" content="https://j3lfamily.com/BookCover.png" />
-  <meta property="og:url" content="https://j3lfamily.com" />
+  <meta property="og:url" content="https://j3lfamily.com/" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -26,72 +27,314 @@
     ml('account', '1727356');  /* your MailerLite account ID */
   </script>
 
+  <!-- Styles -->
   <style>
-    :root { --bg:#0b0b0b; --gold:#d8a316; --ink:#222; --paper:#f7f7f7; }
+    :root{
+      --bg:#0b0b0b; --ink:#1f2937; --muted:#6b7280; --paper:#f7f7f7;
+      --gold:#d8a316; --card:#ffffff; --ring:rgba(216,163,22,.35);
+      --max:1080px; --radius:14px;
+    }
     *{box-sizing:border-box}
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;line-height:1.6;color:var(--ink);background:var(--paper)}
-    .hero{background:var(--bg);color:#fff;text-align:center;padding:18px 14px 30px}
-    .cover{width:100%;max-width:620px;height:auto;border:3px solid var(--gold);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.4)}
-    .hero h1{margin:18px 0 6px;font-size:2.4rem;letter-spacing:.05em;color:var(--gold)}
-    .tagline{margin:0 auto;max-width:760px;color:#e5e5e5}
-    .container{max-width:900px;margin:28px auto;padding:0 16px}
-    h2{margin:18px 0 10px;color:var(--bg)}
-    ul{padding-left:20px}
-    .cta{background:#fff;padding:18px;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.08);text-align:center}
-    .footer{text-align:center;padding:22px 12px;color:#aaa;background:#111}
-    .footer a{color:#ddd}
-    @media (max-width:520px){ .hero h1{font-size:1.9rem} }
-    /* Optional: tighten the ML form width */
-    .ml-embedded{max-width:520px;margin:12px auto}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,Helvetica,sans-serif;
+      color:var(--ink); background:var(--paper); line-height:1.6; -webkit-font-smoothing:antialiased;
+    }
+    a{color:var(--bg); text-decoration:none}
+    a:hover{opacity:.9}
+    img{max-width:100%; height:auto; display:block}
+
+    /* Header / Nav */
+    .topbar{
+      position:sticky; top:0; z-index:50; backdrop-filter:blur(8px);
+      background:rgba(255,255,255,.82); border-bottom:1px solid #e5e7eb;
+    }
+    .navwrap{max-width:var(--max); margin:0 auto; padding:10px 16px; display:flex; align-items:center; gap:16px}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px}
+    .brand img{width:36px; height:36px; border-radius:8px; border:2px solid var(--gold)}
+    .navlinks{margin-left:auto; display:flex; gap:18px; align-items:center; flex-wrap:wrap}
+    .navlinks a{font-weight:600; color:#374151}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:8px; cursor:pointer;
+      padding:10px 16px; border-radius:999px; background:var(--gold); color:#111; font-weight:800; border:0;
+      box-shadow:0 8px 20px rgba(216,163,22,.25);
+    }
+    .btn-outline{
+      background:#fff; color:#111; border:2px solid var(--gold); box-shadow:none; font-weight:700;
+    }
+
+    /* Hero */
+    .hero{
+      background:linear-gradient(180deg, #0b0b0b 0%, #131313 100%); color:#fff; text-align:center;
+      padding:34px 16px 44px;
+    }
+    .hero-inner{max-width:var(--max); margin:0 auto; display:grid; gap:26px; grid-template-columns:1fr; align-items:center}
+    .cover{
+      width:100%; max-width:520px; margin:0 auto; border-radius:12px; border:3px solid var(--gold);
+      box-shadow:0 16px 42px rgba(0,0,0,.45);
+    }
+    .hero h1{margin:0; font-size:clamp(28px,4vw,44px); color:var(--gold); letter-spacing:.02em}
+    .tag{display:inline-block; margin:.25rem auto 1rem; padding:6px 10px; border-radius:999px; background:rgba(216,163,22,.12); color:#f1c75b; font-weight:700}
+    .lead{max-width:760px; margin:0 auto; color:#e5e5e5}
+
+    /* Sections */
+    .section{max-width:var(--max); margin:28px auto; padding:0 16px}
+    .grid-2{display:grid; gap:22px; grid-template-columns:1fr}
+    .card{
+      background:var(--card); border-radius:var(--radius);
+      box-shadow:0 12px 28px rgba(0,0,0,.06); padding:18px;
+      border:1px solid #eee;
+    }
+    h2{margin:0 0 8px; color:#0b0b0b; font-size:clamp(22px,3vw,30px)}
+    .muted{color:var(--muted)}
+    ul{margin:10px 0 0 0; padding-left:18px}
+    .pill{display:inline-block; padding:6px 10px; background:#fff; border:1px solid #e5e7eb; border-radius:999px; margin:4px 6px 0 0; font-weight:600}
+    .stack{display:flex; flex-wrap:wrap; gap:8px}
+
+    /* Sample excerpt */
+    .quote{
+      border-left:4px solid var(--gold); padding:8px 12px; background:#fffbe8; border-radius:10px;
+    }
+
+    /* Footer */
+    footer{background:#111; color:#aaa; padding:26px 16px; text-align:center}
+    footer a{color:#e5e5e5}
+
+    /* Responsive */
+    @media (min-width:860px){
+      .hero-inner{grid-template-columns:1.2fr .8fr}
+      .grid-2{grid-template-columns:1fr 1fr}
+    }
+
+    /* Focus styles */
+    :is(a,button,.btn,.btn-outline):focus{outline:3px solid var(--ring); outline-offset:2px}
+    /* Smooth anchor offset */
+    :target::before{content:""; display:block; height:72px; margin-top:-72px; visibility:hidden}
   </style>
+
+  <!-- Structured Data (replace buy links when live) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Book",
+    "name":"Dual Military: From Combat Boots to Courts & Fields",
+    "author":[{"@type":"Person","name":"Joe Birkhead"},{"@type":"Person","name":"Lisa Birkhead"}],
+    "image":"https://j3lfamily.com/BookCover.png",
+    "bookFormat":"https://schema.org/Paperback",
+    "genre":["Memoir","Leadership","Parenting","Sports"],
+    "description":"Memoir + AAR lessons from two Army Sergeant Majors raising athletes.",
+    "inLanguage":"en",
+    "publisher":{"@type":"Organization","name":"J3L Family"},
+    "url":"https://j3lfamily.com/",
+    "offers":{
+      "@type":"Offer",
+      "price":"19.99",
+      "priceCurrency":"USD",
+      "availability":"https://schema.org/PreOrder"
+    }
+  }
+  </script>
 </head>
 <body>
-  <header class="hero">
-    <img src="BookCover.png" alt="Dual Military Book Cover" class="cover" />
-    <h1>Dual Military</h1>
-    <p class="tagline">From Combat Boots to Courts and Fields: Life, Leadership, and Raising Athletes the Military Way</p>
+
+  <!-- Sticky Nav -->
+  <header class="topbar" role="banner">
+    <div class="navwrap">
+      <a class="brand" href="#top" aria-label="J3L Family Home">
+        <img src="BookCover.png" alt="Dual Military cover thumbnail">
+        <span>Dual Military</span>
+      </a>
+      <nav class="navlinks" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#learn">What You’ll Learn</a>
+        <a href="#sample">Sample</a>
+        <a href="#speaking">Speaking</a>
+        <a href="#press">Press</a>
+        <a href="#contact">Contact</a>
+        <a class="btn" href="#preorder">Pre-Order</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="container">
-    <section>
-      <h2>About the Book</h2>
-      <p>Twenty-five years in the Army. Eleven deployments. Two Sergeant Majors, two kids, and a family mission built on leadership, resilience, and grit. This book blends memoir with practical After Action Reviews (AARs) that parents, coaches, veterans, and leaders can use right away.</p>
+  <!-- Hero -->
+  <section id="top" class="hero" role="region" aria-label="Hero">
+    <div class="hero-inner">
+      <div>
+        <span class="tag">Memoir · AAR Lessons · Parenting & Sports</span>
+        <h1>From Combat Boots to Courts&nbsp;&amp;&nbsp;Fields</h1>
+        <p class="lead">
+          Two Army Sergeant Majors. Two kids. One family mission. A field manual for life, leadership, and raising athletes the military way.
+        </p>
+        <div style="display:flex; gap:10px; justify-content:center; margin-top:16px; flex-wrap:wrap">
+          <a class="btn" href="#preorder">Pre-Order the Book</a>
+          <a class="btn btn-outline" href="#newsletter">Get Updates</a>
+        </div>
+      </div>
+      <img class="cover" src="BookCover.png" alt="Dual Military book cover — From Combat Boots to Courts & Fields">
+    </div>
+  </section>
+
+  <main>
+    <!-- About -->
+    <section id="about" class="section grid-2">
+      <div class="card">
+        <h2>About the Book</h2>
+        <p>
+          Twenty-five years in the Army. Eleven deployments. Two Sergeant Majors, two kids, and a family mission built on leadership, resilience, and grit.
+          <em>Dual Military</em> blends memoir with practical After Action Reviews (AARs) that parents, coaches, veterans, and leaders can use immediately.
+        </p>
+        <div class="stack" aria-label="Topics">
+          <span class="pill">Leadership</span>
+          <span class="pill">Resilience</span>
+          <span class="pill">AAU Sports</span>
+          <span class="pill">Family Systems</span>
+          <span class="pill">Mentorship</span>
+        </div>
+      </div>
+      <div class="card">
+        <h2>About the Authors</h2>
+        <p><strong>Joe &amp; Lisa Birkhead</strong> are retired U.S. Army Sergeant Majors. They raised two driven kids through deployments, relocations, AAU sports, and family businesses — and now mentor others on leadership, resilience, and building winning mindsets.</p>
+        <ul class="muted">
+          <li>Active duty service across medical, signal, special missions &amp; cyber</li>
+          <li>Duty stations from Bragg to Belgium; leadership from squad room to Corps</li>
+          <li>Family ventures: Bricks 4 Kidz, Frios Gourmet Pops, vending &amp; ATMs</li>
+        </ul>
+      </div>
     </section>
 
-    <section>
-      <h2>What You’ll Learn</h2>
-      <ul>
-        <li>Lead under pressure — at work and at home</li>
-        <li>Why consistency beats talent over time</li>
-        <li>How to mentor without micromanaging</li>
-        <li>Army lessons that work in civilian life</li>
-      </ul>
+    <!-- What you'll learn -->
+    <section id="learn" class="section grid-2">
+      <div class="card">
+        <h2>What You’ll Learn</h2>
+        <ul>
+          <li>Lead under pressure — at work and at home</li>
+          <li>Why consistency beats talent over time</li>
+          <li>How to mentor without micromanaging</li>
+          <li>Army lessons that win in civilian life</li>
+          <li>Designing a family “mission” that endures moves &amp; seasons</li>
+        </ul>
+      </div>
+      <div class="card" id="sample">
+        <h2>Sample Excerpt</h2>
+        <div class="quote">
+          <p>
+            “We don’t chase titles. We chase consistency. Because doing a little every day beats doing a lot once. It worked in uniform. It works in parenting. It works on the court.”
+          </p>
+        </div>
+        <p class="muted" style="margin-top:10px">Want a longer preview? Join the newsletter below.</p>
+      </div>
     </section>
 
-    <section class="cta">
-      <h2>Be First to Know</h2>
-      <p>Get chapter previews, launch updates, and leadership tips.</p>
+    <!-- Preorder / Newsletter -->
+    <section id="preorder" class="section">
+      <div class="card" style="text-align:center">
+        <h2>Pre-Order / Buy</h2>
+        <p class="muted">Choose your format. Links update at launch.</p>
+        <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:10px 0 2px">
+          <a class="btn" href="#" aria-label="Buy Paperback (coming soon)">Paperback</a>
+          <a class="btn btn-outline" href="#" aria-label="Buy eBook (coming soon)">eBook</a>
+          <a class="btn btn-outline" href="#" aria-label="Buy Audiobook (coming soon)">Audiobook</a>
+        </div>
+      </div>
 
-      <!-- MailerLite embedded form -->
-      <div class="ml-embedded" data-form="wlxhmJ"></div>
-
-      <!-- Fallback link (optional) -->
-      <p style="margin-top:10px">
-        Having trouble with the form? 
-        <a href="https://assets.mailerlite.com/jsonp/1727356/forms/162450711964026171/subscribe" target="_blank" rel="noopener">
-          Open the signup page
-        </a>.
-      </p>
+      <div id="newsletter" class="card" style="margin-top:18px">
+        <h2>Be First to Know</h2>
+        <p>Get chapter previews, launch updates, and leadership tips.</p>
+        <div class="ml-embedded" data-form="wlxhmJ"></div>
+        <p style="margin-top:10px">
+          Having trouble with the form?
+          <a href="https://assets.mailerlite.com/jsonp/1727356/forms/162450711964026171/subscribe" target="_blank" rel="noopener">Open the signup page</a>.
+        </p>
+      </div>
     </section>
 
-    <section>
-      <h2>About the Authors</h2>
-      <p><strong>Joe & Lisa Birkhead</strong> are retired U.S. Army Sergeant Majors. They raised two driven kids through deployments, relocations, AAU sports, and family businesses — and now mentor others on leadership, resilience, and building winning mindsets.</p>
+    <!-- Speaking & Workshops -->
+    <section id="speaking" class="section grid-2">
+      <div class="card">
+        <h2>Speaking &amp; Workshops</h2>
+        <p>We deliver keynotes and hands-on sessions for:</p>
+        <ul>
+          <li>Military &amp; veteran audiences (resilience, MRT tools)</li>
+          <li>Coaches, clubs &amp; schools (parent/player culture, AARs)</li>
+          <li>Corporate teams (mission clarity, communication under pressure)</li>
+        </ul>
+        <p style="margin:.5rem 0 0"><strong>Formats:</strong> 30–60 min keynotes · 2–4 hr workshops · full-day intensives</p>
+      </div>
+      <div class="card">
+        <h2>Popular Topics</h2>
+        <ul>
+          <li><em>Hunt the Good Stuff</em>: Building resilient team cultures</li>
+          <li>Mentor Without Micromanaging: Accountability the right way</li>
+          <li>From AARs to Report Cards: Feedback that actually improves performance</li>
+          <li>Family as a Unit: Designing a plan everyone can execute</li>
+        </ul>
+        <p style="margin-top:8px"><a class="btn" href="#contact">Book a Talk</a></p>
+      </div>
+    </section>
+
+    <!-- Press / Media -->
+    <section id="press" class="section grid-2">
+      <div class="card">
+        <h2>Press &amp; Media</h2>
+        <p>For interviews, podcast bookings, and excerpts, reach out below. A press kit with bios, photos, and sample questions is available.</p>
+        <p><a class="btn btn-outline" href="press-kit.zip" download>Download Press Kit</a></p>
+        <p class="muted">Tip: replace <code>press-kit.zip</code> with your file once ready.</p>
+      </div>
+      <div class="card">
+        <h2>Fast Facts</h2>
+        <ul>
+          <li>Two retired Sergeant Majors (E-9), dual-military marriage</li>
+          <li>Assignments from Bragg to Belgium; leadership roles up to Corps</li>
+          <li>Raised athletes while running multiple family businesses</li>
+          <li>Book blends memoir with usable AAR checklists</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="card">
+        <h2>Contact</h2>
+        <p>Speaking, bulk orders, partnerships — we’d love to connect.</p>
+        <p><strong>Email:</strong> <a href="mailto:info@j3lfamily.com">info@j3lfamily.com</a></p>
+        <!-- Simple mailto form (GitHub Pages can’t run server code) -->
+        <form action="mailto:info@j3lfamily.com" method="post" enctype="text/plain" style="display:grid; gap:10px; max-width:560px">
+          <label> Name
+            <input required name="name" type="text" style="width:100%; padding:10px; border-radius:10px; border:1px solid #d1d5db" />
+          </label>
+          <label> Email
+            <input required name="email" type="email" style="width:100%; padding:10px; border-radius:10px; border:1px solid #d1d5db" />
+          </label>
+          <label> Message
+            <textarea required name="message" rows="5" style="width:100%; padding:10px; border-radius:10px; border:1px solid #d1d5db"></textarea>
+          </label>
+          <button class="btn" type="submit">Send</button>
+          <p class="muted" style="margin:0">This opens your email app. Or write us directly at <a href="mailto:info@j3lfamily.com">info@j3lfamily.com</a>.</p>
+        </form>
+      </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <p>&copy; 2025 Joe & Lisa Birkhead. All Rights Reserved. | <a href="mailto:info@j3lfamily.com">Contact</a></p>
+  <footer role="contentinfo">
+    <p>&copy; <span id="year"></span> Joe &amp; Lisa Birkhead · All rights reserved · <a href="mailto:info@j3lfamily.com">Contact</a></p>
   </footer>
+
+  <!-- Minimal JS: smooth scroll + dynamic year -->
+  <script>
+    // dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // smooth scroll for same-page links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el){
+          e.preventDefault();
+          el.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  </script>
 </body>
 </html>
