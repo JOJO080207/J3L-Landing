@@ -128,7 +128,19 @@
     }
     .nil-cta:hover{filter:brightness(.92)}
     .nil-note{color:#d1d5db; font-size:.95rem}
-    .nil-img{width:100%; max-width:380px; border-radius:12px; border:3px solid var(--gold); box-shadow:0 14px 36px rgba(0,0,0,.35)}
+    /* Make links inside NIL card gold so they’re visible on dark bg */
+    #jolesa-nil a { color:#ffd874; font-weight:600; }
+    #jolesa-nil a:hover { color:#f1c75b; }
+    /* Image + glow hover */
+    .nil-img{
+      width:100%; max-width:380px; border-radius:12px; border:3px solid var(--gold);
+      box-shadow:0 14px 36px rgba(0,0,0,.35);
+      transition: box-shadow .3s ease, transform .3s ease;
+    }
+    .nil-img:hover{
+      box-shadow:0 0 25px rgba(216,163,22,.8), 0 14px 36px rgba(0,0,0,.35);
+      transform:scale(1.02);
+    }
     @media (max-width:860px){ .nil-card{grid-template-columns:1fr} .nil-img{margin:0 auto} }
   </style>
 
@@ -289,7 +301,8 @@
           </p>
         </div>
         <div>
-          <img class="nil-img" src="https://j3lfamily.com/JoLesa.jpg" alt="JoLesa Birkhead in Converse University colors">
+          <!-- Replace src with your official photo file when ready -->
+          <img class="nil-img" src="JoLesa.jpg" alt="JoLesa Birkhead in Converse University colors">
         </div>
       </div>
     </section>
