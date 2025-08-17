@@ -24,7 +24,7 @@
       l=d.createElement(e);l.async=1;l.src=u;
       n=d.getElementsByTagName(e)[0];n.parentNode.insertBefore(l,n);
     })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', '1727356');
+    ml('account', '1727356');  /* your MailerLite account ID */
   </script>
 
   <!-- Styles -->
@@ -128,9 +128,9 @@
     }
     .nil-cta:hover{filter:brightness(.92)}
     .nil-note{color:#d1d5db; font-size:.95rem}
-    /* Make links inside NIL card gold so they’re visible on dark bg */
-    #jolesa-nil a { color:#ffd874; font-weight:600; }
-    #jolesa-nil a:hover { color:#f1c75b; }
+    /* Make links inside NIL card visible on dark bg; leave the CTA white/black */
+    #jolesa-nil a:not(.nil-cta) { color:#ffd874; font-weight:600; }
+    #jolesa-nil a:not(.nil-cta):hover { color:#f1c75b; }
     /* Image + glow hover */
     .nil-img{
       width:100%; max-width:380px; border-radius:12px; border:3px solid var(--gold);
@@ -144,7 +144,7 @@
     @media (max-width:860px){ .nil-card{grid-template-columns:1fr} .nil-img{margin:0 auto} }
   </style>
 
-  <!-- Structured Data -->
+  <!-- Structured Data (replace buy links when live) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -301,8 +301,8 @@
           </p>
         </div>
         <div>
-          <!-- Replace src with your official photo file when ready -->
-          <img class="nil-img" src="jolesa.jpg?v=2" alt="JoLesa Birkhead in Converse University colors">
+          <!-- Official photo path (place file in /images folder) -->
+          <img class="nil-img" src="images/jolesa.jpg?v=4" alt="JoLesa Birkhead in Converse University colors">
         </div>
       </div>
     </section>
