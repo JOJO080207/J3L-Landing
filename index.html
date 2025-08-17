@@ -24,7 +24,7 @@
       l=d.createElement(e);l.async=1;l.src=u;
       n=d.getElementsByTagName(e)[0];n.parentNode.insertBefore(l,n);
     })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', '1727356');  /* your MailerLite account ID */
+    ml('account', '1727356');
   </script>
 
   <!-- Styles -->
@@ -110,9 +110,29 @@
     :is(a,button,.btn,.btn-outline):focus{outline:3px solid var(--ring); outline-offset:2px}
     /* Smooth anchor offset */
     :target::before{content:""; display:block; height:72px; margin-top:-72px; visibility:hidden}
+
+    /* ===== JoLesa NIL styles ===== */
+    .nil-card{
+      display:grid; gap:22px; grid-template-columns:1.1fr .9fr; align-items:center;
+      background:linear-gradient(135deg,#0f0f0f 0%, #1a1a1a 100%); color:#fff;
+      border-radius:var(--radius); padding:22px; border:1px solid #1f2937;
+      box-shadow:0 16px 42px rgba(0,0,0,.25), inset 0 0 0 2px rgba(255,255,255,.04);
+    }
+    .nil-eyebrow{display:inline-block; font-weight:800; letter-spacing:.02em; color:#f1c75b; margin-bottom:6px}
+    .nil-title{margin:.15rem 0 .5rem; font-size:clamp(22px,3.2vw,32px); color:#ffd874}
+    .nil-text p{margin:.25rem 0 1rem; color:#e9e9e9}
+    .nil-cta{
+      display:inline-flex; align-items:center; gap:10px; padding:12px 16px;
+      background:#fff; color:#111; border-radius:999px; font-weight:800; text-decoration:none;
+      box-shadow:0 10px 24px rgba(255,255,255,.15);
+    }
+    .nil-cta:hover{filter:brightness(.92)}
+    .nil-note{color:#d1d5db; font-size:.95rem}
+    .nil-img{width:100%; max-width:380px; border-radius:12px; border:3px solid var(--gold); box-shadow:0 14px 36px rgba(0,0,0,.35)}
+    @media (max-width:860px){ .nil-card{grid-template-columns:1fr} .nil-img{margin:0 auto} }
   </style>
 
-  <!-- Structured Data (replace buy links when live) -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -134,6 +154,26 @@
     }
   }
   </script>
+
+  <!-- Athlete / NIL JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "JoLesa Birkhead",
+    "jobTitle": "Student-Athlete",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "Converse University"
+    },
+    "sameAs": [
+      "https://twitter.com/BJolesa",
+      "https://govalkyries.athsolutions.shop/?affiliate_id=JBIRKHEAD&utm_source=affiliate&utm_medium=affiliate&utm_campaign=Affiliate-JBIRKHEAD"
+    ],
+    "url": "https://j3lfamily.com/#jolesa-nil",
+    "description": "Converse University DII student-athlete and Art major with approved NIL—earns on gear sales featuring her name, image, and likeness."
+  }
+  </script>
 </head>
 <body>
 
@@ -148,6 +188,7 @@
         <a href="#about">About</a>
         <a href="#learn">What You’ll Learn</a>
         <a href="#sample">Sample</a>
+        <a href="#jolesa-nil">JoLesa NIL</a>
         <a href="#speaking">Speaking</a>
         <a href="#press">Press</a>
         <a href="#contact">Contact</a>
@@ -222,6 +263,34 @@
           </p>
         </div>
         <p class="muted" style="margin-top:10px">Want a longer preview? Join the newsletter below.</p>
+      </div>
+    </section>
+
+    <!-- JoLesa NIL Feature -->
+    <section id="jolesa-nil" class="section" aria-label="JoLesa NIL">
+      <div class="nil-card">
+        <div class="nil-text">
+          <span class="nil-eyebrow">Family Spotlight</span>
+          <h2 class="nil-title">JoLesa Birkhead — Converse University (DII)</h2>
+          <p>
+            Proud student-athlete and Art major. Officially approved for NIL at Converse — JoLesa earns directly when her
+            gear with her name, image, and likeness sells.
+          </p>
+          <a
+            class="nil-cta"
+            href="https://govalkyries.athsolutions.shop/?affiliate_id=JBIRKHEAD&utm_source=affiliate&utm_medium=affiliate&utm_campaign=Affiliate-JBIRKHEAD"
+            target="_blank" rel="noopener noreferrer" aria-label="Shop JoLesa NIL Gear"
+          >
+            🛒 Shop JoLesa’s NIL Gear
+          </a>
+          <p class="nil-note" style="margin-top:.75rem">
+            Follow her journey on X:
+            <a href="https://twitter.com/BJolesa" target="_blank" rel="noopener">@BJolesa</a>
+          </p>
+        </div>
+        <div>
+          <img class="nil-img" src="https://j3lfamily.com/JoLesa.jpg" alt="JoLesa Birkhead in Converse University colors">
+        </div>
       </div>
     </section>
 
