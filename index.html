@@ -8,14 +8,19 @@
   <!-- SEO + Social -->
   <meta name="description" content="From combat boots to courts & fields — leadership, family, and raising athletes the military way." />
   <link rel="canonical" href="https://j3lfamily.com/" />
+  <meta property="og:site_name" content="J3L Family" />
   <meta property="og:title" content="Dual Military — Leadership, Family & Sports" />
   <meta property="og:description" content="Memoir + AAR lessons from two Army Sergeant Majors raising athletes." />
   <meta property="og:image" content="https://j3lfamily.com/BookCover.png" />
   <meta property="og:url" content="https://j3lfamily.com/" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0b0b0b" />
 
-  <link rel="icon" href="favicon.png" />
+  <!-- Favicons -->
+  <link rel="icon" href="favicon.png" sizes="32x32" />
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
 
   <!-- MailerLite Universal (must be BEFORE the form div) -->
   <script>
@@ -26,10 +31,12 @@
     })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
     ml('account', '1727356');  /* your MailerLite account ID */
   </script>
+  <noscript><style>.ml-embedded{display:none !important}</style></noscript>
 
   <!-- Styles -->
   <style>
     :root{
+      color-scheme: light dark;
       --bg:#0b0b0b; --ink:#1f2937; --muted:#6b7280; --paper:#f7f7f7;
       --gold:#d8a316; --card:#ffffff; --ring:rgba(216,163,22,.35);
       --max:1080px; --radius:14px;
@@ -40,14 +47,14 @@
       margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,Helvetica,sans-serif;
       color:var(--ink); background:var(--paper); line-height:1.6; -webkit-font-smoothing:antialiased;
     }
-    a{color:var(--bg); text-decoration:none}
+    a{color:#0b0b0b; text-decoration:none}
     a:hover{opacity:.9}
     img{max-width:100%; height:auto; display:block}
 
     /* Header / Nav */
     .topbar{
       position:sticky; top:0; z-index:50; backdrop-filter:blur(8px);
-      background:rgba(255,255,255,.82); border-bottom:1px solid #e5e7eb;
+      background:rgba(255,255,255,.9); border-bottom:1px solid #e5e7eb;
     }
     .navwrap{max-width:var(--max); margin:0 auto; padding:10px 16px; display:flex; align-items:center; gap:16px}
     .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px}
@@ -59,6 +66,8 @@
       padding:10px 16px; border-radius:999px; background:var(--gold); color:#111; font-weight:800; border:0;
       box-shadow:0 8px 20px rgba(216,163,22,.25);
     }
+    .btn:hover{filter:brightness(0.98)}
+    .btn:active{transform:translateY(1px)}
     .btn-outline{
       background:#fff; color:#111; border:2px solid var(--gold); box-shadow:none; font-weight:700;
     }
@@ -107,7 +116,13 @@
     }
 
     /* Focus styles */
-    :is(a,button,.btn,.btn-outline):focus{outline:3px solid var(--ring); outline-offset:2px}
+    :is(a,button,.btn,.btn-outline,input,textarea):focus{outline:3px solid var(--ring); outline-offset:2px}
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    }
+
     /* Smooth anchor offset */
     :target::before{content:""; display:block; height:72px; margin-top:-72px; visibility:hidden}
 
@@ -193,7 +208,7 @@
   <header class="topbar" role="banner">
     <div class="navwrap">
       <a class="brand" href="#top" aria-label="J3L Family Home">
-        <img src="BookCover.png" alt="Dual Military cover thumbnail">
+        <img src="BookCover.png" alt="Dual Military cover thumbnail" loading="lazy" decoding="async">
         <span>Dual Military</span>
       </a>
       <nav class="navlinks" aria-label="Primary">
@@ -223,7 +238,7 @@
           <a class="btn btn-outline" href="#newsletter">Get Updates</a>
         </div>
       </div>
-      <img class="cover" src="BookCover.png" alt="Dual Military book cover — From Combat Boots to Courts & Fields">
+      <img class="cover" src="BookCover.png" alt="Dual Military book cover — From Combat Boots to Courts & Fields" loading="lazy" decoding="async">
     </div>
   </section>
 
@@ -248,7 +263,7 @@
         <h2>About the Authors</h2>
         <p><strong>Joe &amp; Lisa Birkhead</strong> are retired U.S. Army Sergeant Majors. They raised two driven kids through deployments, relocations, AAU sports, and family businesses — and now mentor others on leadership, resilience, and building winning mindsets.</p>
         <ul class="muted">
-          <li>Active duty service across Medical,Signal,Recruiting/Retention,Special Missions &amp; Cyber</li>
+          <li>Active duty service across Medical, Signal, Recruiting/Retention, Special Missions &amp; Cyber</li>
           <li>Duty stations from Bragg to Belgium; leadership from squad room to Corps</li>
           <li>Family ventures: Bricks 4 Kidz, Frios Gourmet Pops, vending &amp; ATMs</li>
         </ul>
@@ -302,7 +317,7 @@
         </div>
         <div>
           <!-- Official photo path (place file in /images folder) -->
-          <img class="nil-img" src="images/jolesa2025.jpg?v=1" alt="JoLesa NIL Gear">
+          <img class="nil-img" src="images/jolesa2025.jpg?v=1" alt="JoLesa NIL Gear" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
@@ -322,7 +337,7 @@
       <div id="newsletter" class="card" style="margin-top:18px">
         <h2>Be First to Know</h2>
         <p>Get chapter previews, launch updates, and leadership tips.</p>
-        <div class="ml-embedded" data-form="wlxhmJ"></div>
+        <div class="ml-embedded" data-form="wlxhmJ" aria-label="Newsletter signup form"></div>
         <p style="margin-top:10px">
           Having trouble with the form?
           <a href="https://assets.mailerlite.com/jsonp/1727356/forms/162450711964026171/subscribe" target="_blank" rel="noopener">Open the signup page</a>.
@@ -420,3 +435,4 @@
   </script>
 </body>
 </html>
+
