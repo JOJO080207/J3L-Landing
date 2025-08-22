@@ -7,14 +7,20 @@
 
   <!-- SEO + Social -->
   <meta name="description" content="From combat boots to courts & fields — leadership, family, and raising athletes the military way." />
+  <meta name="author" content="Joe & Lisa Birkhead" />
   <link rel="canonical" href="https://j3lfamily.com/" />
   <meta property="og:site_name" content="J3L Family" />
   <meta property="og:title" content="Dual Military — Leadership, Family & Sports" />
   <meta property="og:description" content="Memoir + AAR lessons from two Army Sergeant Majors raising athletes." />
-  <meta property="og:image" content="https://j3lfamily.com/BookCover_v2.png?v=1" />
+  <!-- Prefer a wide social card for sharing previews -->
+  <meta property="og:image" content="https://j3lfamily.com/SocialCard.png?v=1" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:url" content="https://j3lfamily.com/" />
   <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://j3lfamily.com/SocialCard.png?v=1" />
   <meta name="theme-color" content="#0b0b0b" />
 
   <!-- Favicons -->
@@ -29,7 +35,7 @@
       l=d.createElement(e);l.async=1;l.src=u;
       n=d.getElementsByTagName(e)[0];n.parentNode.insertBefore(l,n);
     })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', '1727356');  /* your MailerLite account ID */
+    ml('account', '1727356');
   </script>
   <noscript><style>.ml-embedded{display:none !important}</style></noscript>
 
@@ -206,7 +212,10 @@
   <header class="topbar" role="banner">
     <div class="navwrap">
       <a class="brand" href="#top" aria-label="J3L Family Home">
-        <img src="BookCover_v2.png?v=1" alt="Dual Military cover thumbnail" loading="lazy" decoding="async">
+        <picture>
+          <source srcset="BookCover_v2.webp?v=1" type="image/webp">
+          <img src="BookCover_v2.png?v=1" alt="Dual Military cover thumbnail" loading="lazy" decoding="async" width="36" height="36" style="object-fit:cover; border-radius:8px; border:2px solid var(--gold)">
+        </picture>
         <span>Dual Military</span>
       </a>
       <nav class="navlinks" aria-label="Primary">
@@ -217,7 +226,7 @@
         <a href="#speaking">Speaking</a>
         <a href="#press">Press</a>
         <a href="#contact">Contact</a>
-        <a class="btn" href="#preorder">Pre-Order</a>
+        <a class="btn" href="#preorder" aria-label="Jump to pre-order options">Pre-Order</a>
       </nav>
     </div>
   </header>
@@ -232,179 +241,185 @@
           Two Army Sergeant Majors. Two kids. One family mission. A field manual for life, leadership, and raising athletes the military way.
         </p>
         <div style="display:flex; gap:10px; justify-content:center; margin-top:16px; flex-wrap:wrap">
-          <a class="btn" href="#preorder">Pre-Order the Book</a>
-          <a class="btn btn-outline" href="#newsletter">Get Updates</a>
+          <a class="btn" href="#preorder" aria-label="Jump to pre-order options">Pre-Order the Book</a>
+          <a class="btn btn-outline" href="#newsletter" aria-label="Jump to newsletter signup">Get Updates</a>
         </div>
       </div>
-      <img class="cover" src="BookCover_v2.png?v=1" alt="Dual Military book cover — From Combat Boots to Courts & Fields" loading="lazy" decoding="async">
+      <picture>
+        <source srcset="BookCover_v2.webp?v=1" type="image/webp">
+        <img class="cover" src="BookCover_v2.png?v=1" alt="Dual Military book cover — From Combat Boots to Courts & Fields" loading="lazy" decoding="async" width="520">
+      </picture>
     </div>
   </section>
 
-  <!-- About -->
-  <section id="about" class="section grid-2">
-    <div class="card">
-      <h2>About the Book</h2>
-      <p>
-        Twenty-five years in the Army. Eleven deployments. Two Sergeant Majors, two kids, and a family mission built on leadership, resilience, and grit.
-        <em>Dual Military</em> blends memoir with practical After Action Reviews (AARs) that parents, coaches, veterans, and leaders can use immediately.
-      </p>
-      <div class="stack" aria-label="Topics">
-        <span class="pill">Leadership</span>
-        <span class="pill">Resilience</span>
-        <span class="pill">AAU Sports</span>
-        <span class="pill">Family Systems</span>
-        <span class="pill">Mentorship</span>
-      </div>
-    </div>
-    <div class="card">
-      <h2>About the Authors</h2>
-      <p><strong>Joe &amp; Lisa Birkhead</strong> are retired U.S. Army Sergeant Majors. They raised two driven kids through deployments, relocations, AAU sports, and family businesses — and now mentor others on leadership, resilience, and building winning mindsets.</p>
-      <ul class="muted">
-        <li>Active duty service across Medical, Signal, Recruiting/Retention, Special Missions &amp; Cyber</li>
-        <li>Duty stations from Bragg to Belgium; leadership from squad room to Corps</li>
-        <li>Family ventures: Bricks 4 Kidz, Frios Gourmet Pops, vending &amp; ATMs</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- What you'll learn -->
-  <section id="learn" class="section grid-2">
-    <div class="card">
-      <h2>What You’ll Learn</h2>
-      <ul>
-        <li>Lead under pressure — at work and at home</li>
-        <li>Why consistency beats talent over time</li>
-        <li>How to mentor without micromanaging</li>
-        <li>Army lessons that win in civilian life</li>
-        <li>Designing a family “mission” that endures moves &amp; seasons</li>
-      </ul>
-    </div>
-    <div class="card" id="sample">
-      <h2>Sample Excerpt</h2>
-      <div class="quote">
+  <main>
+    <!-- About -->
+    <section id="about" class="section grid-2">
+      <div class="card">
+        <h2>About the Book</h2>
         <p>
-          “We don’t chase titles. We chase consistency. Because doing a little every day beats doing a lot once. It worked in uniform. It works in parenting. It works on the court.”
+          Twenty-five years in the Army. Eleven deployments. Two Sergeant Majors, two kids, and a family mission built on leadership, resilience, and grit.
+          <em>Dual Military</em> blends memoir with practical After Action Reviews (AARs) that parents, coaches, veterans, and leaders can use immediately.
+        </p>
+        <div class="stack" aria-label="Topics">
+          <span class="pill">Leadership</span>
+          <span class="pill">Resilience</span>
+          <span class="pill">AAU Sports</span>
+          <span class="pill">Family Systems</span>
+          <span class="pill">Mentorship</span>
+        </div>
+      </div>
+      <div class="card">
+        <h2>About the Authors</h2>
+        <p><strong>Joe &amp; Lisa Birkhead</strong> are retired U.S. Army Sergeant Majors. They raised two driven kids through deployments, relocations, AAU sports, and family businesses — and now mentor others on leadership, resilience, and building winning mindsets.</p>
+        <ul class="muted">
+          <li>Active duty service across Medical, Signal, Recruiting/Retention, Special Missions &amp; Cyber</li>
+          <li>Duty stations from Bragg to Belgium; leadership from squad room to Corps</li>
+          <li>Family ventures: Bricks 4 Kidz, Frios Gourmet Pops, vending &amp; ATMs</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- What you'll learn -->
+    <section id="learn" class="section grid-2">
+      <div class="card">
+        <h2>What You’ll Learn</h2>
+        <ul>
+          <li>Lead under pressure — at work and at home</li>
+          <li>Why consistency beats talent over time</li>
+          <li>How to mentor without micromanaging</li>
+          <li>Army lessons that win in civilian life</li>
+          <li>Designing a family “mission” that endures moves &amp; seasons</li>
+        </ul>
+      </div>
+      <div class="card" id="sample">
+        <h2>Sample Excerpt</h2>
+        <div class="quote">
+          <p>
+            “We don’t chase titles. We chase consistency. Because doing a little every day beats doing a lot once. It worked in uniform. It works in parenting. It works on the court.”
+          </p>
+        </div>
+        <p class="muted" style="margin-top:10px">Want a longer preview? Join the newsletter below.</p>
+      </div>
+    </section>
+
+    <!-- JoLesa NIL Feature -->
+    <section id="jolesa-nil" class="section" aria-label="JoLesa NIL">
+      <div class="nil-card">
+        <div class="nil-text">
+          <span class="nil-eyebrow">Family Spotlight</span>
+          <h2 class="nil-title">JoLesa Birkhead — Converse University (DII)</h2>
+          <p>
+            Proud student-athlete and Art major. Officially approved for NIL at Converse — JoLesa earns directly when her
+            gear with her name, image, and likeness sells.
+          </p>
+          <a
+            class="nil-cta"
+            href="https://govalkyries.athsolutions.shop/collections/jolesa-birkhead-5384567"
+            target="_blank" rel="noopener noreferrer" aria-label="Shop JoLesa NIL Gear"
+          >
+            🛒 Shop JoLesa’s NIL Gear
+          </a>
+          <p class="nil-note" style="margin-top:.75rem">
+            Follow her journey on X:
+            <a href="https://twitter.com/BJolesa" target="_blank" rel="noopener">@BJolesa</a>
+          </p>
+        </div>
+        <div>
+          <!-- Official photo path (place file in /images folder) -->
+          <img class="nil-img" src="images/jolesa2025.jpg?v=1" alt="JoLesa NIL Gear" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <!-- Preorder / Newsletter -->
+    <section id="preorder" class="section">
+      <div class="card" style="text-align:center">
+        <h2>Pre-Order / Buy</h2>
+        <p class="muted">Choose your format. Links update at launch.</p>
+        <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:10px 0 2px">
+          <a class="btn" href="#" aria-label="Buy Paperback (coming soon)">Paperback</a>
+          <a class="btn btn-outline" href="#" aria-label="Buy eBook (coming soon)">eBook</a>
+          <a class="btn btn-outline" href="#" aria-label="Buy Audiobook (coming soon)">Audiobook</a>
+        </div>
+      </div>
+
+      <div id="newsletter" class="card" style="margin-top:18px">
+        <h2>Be First to Know</h2>
+        <p>Get chapter previews, launch updates, and leadership tips.</p>
+        <div class="ml-embedded" data-form="wlxhmJ" aria-label="Newsletter signup form"></div>
+        <p style="margin-top:10px">
+          Having trouble with the form?
+          <a href="https://assets.mailerlite.com/jsonp/1727356/forms/162450711964026171/subscribe" target="_blank" rel="noopener">Open the signup page</a>.
         </p>
       </div>
-      <p class="muted" style="margin-top:10px">Want a longer preview? Join the newsletter below.</p>
-    </div>
-  </section>
+    </section>
 
-  <!-- JoLesa NIL Feature -->
-  <section id="jolesa-nil" class="section" aria-label="JoLesa NIL">
-    <div class="nil-card">
-      <div class="nil-text">
-        <span class="nil-eyebrow">Family Spotlight</span>
-        <h2 class="nil-title">JoLesa Birkhead — Converse University (DII)</h2>
-        <p>
-          Proud student-athlete and Art major. Officially approved for NIL at Converse — JoLesa earns directly when her
-          gear with her name, image, and likeness sells.
-        </p>
-        <a
-          class="nil-cta"
-          href="https://govalkyries.athsolutions.shop/collections/jolesa-birkhead-5384567"
-          target="_blank" rel="noopener noreferrer" aria-label="Shop JoLesa NIL Gear"
-        >
-          🛒 Shop JoLesa’s NIL Gear
-        </a>
-        <p class="nil-note" style="margin-top:.75rem">
-          Follow her journey on X:
-          <a href="https://twitter.com/BJolesa" target="_blank" rel="noopener">@BJolesa</a>
-        </p>
+    <!-- Speaking & Workshops -->
+    <section id="speaking" class="section grid-2">
+      <div class="card">
+        <h2>Speaking &amp; Workshops</h2>
+        <p>We deliver keynotes and hands-on sessions for:</p>
+        <ul>
+          <li>Military &amp; veteran audiences (resilience, MRT tools)</li>
+          <li>Coaches, clubs &amp; schools (parent/player culture, AARs)</li>
+          <li>Corporate teams (mission clarity, communication under pressure)</li>
+        </ul>
+        <p style="margin:.5rem 0 0"><strong>Formats:</strong> 30–60 min keynotes · 2–4 hr workshops · full-day intensives</p>
       </div>
-      <div>
-        <img class="nil-img" src="images/jolesa2025.jpg?v=1" alt="JoLesa NIL Gear" loading="lazy" decoding="async">
+      <div class="card">
+        <h2>Popular Topics</h2>
+        <ul>
+          <li><em>Hunt the Good Stuff</em>: Building resilient team cultures</li>
+          <li>Mentor Without Micromanaging: Accountability the right way</li>
+          <li>From AARs to Report Cards: Feedback that actually improves performance</li>
+          <li>Family as a Unit: Designing a plan everyone can execute</li>
+        </ul>
+        <p style="margin-top:8px"><a class="btn" href="#contact">Book a Talk</a></p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Preorder / Newsletter -->
-  <section id="preorder" class="section">
-    <div class="card" style="text-align:center">
-      <h2>Pre-Order / Buy</h2>
-      <p class="muted">Choose your format. Links update at launch.</p>
-      <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:10px 0 2px">
-        <a class="btn" href="#" aria-label="Buy Paperback (coming soon)">Paperback</a>
-        <a class="btn btn-outline" href="#" aria-label="Buy eBook (coming soon)">eBook</a>
-        <a class="btn btn-outline" href="#" aria-label="Buy Audiobook (coming soon)">Audiobook</a>
+    <!-- Press / Media -->
+    <section id="press" class="section grid-2">
+      <div class="card">
+        <h2>Press &amp; Media</h2>
+        <p>For interviews, podcast bookings, and excerpts, reach out below. A press kit with bios, photos, and sample questions is available.</p>
+        <p><a class="btn btn-outline" href="press-kit.zip" download>Download Press Kit</a></p>
+        <p class="muted">Tip: replace <code>press-kit.zip</code> with your file once ready.</p>
       </div>
-    </div>
+      <div class="card">
+        <h2>Fast Facts</h2>
+        <ul>
+          <li>Two retired Sergeant Majors (E-9), dual-military marriage</li>
+          <li>Assignments from Bragg to Belgium; leadership roles up to Corps</li>
+          <li>Raised athletes while running multiple family businesses</li>
+          <li>Book blends memoir with usable AAR checklists</li>
+        </ul>
+      </div>
+    </section>
 
-    <div id="newsletter" class="card" style="margin-top:18px">
-      <h2>Be First to Know</h2>
-      <p>Get chapter previews, launch updates, and leadership tips.</p>
-      <div class="ml-embedded" data-form="wlxhmJ" aria-label="Newsletter signup form"></div>
-      <p style="margin-top:10px">
-        Having trouble with the form?
-        <a href="https://assets.mailerlite.com/jsonp/1727356/forms/162450711964026171/subscribe" target="_blank" rel="noopener">Open the signup page</a>.
-      </p>
-    </div>
-  </section>
-
-  <!-- Speaking & Workshops -->
-  <section id="speaking" class="section grid-2">
-    <div class="card">
-      <h2>Speaking &amp; Workshops</h2>
-      <p>We deliver keynotes and hands-on sessions for:</p>
-      <ul>
-        <li>Military &amp; veteran audiences (resilience, MRT tools)</li>
-        <li>Coaches, clubs &amp; schools (parent/player culture, AARs)</li>
-        <li>Corporate teams (mission clarity, communication under pressure)</li>
-      </ul>
-      <p style="margin:.5rem 0 0"><strong>Formats:</strong> 30–60 min keynotes · 2–4 hr workshops · full-day intensives</p>
-    </div>
-    <div class="card">
-      <h2>Popular Topics</h2>
-      <ul>
-        <li><em>Hunt the Good Stuff</em>: Building resilient team cultures</li>
-        <li>Mentor Without Micromanaging: Accountability the right way</li>
-        <li>From AARs to Report Cards: Feedback that actually improves performance</li>
-        <li>Family as a Unit: Designing a plan everyone can execute</li>
-      </ul>
-      <p style="margin-top:8px"><a class="btn" href="#contact">Book a Talk</a></p>
-    </div>
-  </section>
-
-  <!-- Press / Media -->
-  <section id="press" class="section grid-2">
-    <div class="card">
-      <h2>Press &amp; Media</h2>
-      <p>For interviews, podcast bookings, and excerpts, reach out below. A press kit with bios, photos, and sample questions is available.</p>
-      <p><a class="btn btn-outline" href="press-kit.zip" download>Download Press Kit</a></p>
-      <p class="muted">Tip: replace <code>press-kit.zip</code> with your file once ready.</p>
-    </div>
-    <div class="card">
-      <h2>Fast Facts</h2>
-      <ul>
-        <li>Two retired Sergeant Majors (E-9), dual-military marriage</li>
-        <li>Assignments from Bragg to Belgium; leadership roles up to Corps</li>
-        <li>Raised athletes while running multiple family businesses</li>
-        <li>Book blends memoir with usable AAR checklists</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <div class="card">
-      <h2>Contact</h2>
-      <p>Speaking, bulk orders, partnerships — we’d love to connect.</p>
-      <p><strong>Email:</strong> <a href="mailto:info@j3lfamily.com">info@j3lfamily.com</a></p>
-      <form action="mailto:info@j3lfamily.com" method="post" enctype="text/plain" style="display:grid; gap:10px; max-width:560px">
-        <label> Name
-          <input required name="name" type="text" style="width:100%; padding:10px; border-radius:10px; border:1px solid #d1d5db" />
-        </label>
-        <label> Email
-          <input required name="email" type="email" style="width:100%; padding:10px; border-radius:10px; border:1px solid #d1d5db" />
-        </label>
-        <label> Message
-          <textarea required name="message" rows="5" style="width:100%; padding:10px; border-radius:10px; border:1px solid #d1d5db"></textarea>
-        </label>
-        <button class="btn" type="submit">Send</button>
-        <p class="muted" style="margin:0">This opens your email app. Or write us directly at <a href="mailto:info@j3lfamily.com">info@j3lfamily.com</a>.</p>
-      </form>
-    </div>
-  </section>
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="card">
+        <h2>Contact</h2>
+        <p>Speaking, bulk orders, partnerships — we’d love to connect.</p>
+        <p><strong>Email:</strong> <a href="mailto:info@j3lfamily.com">info@j3lfamily.com</a></p>
+        <!-- Simple mailto form (GitHub Pages can’t run server code) -->
+        <form action="mailto:info@j3lfamily.com" method="post" enctype="text/plain" style="display:grid; gap:10px; max-width:560px">
+          <label> Name
+            <input required name="name" type="text" style="width:100%; padding:10px; border-radius:10px; border:1px solid #d1d5db" />
+          </label>
+          <label> Email
+            <input required name="email" type="email" style="width:100%; padding:10px; border-radius:10px; border:1px solid #d1d5db" />
+          </label>
+          <label> Message
+            <textarea required name="message" rows="5" style="width:100%; padding:10px; border-radius:10px; border:1px solid #d1d5db"></textarea>
+          </label>
+          <button class="btn" type="submit">Send</button>
+          <p class="muted" style="margin:0">This opens your email app. Or write us directly at <a href="mailto:info@j3lfamily.com">info@j3lfamily.com</a>.</p>
+        </form>
+      </div>
+    </section>
   </main>
 
   <footer role="contentinfo">
@@ -413,7 +428,10 @@
 
   <!-- Minimal JS: smooth scroll + dynamic year -->
   <script>
+    // dynamic year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // smooth scroll for same-page links
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', e=>{
         const id = a.getAttribute('href').slice(1);
@@ -427,3 +445,4 @@
   </script>
 </body>
 </html>
+
