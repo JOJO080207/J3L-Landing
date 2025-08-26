@@ -24,6 +24,9 @@
   <link rel="icon" href="favicon.png" type="image/png" />
   <link rel="apple-touch-icon" href="favicon.png" />
 
+  <!-- Performance: Preload hero cover -->
+  <link rel="preload" as="image" href="BookCover_v2.png?v=1" imagesrcset="BookCover_v2.png?v=1" />
+
   <!-- MailerLite Universal (must be BEFORE the form div) -->
   <script>
     (function(w,d,e,u,f,l,n){
@@ -31,7 +34,7 @@
       l=d.createElement(e);l.async=1;l.src=u;
       n=d.getElementsByTagName(e)[0];n.parentNode.insertBefore(l,n);
     })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', '1727356');  /* your MailerLite account ID */
+    ml('account', '1727356');
   </script>
   <noscript><style>.ml-embedded{display:none !important}</style></noscript>
 
@@ -159,7 +162,7 @@
     @media (max-width:860px){ .nil-card{grid-template-columns:1fr} .nil-img{margin:0 auto} }
   </style>
 
-  <!-- Structured Data -->
+  <!-- Structured Data (Book) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -177,7 +180,8 @@
       "@type":"Offer",
       "price":"19.99",
       "priceCurrency":"USD",
-      "availability":"https://schema.org/PreOrder"
+      "availability":"https://schema.org/InStock",
+      "url":"https://www.amazon.com/dp/XXXXXXXX"
     }
   }
   </script>
@@ -189,10 +193,7 @@
     "@type": "Person",
     "name": "JoLesa Birkhead",
     "jobTitle": "Student-Athlete",
-    "affiliation": {
-      "@type": "CollegeOrUniversity",
-      "name": "Converse University"
-    },
+    "affiliation": {"@type": "CollegeOrUniversity","name": "Converse University"},
     "sameAs": [
       "https://twitter.com/BJolesa",
       "https://govalkyries.athsolutions.shop/collections/jolesa-birkhead-5384567"
@@ -219,10 +220,16 @@
         <a href="#speaking">Speaking</a>
         <a href="#press">Press</a>
         <a href="#contact">Contact</a>
-        <a class="btn" href="#preorder" aria-label="Jump to pre-order options">Pre-Order</a>
+        <a class="btn" href="#buy" aria-label="Jump to buy options">Buy</a>
       </nav>
     </div>
   </header>
+
+  <!-- Availability banner -->
+  <div aria-live="polite" style="background:#fffbe8;border:1px solid #f2e2a2;color:#111;padding:8px 12px;text-align:center">
+    <strong>Now available:</strong> <em>Dual Military — From Combat Boots to Courts &amp; Fields</em>.
+    Grab your copy on <a href="https://www.amazon.com/dp/XXXXXXXX" target="_blank" rel="noopener">Amazon</a>.
+  </div>
 
   <!-- Hero -->
   <section id="top" class="hero" role="region" aria-label="Hero">
@@ -233,12 +240,19 @@
         <p class="lead">
           Two retired Army Sergeant Majors. Two kids. One family mission. <em>Dual Military</em> blends real deployments, real parenting, and real AARs into a practical playbook you can use at home, on the court, and at work.
         </p>
+
+        <!-- Hero buttons -->
         <div style="display:flex; gap:10px; justify-content:center; margin-top:16px; flex-wrap:wrap">
-          <a class="btn" href="#preorder" aria-label="Jump to pre-order options">Pre-Order the Book</a>
-          <a class="btn btn-outline" href="#newsletter" aria-label="Jump to newsletter signup">Get Updates</a>
+          <a class="btn" href="https://www.amazon.com/dp/XXXXXXXX" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a class="btn btn-outline" href="#buy">More Retailers</a>
         </div>
       </div>
-      <img class="cover" src="BookCover_v2.png?v=1" alt="Dual Military book cover — From Combat Boots to Courts & Fields" loading="lazy" decoding="async" width="520">
+
+      <img class="cover"
+           src="BookCover_v2.png?v=1"
+           alt="Dual Military book cover — From Combat Boots to Courts &amp; Fields"
+           width="520" height="780"
+           fetchpriority="high" decoding="async">
     </div>
   </section>
 
@@ -316,21 +330,21 @@
           </p>
         </div>
         <div>
-          <!-- Official photo path (place file in /images folder) -->
           <img class="nil-img" src="images/jolesa2025.jpg?v=1" alt="JoLesa NIL Gear" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
 
-    <!-- Preorder / Newsletter -->
-    <section id="preorder" class="section">
+    <!-- Buy section -->
+    <section id="buy" class="section">
       <div class="card" style="text-align:center">
-        <h2>Pre-Order / Buy</h2>
-        <p class="muted">Choose your format. Links update at launch.</p>
+        <h2>Buy the Book</h2>
+        <p class="muted">Paperback · eBook · (Audiobook when ready)</p>
         <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:10px 0 2px">
-          <a class="btn" href="#" aria-label="Buy Paperback (coming soon)">Paperback</a>
-          <a class="btn btn-outline" href="#" aria-label="Buy eBook (coming soon)">eBook</a>
-          <a class="btn btn-outline" href="#" aria-label="Buy Audiobook (coming soon)">Audiobook</a>
+          <a class="btn" href="https://www.amazon.com/dp/XXXXXXXX" target="_blank" rel="noopener">Amazon (Paperback/eBook)</a>
+          <a class="btn btn-outline" href="https://www.barnesandnoble.com/w/XXXXXXXX" target="_blank" rel="noopener">Barnes &amp; Noble</a>
+          <a class="btn btn-outline" href="https://www.kobo.com/us/en/ebook/XXXXXXXX" target="_blank" rel="noopener">Kobo (eBook)</a>
+          <a class="btn btn-outline" href="https://www.lulu.com/shop/XXXXXXXX" target="_blank" rel="noopener">Lulu (Print)</a>
         </div>
       </div>
 
@@ -368,8 +382,9 @@
       <div class="card">
         <h2>Press &amp; Media</h2>
         <p>For interviews, podcasts, and excerpts, contact us below. A press kit with bios, photos, and sample questions is available.</p>
-        <p><a class="btn btn-outline" href="press-kit.zip" download>Download Press Kit</a></p>
-        <p class="muted">Tip: replace <code>press-kit.zip</code> with your file once ready.</p>
+        <!-- Press kit button (uncomment when zip is uploaded) -->
+        <!-- <p><a class="btn btn-outline" href="press-kit.zip" download>Download Press Kit</a></p> -->
+        <p class="muted">Press kit available at launch (bio, photos, sample Q&amp;A).</p>
       </div>
       <div class="card">
         <h2>Fast Facts</h2>
