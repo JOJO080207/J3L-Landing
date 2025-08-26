@@ -3,7 +3,7 @@
 <head>
   <!-- =========================================================
        Dual Military — From Combat Boots to Courts & Fields
-       Single-file site (expanded, ~450+ lines)
+       Copy-paste single file (light theme + NIL links + retailers)
        ========================================================= -->
 
   <meta charset="UTF-8" />
@@ -17,7 +17,7 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Dual Military — Leadership, Family & Sports" />
   <meta property="og:description" content="Memoir + AAR lessons from two Army Sergeant Majors raising athletes." />
-  <meta property="og:image" content="https://j3lfamily.com/BookCover.png" />
+  <meta property="og:image" content="BookCover_v2.png" />
   <meta property="og:url" content="https://j3lfamily.com/" />
   <meta property="og:type" content="website" />
 
@@ -25,117 +25,115 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Dual Military — Leadership, Family & Sports" />
   <meta name="twitter:description" content="Memoir + AAR lessons from two Army Sergeant Majors raising athletes." />
-  <meta name="twitter:image" content="https://j3lfamily.com/BookCover.png" />
+  <meta name="twitter:image" content="BookCover_v2.png" />
 
-  <!-- PWA-ish/basic -->
-  <meta name="theme-color" content="#000000" />
-  <link rel="icon" href="/favicon.ico" />
+  <!-- Icons -->
+  <link rel="icon" href="favicon.ico" />
 
-  <!-- Performance hints (safe even if unused) -->
-  <link rel="preload" as="image" href="https://j3lfamily.com/BookCover.png" imagesrcset="https://j3lfamily.com/BookCover.png 1x" />
-  <link rel="dns-prefetch" href="https://j3lfamily.com" />
+  <!-- Performance hints -->
+  <link rel="preload" as="image" href="BookCover_v2.png" />
+  <meta name="theme-color" content="#0f172a" />
 
   <!-- ============ Styles ============ -->
   <style>
     :root{
-      --bg:#0a0a0a;
-      --panel:#101010;
-      --card:#111;
-      --fg:#ffffff;
-      --muted:#bdbdbd;
-      --border:#222;
-      --accent:#ffffff;
-      --accent-2:#e6e6e6;
-      --ok:#65d26e;
-      --warn:#ffcf5a;
+      /* Light theme palette */
+      --bg:#f7f8fa;        /* page background */
+      --panel:#ffffff;     /* header/cards */
+      --card:#ffffff;
+      --fg:#111111;        /* main text */
+      --muted:#656d76;     /* muted text */
+      --border:#e5e7eb;    /* borders */
+      --accent:#0f172a;    /* primary buttons */
+      --accent-2:#1f2937;  /* headings/links */
+      --ok:#15803d;        /* green dot */
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;line-height:1.5}
-    a{color:var(--fg);text-decoration:none}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;line-height:1.55}
+    a{color:var(--accent-2);text-decoration:none}
+    a:hover{text-decoration:underline}
     img{max-width:100%;height:auto;display:block}
     .container{max-width:1120px;margin:0 auto;padding:20px}
-    .hidden{display:none}
     .muted{color:var(--muted)}
-    .nowrap{white-space:nowrap}
-    .shadow{box-shadow:0 12px 40px rgba(0,0,0,.35)}
+    .shadow{box-shadow:0 12px 40px rgba(0,0,0,.15)}
     .rounded{border-radius:16px}
-    .pill{border-radius:999px}
 
     /* Top “Now Available” banner */
-    .banner{background:#fff;color:#000;text-align:center;padding:10px 14px;font-weight:800;letter-spacing:.3px}
-    .banner small{display:block;font-weight:600;letter-spacing:0}
+    .banner{background:#0f172a;color:#fff;text-align:center;padding:10px 14px;font-weight:800;letter-spacing:.3px}
+    .banner a{color:#fff;text-decoration:underline}
+    .banner small{display:block;font-weight:600;letter-spacing:0;opacity:.9}
 
     /* Header / nav */
-    header.site{position:sticky;top:0;z-index:50;background:#000;border-bottom:1px solid var(--border)}
+    header.site{position:sticky;top:0;z-index:50;background:var(--panel);border-bottom:1px solid var(--border)}
     .site-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 20px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
-    .brand img{width:36px;height:36px;border-radius:8px;background:#fff}
-    nav a{opacity:.9}
-    nav a:hover{opacity:1;text-decoration:underline}
-    .nav-links{display:flex;gap:18px;font-weight:600}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--accent-2)}
+    .brand img{width:36px;height:36px;border-radius:8px;background:#fff;border:1px solid var(--border)}
+    .nav-links{display:flex;gap:14px;flex-wrap:wrap}
+    .btn-mini{
+      display:inline-flex;align-items:center;justify-content:center;padding:8px 12px;border-radius:999px;
+      font-weight:700;border:1px solid var(--border);background:#fff;color:var(--accent-2)
+    }
 
     /* Hero */
     .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center;padding:36px 0}
-    .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);color:var(--muted);padding:6px 10px;border-radius:999px;font-size:12px}
+    .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);color:var(--muted);padding:6px 10px;border-radius:999px;font-size:12px;background:#fff}
     .badge .dot{width:8px;height:8px;background:var(--ok);border-radius:50%}
-    h1{font-size:clamp(30px,4vw,50px);line-height:1.1;margin:12px 0 10px}
-    .sub{font-size:clamp(14px,2.1vw,20px);color:var(--muted)}
+    h1{font-size:clamp(30px,4vw,50px);line-height:1.1;margin:12px 0 10px;color:var(--accent-2)}
+    .sub{font-size:clamp(14px,2.1vw,19px);color:var(--muted)}
     .btnrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
-    .btn,.btn-outline,.btn-ghost{
-      display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;font-weight:800;transition:transform .06s ease, box-shadow .2s ease, opacity .2s ease;border:1px solid var(--fg)
+    .btn,.btn-outline{
+      display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;font-weight:800;transition:transform .06s ease, box-shadow .2s ease, opacity .2s ease;border:1px solid var(--accent)
     }
-    .btn{background:var(--fg);color:#000;border-color:var(--fg)}
+    .btn{background:var(--accent);color:#fff}
     .btn:hover{transform:translateY(-1px)}
-    .btn-outline{background:transparent;color:#fff;border-color:var(--border)}
-    .btn-outline:hover{border-color:#444;transform:translateY(-1px)}
-    .btn-ghost{background:transparent;border-color:transparent;color:var(--accent-2);opacity:.9}
-    .btn-ghost:hover{opacity:1;text-decoration:underline}
+    .btn-outline{background:#fff;color:var(--accent-2);border-color:var(--border)}
+    .btn-outline:hover{border-color:#cbd5e1;transform:translateY(-1px)}
 
-    .cover{border:1px solid var(--border);border-radius:16px;overflow:hidden;background:#0f0f0f}
+    .cover{border:1px solid var(--border);border-radius:16px;overflow:hidden;background:#fff}
 
     /* Sections */
     .section{padding:56px 0;border-top:1px solid var(--border)}
-    h2{font-size:clamp(22px,3vw,34px);margin:0 0 12px}
-    h3{font-size:clamp(18px,2.4vw,24px);margin:0 0 8px}
-    .lead{color:#e8e8e8}
+    h2{font-size:clamp(22px,3vw,34px);margin:0 0 12px;color:var(--accent-2)}
+    h3{font-size:clamp(18px,2.4vw,24px);margin:0 0 8px;color:var(--accent-2)}
+    .lead{color:#202938}
     .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
     .grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px}
     .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px}
     .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
-    .kpi{background:#0f0f0f;border:1px solid var(--border);padding:14px;border-radius:14px;text-align:center}
-    .kpi big{display:block;font-weight:900;font-size:28px}
+    .kpi{background:#fff;border:1px solid var(--border);padding:14px;border-radius:14px;text-align:center}
+    .kpi big{display:block;font-weight:900;font-size:28px;color:var(--accent-2)}
     .kpi small{color:var(--muted)}
 
     /* Feature list / TOC */
     ul.clean{list-style:none;padding:0;margin:0}
-    ul.clean li{padding-left:26px;position:relative;margin:10px 0;color:#eaeaea}
-    ul.clean li:before{content:"✓";position:absolute;left:0;top:0.15rem;opacity:.85}
+    ul.clean li{padding-left:26px;position:relative;margin:10px 0;color:#202938}
+    ul.clean li:before{content:"✓";position:absolute;left:0;top:0.15rem;opacity:.7;color:var(--ok);font-weight:900}
 
     /* Retailers list */
     .retailers{display:grid;gap:12px;margin-top:18px}
-    .retailer{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border:1px solid var(--border);border-radius:12px;background:#0e0e0e}
+    .retailer{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border:1px solid var(--border);border-radius:12px;background:#fff}
     .retailer small{color:var(--muted)}
 
     /* Testimonials */
-    .quote{font-size:18px}
+    .quote{font-size:18px;color:#202938}
     .quote .who{display:block;color:var(--muted);font-size:14px;margin-top:8px}
 
-    /* Newsletter form (no backend; mailto fallback) */
+    /* Newsletter */
     .newsletter{display:flex;gap:10px;flex-wrap:wrap}
     .input{
-      background:#0f0f0f;border:1px solid var(--border);color:#fff;padding:12px 14px;border-radius:12px;min-width:240px;flex:1
+      background:#fff;border:1px solid var(--border);color:var(--fg);padding:12px 14px;border-radius:12px;min-width:240px;flex:1
     }
     .disclaimer{color:var(--muted);font-size:13px;margin-top:10px}
 
-    /* FAQ accordion (simple) */
-    details{background:#0f0f0f;border:1px solid var(--border);border-radius:12px;padding:14px}
+    /* FAQ */
+    details{background:#fff;border:1px solid var(--border);border-radius:12px;padding:14px}
     details+details{margin-top:10px}
-    summary{cursor:pointer;font-weight:700}
+    summary{cursor:pointer;font-weight:700;color:var(--accent-2)}
 
     /* Footer */
-    footer.footer{padding:40px 0 70px;color:var(--muted)}
+    footer.footer{padding:40px 0 70px;color:var(--muted);background:#f9fafb;border-top:1px solid var(--border)}
     .footgrid{display:grid;grid-template-columns:1.2fr .9fr .9fr .9fr;gap:26px}
-    .footgrid h4{margin:0 0 10px;color:#fff}
+    .footgrid h4{margin:0 0 10px;color:var(--accent-2)}
     .footgrid a{display:block;margin:6px 0}
     .copy{border-top:1px solid var(--border);margin-top:26px;padding-top:16px;text-align:center}
 
@@ -153,11 +151,14 @@
       .footgrid{grid-template-columns:1fr}
     }
 
-    /* Small helpers for badges/icons */
-    .mini{font-size:12px;color:var(--muted)}
-    .label{display:inline-block;font-size:12px;padding:4px 8px;border:1px solid var(--border);border-radius:999px;color:#ddd}
-    .row{display:flex;gap:10px;flex-wrap:wrap}
-    .sep{height:1px;background:var(--border);margin:10px 0}
+    /* Floating NIL button */
+    .nil-fab{
+      position: fixed; right: 18px; bottom: 18px; z-index: 9999;
+      padding: 12px 16px; border-radius: 999px; font-weight: 800;
+      background: var(--accent); color: #fff; border: 1px solid var(--accent);
+      box-shadow: 0 10px 24px rgba(2,6,23,.25);
+    }
+    .nil-fab:hover{ transform: translateY(-1px); text-decoration:none }
   </style>
 </head>
 <body>
@@ -172,7 +173,7 @@
   <header class="site" role="banner">
     <div class="container site-row">
       <div class="brand">
-        <img src="https://j3lfamily.com/BookCover.png" alt="J3L / Dual Military logo">
+        <img src="BookCover_v2.png" alt="J3L / Dual Military logo">
         <span>J3L Family</span>
       </div>
       <nav aria-label="Primary">
@@ -182,6 +183,7 @@
           <a href="#aar">AAR</a>
           <a href="#endorsements">Endorsements</a>
           <a href="#buy">Buy</a>
+          <a href="#jolesa" class="btn-mini" id="nav-nil" target="_blank" rel="noopener">JoLesa NIL Gear</a>
           <a href="#contact">Contact</a>
         </div>
       </nav>
@@ -200,10 +202,10 @@
           <!-- Replace with real links -->
           <a class="btn" href="https://www.amazon.com/dp/XXXXXXXX" target="_blank" rel="noopener">Buy on Amazon</a>
           <a class="btn-outline" href="#buy">More Retailers</a>
-          <a class="btn-ghost" href="#toc">Read the Chapters</a>
+          <a class="btn" id="hero-nil" href="#jolesa" target="_blank" rel="noopener">Shop JoLesa’s NIL</a>
         </div>
 
-        <!-- Quick KPIs (optional) -->
+        <!-- Quick KPIs -->
         <div class="kpis" aria-label="Highlights">
           <div class="kpi">
             <big>20+</big>
@@ -220,9 +222,9 @@
         </div>
       </div>
 
-      <figure class="cover shadow" aria-labelledby="covercaption">
-        <img src="https://j3lfamily.com/BookCover.png" alt="Dual Military book cover">
-        <figcaption id="covercaption" class="mini" style="padding:10px 12px">Front cover — early print shown</figcaption>
+      <figure class="cover shadow rounded" aria-labelledby="covercaption">
+        <img src="BookCover_v2.png" alt="Dual Military book cover">
+        <figcaption id="covercaption" class="muted" style="padding:10px 12px">Front cover — early print shown</figcaption>
       </figure>
     </section>
 
@@ -246,10 +248,10 @@
             <li>Communicating clearly under stress</li>
             <li>Leading from the front at home and on the field</li>
           </ul>
-          <div class="row" style="margin-top:10px">
-            <span class="label">Parents</span>
-            <span class="label">Coaches</span>
-            <span class="label">Leaders</span>
+          <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+            <span class="btn-mini">Parents</span>
+            <span class="btn-mini">Coaches</span>
+            <span class="btn-mini">Leaders</span>
           </div>
         </div>
       </div>
@@ -260,51 +262,16 @@
       <div class="card">
         <h2>Chapters</h2>
         <p class="muted">Every chapter ends with an AAR — a short debrief with actions you can use tonight.</p>
-
         <div class="grid-3" style="margin-top:6px">
-          <div class="card">
-            <h3>1. September 11, 2001</h3>
-            <p class="muted">Where we were. What changed. Why clarity matters when everything moves fast.</p>
-          </div>
-          <div class="card">
-            <h3>2. The Long Walks</h3>
-            <p class="muted">Discipline, routine, and small daily wins — in the field and at home.</p>
-          </div>
-          <div class="card">
-            <h3>3. The Quiet Leader</h3>
-            <p class="muted">Leadership beyond volume: consistency beats intensity.</p>
-          </div>
-
-          <div class="card">
-            <h3>4. Practice Reps</h3>
-            <p class="muted">Boring is beautiful: how repetition creates calm on game day.</p>
-          </div>
-          <div class="card">
-            <h3>5. Mirror Tree</h3>
-            <p class="muted">Seeing what’s real vs. what’s loud. Choosing signal over noise.</p>
-          </div>
-          <div class="card">
-            <h3>6. The Locker Room</h3>
-            <p class="muted">Trust, roles, and the standard you walk past.</p>
-          </div>
-
-          <div class="card">
-            <h3>7. The Long Game</h3>
-            <p class="muted">Delayed gratification and the family scoreboard.</p>
-          </div>
-          <div class="card">
-            <h3>8. Game-Day Calm</h3>
-            <p class="muted">Controlling breath, body language, and the huddle in your home.</p>
-          </div>
-          <div class="card">
-            <h3>9. After Action, Always</h3>
-            <p class="muted">The AAR habit that turns every moment into a lesson.</p>
-          </div>
-        </div>
-
-        <div class="row" style="margin-top:14px">
-          <a class="btn-outline" href="#aar">See AAR Sample</a>
-          <a class="btn-ghost" href="#endorsements">Read Endorsements</a>
+          <div class="card"><h3>1. September 11, 2001</h3><p class="muted">Where we were. What changed. Why clarity matters when everything moves fast.</p></div>
+          <div class="card"><h3>2. The Long Walks</h3><p class="muted">Discipline, routine, and small daily wins — in the field and at home.</p></div>
+          <div class="card"><h3>3. The Quiet Leader</h3><p class="muted">Leadership beyond volume: consistency beats intensity.</p></div>
+          <div class="card"><h3>4. Practice Reps</h3><p class="muted">Boring is beautiful: how repetition creates calm on game day.</p></div>
+          <div class="card"><h3>5. Mirror Tree</h3><p class="muted">Seeing what’s real vs. what’s loud. Choosing signal over noise.</p></div>
+          <div class="card"><h3>6. The Locker Room</h3><p class="muted">Trust, roles, and the standard you walk past.</p></div>
+          <div class="card"><h3>7. The Long Game</h3><p class="muted">Delayed gratification and the family scoreboard.</p></div>
+          <div class="card"><h3>8. Game-Day Calm</h3><p class="muted">Controlling breath, body language, and the huddle in your home.</p></div>
+          <div class="card"><h3>9. After Action, Always</h3><p class="muted">The AAR habit that turns every moment into a lesson.</p></div>
         </div>
       </div>
     </section>
@@ -330,11 +297,6 @@
             <li>We pick <em>one</em> action — not ten</li>
             <li>We follow up next time, then move on</li>
           </ul>
-          <div class="row" style="margin-top:10px">
-            <span class="label">Simple</span>
-            <span class="label">Repeatable</span>
-            <span class="label">Fast</span>
-          </div>
         </div>
       </div>
     </section>
@@ -342,15 +304,9 @@
     <!-- =================== ENDORSEMENTS =================== -->
     <section id="endorsements" class="section" aria-label="Endorsements">
       <div class="grid-3">
-        <div class="card">
-          <p class="quote">“A field manual for family culture. The AAR pages alone are worth it.” <span class="who">— HS Coach</span></p>
-        </div>
-        <div class="card">
-          <p class="quote">“Direct, humble, and useful. We used an AAR the same night.” <span class="who">— Parent of two</span></p>
-        </div>
-        <div class="card">
-          <p class="quote">“Leadership without the fluff — stories that stick, lessons that land.” <span class="who">— Veteran</span></p>
-        </div>
+        <div class="card"><p class="quote">“A field manual for family culture. The AAR pages alone are worth it.” <span class="who">— HS Coach</span></p></div>
+        <div class="card"><p class="quote">“Direct, humble, and useful. We used an AAR the same night.” <span class="who">— Parent of two</span></p></div>
+        <div class="card"><p class="quote">“Leadership without the fluff — stories that stick, lessons that land.” <span class="who">— Veteran</span></p></div>
       </div>
     </section>
 
@@ -359,7 +315,6 @@
       <div class="card" style="text-align:center">
         <h2>Buy the Book</h2>
         <p class="muted">Paperback · eBook · (Audiobook when ready)</p>
-
         <div class="btnrow" style="justify-content:center">
           <!-- Replace with live links -->
           <a class="btn" href="https://www.amazon.com/dp/XXXXXXXX" target="_blank" rel="noopener" aria-label="Buy on Amazon">Buy on Amazon</a>
@@ -391,32 +346,17 @@
           </div>
         </div>
 
-        <p class="mini" style="margin-top:12px">Need bulk orders (teams, units, schools)? <a href="#contact">Contact us</a>.</p>
+        <p class="muted" style="margin-top:12px">Need bulk orders (teams, units, schools)? <a href="#contact">Contact us</a>.</p>
       </div>
     </section>
 
-    <!-- =================== MEDIA KIT / DOWNLOADS =================== -->
-    <section id="media" class="section" aria-label="Media kit">
-      <div class="grid-2">
-        <div class="card">
-          <h2>Media Kit</h2>
-          <p class="muted">Press-ready cover image, author bios, and sample Q&amp;A.</p>
-          <ul class="clean">
-            <li><a href="/BookCover.png" download>High-res cover (PNG)</a></li>
-            <li><a href="/media-kit.pdf" download>Media kit (PDF)</a> <span class="mini">(optional placeholder)</span></li>
-          </ul>
-        </div>
-        <div class="card">
-          <h2>Speaking &amp; Teams</h2>
-          <p class="muted">Workshops on AAR for families, teams, and leaders.</p>
-          <div class="row">
-            <span class="label">Keynotes</span>
-            <span class="label">Clinics</span>
-            <span class="label">Q&amp;A</span>
-          </div>
-          <div style="margin-top:12px">
-            <a class="btn-outline" href="#contact">Inquire</a>
-          </div>
+    <!-- =================== JOLESA NIL =================== -->
+    <section id="jolesa" class="section" aria-label="Support JoLesa’s NIL">
+      <div class="card" style="text-align:center">
+        <h2>Support JoLesa’s NIL</h2>
+        <p class="muted">College hooper, artist, and entrepreneur. Rep her gear & support her journey.</p>
+        <div class="btnrow" style="justify-content:center">
+          <a id="section-nil" class="btn" href="#" target="_blank" rel="noopener">Shop JoLesa’s NIL Store</a>
         </div>
       </div>
     </section>
@@ -441,34 +381,34 @@
         <div>
           <details class="card">
             <summary>Is this book only for military families?</summary>
-            <div class="sep"></div>
+            <div style="height:1px;background:var(--border);margin:10px 0"></div>
             <p>No. It’s for any parent, coach, or leader who wants practical systems for a stronger family culture.</p>
           </details>
           <details class="card">
             <summary>What age of kids is this most helpful for?</summary>
-            <div class="sep"></div>
+            <div style="height:1px;background:var(--border);margin:10px 0"></div>
             <p>School age through high school. The AAR habit scales easily for younger and older kids.</p>
           </details>
           <details class="card">
             <summary>Do I need to read it in order?</summary>
-            <div class="sep"></div>
+            <div style="height:1px;background:var(--border);margin:10px 0"></div>
             <p>Nope. Chapters stand alone. We recommend starting with “Game-Day Calm.”</p>
           </details>
         </div>
         <div>
           <details class="card">
             <summary>Can we use this with our team?</summary>
-            <div class="sep"></div>
+            <div style="height:1px;background:var(--border);margin:10px 0"></div>
             <p>Yes. Many coaches run 5-minute AARs after practice and games. Bulk orders available.</p>
           </details>
           <details class="card">
             <summary>Audiobook?</summary>
-            <div class="sep"></div>
+            <div style="height:1px;background:var(--border);margin:10px 0"></div>
             <p>Coming soon. Join the newsletter for release updates.</p>
           </details>
           <details class="card">
             <summary>Bulk &amp; signed copies?</summary>
-            <div class="sep"></div>
+            <div style="height:1px;background:var(--border);margin:10px 0"></div>
             <p>Yes — reach out on the <a href="#contact">contact</a> section with your quantities and deadline.</p>
           </details>
         </div>
@@ -480,7 +420,6 @@
       <div class="card">
         <h2>Contact</h2>
         <p class="muted">Speaking, media, bulk orders, or just to say hello.</p>
-
         <div class="grid-3">
           <div class="card">
             <h3>Email</h3>
@@ -489,7 +428,7 @@
           <div class="card">
             <h3>Social</h3>
             <p class="muted">Updates, clips, and AAR prompts.</p>
-            <div class="row">
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
               <a class="btn-outline" href="https://x.com/BJolesa" target="_blank" rel="noopener" aria-label="X (Twitter)">X / Twitter</a>
               <a class="btn-outline" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
             </div>
@@ -510,10 +449,10 @@
         <div>
           <h4>Dual Military</h4>
           <p class="muted">Leadership, family, and raising athletes — the military way.</p>
-          <div class="row">
-            <span class="label">Memoir</span>
-            <span class="label">AAR</span>
-            <span class="label">Playbook</span>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="btn-mini">Memoir</span>
+            <span class="btn-mini">AAR</span>
+            <span class="btn-mini">Playbook</span>
           </div>
         </div>
         <div>
@@ -533,20 +472,22 @@
         <div>
           <h4>Company</h4>
           <a href="#contact">Contact</a>
-          <a href="#media">Media Kit</a>
           <a href="#newsletter">Newsletter</a>
-          <span class="mini">© <span id="year"></span> J3L, LLC</span>
+          <span class="muted">© <span id="year"></span> J3L, LLC</span>
         </div>
       </div>
 
-      <div class="copy mini">
+      <div class="copy">
         <div>© <span id="year2"></span> J3L, LLC — All rights reserved.</div>
-        <div class="mini" style="margin-top:6px">
+        <div class="muted" style="margin-top:6px">
           <a href="/sitemap.xml">Sitemap</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a>
         </div>
       </div>
     </div>
   </footer>
+
+  <!-- =================== Floating NIL Button =================== -->
+  <a id="fab-nil" class="nil-fab" href="#" target="_blank" rel="noopener" aria-label="Shop JoLesa’s NIL Gear">NIL: JoLesa</a>
 
   <!-- =================== JSON-LD (Structured Data) =================== -->
   <script type="application/ld+json">
@@ -560,18 +501,8 @@
     ],
     "bookEdition":"1st",
     "inLanguage":"en",
-    "image":"https://j3lfamily.com/BookCover.png",
+    "image":"BookCover_v2.png",
     "publisher":{"@type":"Organization","name":"J3L, LLC"},
-    "workExample":[
-      {
-        "@type":"Book",
-        "bookFormat":"https://schema.org/Paperback",
-        "potentialAction":{
-          "@type":"ReadAction",
-          "target":{"@type":"EntryPoint","urlTemplate":"https://www.amazon.com/dp/XXXXXXXX"}
-        }
-      }
-    ],
     "offers":{
       "@type":"Offer",
       "availability":"https://schema.org/InStock",
@@ -580,12 +511,12 @@
   }
   </script>
 
-  <!-- =================== JS (year, smooth scroll, basic hash offset) =================== -->
+  <!-- =================== JS (year, smooth scroll, NIL wiring) =================== -->
   <script>
     // Year stamps
     const y = new Date().getFullYear();
-    document.getElementById('year').textContent = y;
-    document.getElementById('year2').textContent = y;
+    const y1 = document.getElementById('year'); if (y1) y1.textContent = y;
+    const y2 = document.getElementById('year2'); if (y2) y2.textContent = y;
 
     // Smooth scroll for internal anchors
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
@@ -601,6 +532,18 @@
       });
     });
 
+    // ✅ Set JoLesa's NIL URL ONCE here:
+    // REPLACE with her real NIL store link (Court Candy, custom shop, etc.)
+    const JOLESA_NIL_URL = "https://REPLACE_WITH_JOLESAS_NIL_URL";
+
+    // Wire all NIL links to the single URL
+    for (const id of ["nav-nil","hero-nil","fab-nil","section-nil"]) {
+      const el = document.getElementById(id);
+      if (el && typeof JOLESA_NIL_URL === "string" && JOLESA_NIL_URL.startsWith("http")) {
+        el.href = JOLESA_NIL_URL;
+      }
+    }
+
     // If page loaded with hash, nudge into view below sticky header
     window.addEventListener('load', ()=>{
       if(location.hash){
@@ -611,10 +554,6 @@
       }
     });
   </script>
-
-  <!-- =================== (Optional) Analytics placeholder =================== -->
-  <!-- <script>
-    // Example: window.plausible = window.plausible || function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}
-  </script> -->
 </body>
 </html>
+
