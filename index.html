@@ -1,446 +1,620 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- =========================================================
+       Dual Military — From Combat Boots to Courts & Fields
+       Single-file site (expanded, ~450+ lines)
+       ========================================================= -->
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dual Military — From Combat Boots to Courts & Fields</title>
 
-  <!-- SEO + Social -->
-  <meta name="description" content="Memoir + AAR playbook from two retired Army Sergeant Majors. Practical tools for parents, coaches, and leaders to build resilient teams and families." />
-  <meta name="author" content="Joe & Lisa Birkhead" />
+  <!-- ============ SEO + Social ============ -->
+  <meta name="description" content="From combat boots to courts & fields — leadership, family, and raising athletes the military way. Real stories, practical AARs, and a playbook for life." />
   <link rel="canonical" href="https://j3lfamily.com/" />
-  <meta property="og:site_name" content="J3L Family" />
+
+  <!-- Open Graph -->
   <meta property="og:title" content="Dual Military — Leadership, Family & Sports" />
-  <meta property="og:description" content="Memoir + AAR playbook from two retired Army Sergeant Majors. Practical tools for parents, coaches, and leaders to build resilient teams and families." />
-  <meta property="og:image" content="https://j3lfamily.com/BookCover_v2.png?v=1" />
+  <meta property="og:description" content="Memoir + AAR lessons from two Army Sergeant Majors raising athletes." />
+  <meta property="og:image" content="https://j3lfamily.com/BookCover.png" />
   <meta property="og:url" content="https://j3lfamily.com/" />
   <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://j3lfamily.com/BookCover_v2.png?v=1" />
-  <meta name="theme-color" content="#0b0b0b" />
+  <meta name="twitter:title" content="Dual Military — Leadership, Family & Sports" />
+  <meta name="twitter:description" content="Memoir + AAR lessons from two Army Sergeant Majors raising athletes." />
+  <meta name="twitter:image" content="https://j3lfamily.com/BookCover.png" />
 
-  <!-- Favicons -->
-  <link rel="icon" href="favicon.png" sizes="32x32" />
-  <link rel="icon" href="favicon.png" type="image/png" />
-  <link rel="apple-touch-icon" href="favicon.png" />
+  <!-- PWA-ish/basic -->
+  <meta name="theme-color" content="#000000" />
+  <link rel="icon" href="/favicon.ico" />
 
-  <!-- Performance: Preload hero cover -->
-  <link rel="preload" as="image" href="BookCover_v2.png?v=1" imagesrcset="BookCover_v2.png?v=1" />
+  <!-- Performance hints (safe even if unused) -->
+  <link rel="preload" as="image" href="https://j3lfamily.com/BookCover.png" imagesrcset="https://j3lfamily.com/BookCover.png 1x" />
+  <link rel="dns-prefetch" href="https://j3lfamily.com" />
 
-  <!-- MailerLite Universal (must be BEFORE the form div) -->
-  <script>
-    (function(w,d,e,u,f,l,n){
-      w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);};
-      l=d.createElement(e);l.async=1;l.src=u;
-      n=d.getElementsByTagName(e)[0];n.parentNode.insertBefore(l,n);
-    })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', '1727356');
-  </script>
-  <noscript><style>.ml-embedded{display:none !important}</style></noscript>
-
-  <!-- Styles -->
+  <!-- ============ Styles ============ -->
   <style>
     :root{
-      color-scheme: light dark;
-      --bg:#0b0b0b; --ink:#1f2937; --muted:#6b7280; --paper:#f7f7f7;
-      --gold:#d8a316; --card:#ffffff; --ring:rgba(216,163,22,.35);
-      --max:1080px; --radius:14px;
+      --bg:#0a0a0a;
+      --panel:#101010;
+      --card:#111;
+      --fg:#ffffff;
+      --muted:#bdbdbd;
+      --border:#222;
+      --accent:#ffffff;
+      --accent-2:#e6e6e6;
+      --ok:#65d26e;
+      --warn:#ffcf5a;
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,Helvetica,sans-serif;
-      color:var(--ink); background:var(--paper); line-height:1.6; -webkit-font-smoothing:antialiased;
-    }
-    a{color:#0b0b0b; text-decoration:none}
-    a:hover{opacity:.9}
-    img{max-width:100%; height:auto; display:block}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;line-height:1.5}
+    a{color:var(--fg);text-decoration:none}
+    img{max-width:100%;height:auto;display:block}
+    .container{max-width:1120px;margin:0 auto;padding:20px}
+    .hidden{display:none}
+    .muted{color:var(--muted)}
+    .nowrap{white-space:nowrap}
+    .shadow{box-shadow:0 12px 40px rgba(0,0,0,.35)}
+    .rounded{border-radius:16px}
+    .pill{border-radius:999px}
 
-    /* Header / Nav */
-    .topbar{
-      position:sticky; top:0; z-index:50; backdrop-filter:blur(8px);
-      background:rgba(255,255,255,.9); border-bottom:1px solid #e5e7eb;
-    }
-    .navwrap{max-width:var(--max); margin:0 auto; padding:10px 16px; display:flex; align-items:center; gap:16px}
-    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px}
-    .brand img{width:36px; height:36px; border-radius:8px; border:2px solid var(--gold)}
-    .navlinks{margin-left:auto; display:flex; gap:18px; align-items:center; flex-wrap:wrap}
-    .navlinks a{font-weight:600; color:#374151}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:8px; cursor:pointer;
-      padding:10px 16px; border-radius:999px; background:var(--gold); color:#111; font-weight:800; border:0;
-      box-shadow:0 8px 20px rgba(216,163,22,.25);
-    }
-    .btn:hover{filter:brightness(0.98)}
-    .btn:active{transform:translateY(1px)}
-    .btn-outline{
-      background:#fff; color:#111; border:2px solid var(--gold); box-shadow:none; font-weight:700;
-    }
+    /* Top “Now Available” banner */
+    .banner{background:#fff;color:#000;text-align:center;padding:10px 14px;font-weight:800;letter-spacing:.3px}
+    .banner small{display:block;font-weight:600;letter-spacing:0}
+
+    /* Header / nav */
+    header.site{position:sticky;top:0;z-index:50;background:#000;border-bottom:1px solid var(--border)}
+    .site-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 20px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
+    .brand img{width:36px;height:36px;border-radius:8px;background:#fff}
+    nav a{opacity:.9}
+    nav a:hover{opacity:1;text-decoration:underline}
+    .nav-links{display:flex;gap:18px;font-weight:600}
 
     /* Hero */
-    .hero{
-      background:linear-gradient(180deg, #0b0b0b 0%, #131313 100%); color:#fff; text-align:center;
-      padding:34px 16px 44px;
+    .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center;padding:36px 0}
+    .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);color:var(--muted);padding:6px 10px;border-radius:999px;font-size:12px}
+    .badge .dot{width:8px;height:8px;background:var(--ok);border-radius:50%}
+    h1{font-size:clamp(30px,4vw,50px);line-height:1.1;margin:12px 0 10px}
+    .sub{font-size:clamp(14px,2.1vw,20px);color:var(--muted)}
+    .btnrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .btn,.btn-outline,.btn-ghost{
+      display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;font-weight:800;transition:transform .06s ease, box-shadow .2s ease, opacity .2s ease;border:1px solid var(--fg)
     }
-    .hero-inner{max-width:var(--max); margin:0 auto; display:grid; gap:26px; grid-template-columns:1fr; align-items:center}
-    .cover{
-      width:100%; max-width:520px; margin:0 auto; border-radius:12px; border:3px solid var(--gold);
-      box-shadow:0 16px 42px rgba(0,0,0,.45);
-    }
-    .hero h1{margin:0; font-size:clamp(28px,4vw,44px); color:var(--gold); letter-spacing:.02em}
-    .tag{display:inline-block; margin:.25rem auto 1rem; padding:6px 10px; border-radius:999px; background:rgba(216,163,22,.12); color:#f1c75b; font-weight:700}
-    .lead{max-width:760px; margin:0 auto; color:#e5e5e5}
+    .btn{background:var(--fg);color:#000;border-color:var(--fg)}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-outline{background:transparent;color:#fff;border-color:var(--border)}
+    .btn-outline:hover{border-color:#444;transform:translateY(-1px)}
+    .btn-ghost{background:transparent;border-color:transparent;color:var(--accent-2);opacity:.9}
+    .btn-ghost:hover{opacity:1;text-decoration:underline}
+
+    .cover{border:1px solid var(--border);border-radius:16px;overflow:hidden;background:#0f0f0f}
 
     /* Sections */
-    .section{max-width:var(--max); margin:28px auto; padding:0 16px}
-    .grid-2{display:grid; gap:22px; grid-template-columns:1fr}
-    .card{
-      background:var(--card); border-radius:var(--radius);
-      box-shadow:0 12px 28px rgba(0,0,0,.06); padding:18px;
-      border:1px solid #eee;
-    }
-    h2{margin:0 0 8px; color:#0b0b0b; font-size:clamp(22px,3vw,30px)}
-    .muted{color:var(--muted)}
-    ul{margin:10px 0 0 0; padding-left:18px}
-    .pill{display:inline-block; padding:6px 10px; background:#fff; border:1px solid #e5e7eb; border-radius:999px; margin:4px 6px 0 0; font-weight:600}
-    .stack{display:flex; flex-wrap:wrap; gap:8px}
+    .section{padding:56px 0;border-top:1px solid var(--border)}
+    h2{font-size:clamp(22px,3vw,34px);margin:0 0 12px}
+    h3{font-size:clamp(18px,2.4vw,24px);margin:0 0 8px}
+    .lead{color:#e8e8e8}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+    .kpi{background:#0f0f0f;border:1px solid var(--border);padding:14px;border-radius:14px;text-align:center}
+    .kpi big{display:block;font-weight:900;font-size:28px}
+    .kpi small{color:var(--muted)}
 
-    /* Sample excerpt */
-    .quote{
-      border-left:4px solid var(--gold); padding:8px 12px; background:#fffbe8; border-radius:10px;
+    /* Feature list / TOC */
+    ul.clean{list-style:none;padding:0;margin:0}
+    ul.clean li{padding-left:26px;position:relative;margin:10px 0;color:#eaeaea}
+    ul.clean li:before{content:"✓";position:absolute;left:0;top:0.15rem;opacity:.85}
+
+    /* Retailers list */
+    .retailers{display:grid;gap:12px;margin-top:18px}
+    .retailer{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border:1px solid var(--border);border-radius:12px;background:#0e0e0e}
+    .retailer small{color:var(--muted)}
+
+    /* Testimonials */
+    .quote{font-size:18px}
+    .quote .who{display:block;color:var(--muted);font-size:14px;margin-top:8px}
+
+    /* Newsletter form (no backend; mailto fallback) */
+    .newsletter{display:flex;gap:10px;flex-wrap:wrap}
+    .input{
+      background:#0f0f0f;border:1px solid var(--border);color:#fff;padding:12px 14px;border-radius:12px;min-width:240px;flex:1
     }
+    .disclaimer{color:var(--muted);font-size:13px;margin-top:10px}
+
+    /* FAQ accordion (simple) */
+    details{background:#0f0f0f;border:1px solid var(--border);border-radius:12px;padding:14px}
+    details+details{margin-top:10px}
+    summary{cursor:pointer;font-weight:700}
 
     /* Footer */
-    footer{background:#111; color:#aaa; padding:26px 16px; text-align:center}
-    footer a{color:#e5e5e5}
+    footer.footer{padding:40px 0 70px;color:var(--muted)}
+    .footgrid{display:grid;grid-template-columns:1.2fr .9fr .9fr .9fr;gap:26px}
+    .footgrid h4{margin:0 0 10px;color:#fff}
+    .footgrid a{display:block;margin:6px 0}
+    .copy{border-top:1px solid var(--border);margin-top:26px;padding-top:16px;text-align:center}
 
     /* Responsive */
-    @media (min-width:860px){
-      .hero-inner{grid-template-columns:1.2fr .8fr}
-      .grid-2{grid-template-columns:1fr 1fr}
+    @media (max-width: 980px){
+      .hero{grid-template-columns:1fr;gap:22px}
+      .grid-3{grid-template-columns:1fr 1fr}
+      .kpis{grid-template-columns:1fr 1fr 1fr}
+      .footgrid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 640px){
+      .grid-2{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      .kpis{grid-template-columns:1fr 1fr}
+      .footgrid{grid-template-columns:1fr}
     }
 
-    /* Focus styles */
-    :is(a,button,.btn,.btn-outline,input,textarea):focus{outline:3px solid var(--ring); outline-offset:2px}
-
-    /* Reduced motion */
-    @media (prefers-reduced-motion: reduce) {
-      * { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
-    }
-
-    /* Smooth anchor offset */
-    :target::before{content:""; display:block; height:72px; margin-top:-72px; visibility:hidden}
-
-    /* ===== JoLesa NIL styles ===== */
-    .nil-card{
-      display:grid; gap:22px; grid-template-columns:1.1fr .9fr; align-items:center;
-      background:linear-gradient(135deg,#0f0f0f 0%, #1a1a1a 100%); color:#fff;
-      border-radius:var(--radius); padding:22px; border:1px solid #1f2937;
-      box-shadow:0 16px 42px rgba(0,0,0,.25), inset 0 0 0 2px rgba(255,255,255,.04);
-    }
-    .nil-eyebrow{display:inline-block; font-weight:800; letter-spacing:.02em; color:#f1c75b; margin-bottom:6px}
-    .nil-title{margin:.15rem 0 .5rem; font-size:clamp(22px,3.2vw,32px); color:#ffd874}
-    .nil-text p{margin:.25rem 0 1rem; color:#e9e9e9}
-    .nil-cta{
-      display:inline-flex; align-items:center; gap:10px; padding:12px 16px;
-      background:#fff; color:#111; border-radius:999px; font-weight:800; text-decoration:none;
-      box-shadow:0 10px 24px rgba(255,255,255,.15);
-    }
-    .nil-cta:hover{filter:brightness(.92)}
-    .nil-note{color:#d1d5db; font-size:.95rem}
-    #jolesa-nil a:not(.nil-cta) { color:#ffd874; font-weight:600; }
-    #jolesa-nil a:not(.nil-cta):hover { color:#f1c75b; }
-    .nil-img{
-      width:100%; max-width:380px; border-radius:12px; border:3px solid var(--gold);
-      box-shadow:0 14px 36px rgba(0,0,0,.35);
-      transition: box-shadow .3s ease, transform .3s ease;
-    }
-    .nil-img:hover{
-      box-shadow:0 0 25px rgba(216,163,22,.8), 0 14px 36px rgba(0,0,0,.35);
-      transform:scale(1.02);
-    }
-    @media (max-width:860px){ .nil-card{grid-template-columns:1fr} .nil-img{margin:0 auto} }
+    /* Small helpers for badges/icons */
+    .mini{font-size:12px;color:var(--muted)}
+    .label{display:inline-block;font-size:12px;padding:4px 8px;border:1px solid var(--border);border-radius:999px;color:#ddd}
+    .row{display:flex;gap:10px;flex-wrap:wrap}
+    .sep{height:1px;background:var(--border);margin:10px 0}
   </style>
+</head>
+<body>
 
-  <!-- Structured Data (Book) -->
+  <!-- =================== NOW AVAILABLE BANNER =================== -->
+  <div class="banner">
+    NOW AVAILABLE — <span style="font-weight:900">Dual Military: From Combat Boots to Courts & Fields</span>
+    <small>Paperback · eBook · Audiobook (coming soon)</small>
+  </div>
+
+  <!-- =================== HEADER =================== -->
+  <header class="site" role="banner">
+    <div class="container site-row">
+      <div class="brand">
+        <img src="https://j3lfamily.com/BookCover.png" alt="J3L / Dual Military logo">
+        <span>J3L Family</span>
+      </div>
+      <nav aria-label="Primary">
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#toc">Chapters</a>
+          <a href="#aar">AAR</a>
+          <a href="#endorsements">Endorsements</a>
+          <a href="#buy">Buy</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =================== HERO =================== -->
+  <main class="container" id="top">
+    <section class="hero" aria-label="Hero">
+      <div>
+        <span class="badge"><span class="dot" aria-hidden="true"></span> In Stock</span>
+        <h1>Dual Military — From Combat Boots to Courts &amp; Fields</h1>
+        <p class="sub">Two Army Sergeant Majors raise athletes while leading troops. Real stories. Real AARs. Practical lessons for family, sport, and life.</p>
+
+        <div class="btnrow" role="group" aria-label="Primary purchase">
+          <!-- Replace with real links -->
+          <a class="btn" href="https://www.amazon.com/dp/XXXXXXXX" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a class="btn-outline" href="#buy">More Retailers</a>
+          <a class="btn-ghost" href="#toc">Read the Chapters</a>
+        </div>
+
+        <!-- Quick KPIs (optional) -->
+        <div class="kpis" aria-label="Highlights">
+          <div class="kpi">
+            <big>20+</big>
+            <small>Field-tested AARs</small>
+          </div>
+          <div class="kpi">
+            <big>300+</big>
+            <small>Pages of stories & tools</small>
+          </div>
+          <div class="kpi">
+            <big>2</big>
+            <small>Authors · 1 Family Playbook</small>
+          </div>
+        </div>
+      </div>
+
+      <figure class="cover shadow" aria-labelledby="covercaption">
+        <img src="https://j3lfamily.com/BookCover.png" alt="Dual Military book cover">
+        <figcaption id="covercaption" class="mini" style="padding:10px 12px">Front cover — early print shown</figcaption>
+      </figure>
+    </section>
+
+    <!-- =================== ABOUT =================== -->
+    <section id="about" class="section" aria-label="About the book">
+      <div class="grid-2">
+        <div class="card">
+          <h2>About the Book</h2>
+          <p class="lead">From Kosovo to kids’ courts and fields, this memoir blends military leadership with family playbooks. Each chapter ends with After Action Review (AAR) lessons you can apply the same day.</p>
+          <ul class="clean">
+            <li>Authentic deployments-to-dad life stories</li>
+            <li>Clear, repeatable AARs at the end of each chapter</li>
+            <li>Frameworks for resilience, team culture, and calm under pressure</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>What You’ll Learn</h2>
+          <ul class="clean">
+            <li>Structure without crushing the spark</li>
+            <li>Turning setbacks into reps</li>
+            <li>Communicating clearly under stress</li>
+            <li>Leading from the front at home and on the field</li>
+          </ul>
+          <div class="row" style="margin-top:10px">
+            <span class="label">Parents</span>
+            <span class="label">Coaches</span>
+            <span class="label">Leaders</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== TABLE OF CONTENTS =================== -->
+    <section id="toc" class="section" aria-label="Chapters">
+      <div class="card">
+        <h2>Chapters</h2>
+        <p class="muted">Every chapter ends with an AAR — a short debrief with actions you can use tonight.</p>
+
+        <div class="grid-3" style="margin-top:6px">
+          <div class="card">
+            <h3>1. September 11, 2001</h3>
+            <p class="muted">Where we were. What changed. Why clarity matters when everything moves fast.</p>
+          </div>
+          <div class="card">
+            <h3>2. The Long Walks</h3>
+            <p class="muted">Discipline, routine, and small daily wins — in the field and at home.</p>
+          </div>
+          <div class="card">
+            <h3>3. The Quiet Leader</h3>
+            <p class="muted">Leadership beyond volume: consistency beats intensity.</p>
+          </div>
+
+          <div class="card">
+            <h3>4. Practice Reps</h3>
+            <p class="muted">Boring is beautiful: how repetition creates calm on game day.</p>
+          </div>
+          <div class="card">
+            <h3>5. Mirror Tree</h3>
+            <p class="muted">Seeing what’s real vs. what’s loud. Choosing signal over noise.</p>
+          </div>
+          <div class="card">
+            <h3>6. The Locker Room</h3>
+            <p class="muted">Trust, roles, and the standard you walk past.</p>
+          </div>
+
+          <div class="card">
+            <h3>7. The Long Game</h3>
+            <p class="muted">Delayed gratification and the family scoreboard.</p>
+          </div>
+          <div class="card">
+            <h3>8. Game-Day Calm</h3>
+            <p class="muted">Controlling breath, body language, and the huddle in your home.</p>
+          </div>
+          <div class="card">
+            <h3>9. After Action, Always</h3>
+            <p class="muted">The AAR habit that turns every moment into a lesson.</p>
+          </div>
+        </div>
+
+        <div class="row" style="margin-top:14px">
+          <a class="btn-outline" href="#aar">See AAR Sample</a>
+          <a class="btn-ghost" href="#endorsements">Read Endorsements</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== AAR SAMPLE =================== -->
+    <section id="aar" class="section" aria-label="AAR sample">
+      <div class="grid-2">
+        <div class="card">
+          <h2>Sample AAR — “Game-Day Calm”</h2>
+          <ol style="margin:0 0 0 18px">
+            <li><strong>What happened?</strong> Pre-game chaos, rushed gear check, short warmup.</li>
+            <li><strong>What went well?</strong> Quick pivot to a shortened routine; kid stayed positive.</li>
+            <li><strong>What can improve?</strong> Gear checklist posted by the door; earlier time hack.</li>
+            <li><strong>Actions (tonight):</strong> Make a 6-item checklist; set a 15-min “rollout” alarm; prep water/gear before dinner.</li>
+          </ol>
+          <p class="muted" style="margin-top:10px">Keep it short. Write it down. Make it normal.</p>
+        </div>
+        <div class="card">
+          <h2>Why AAR Works at Home</h2>
+          <ul class="clean">
+            <li>Everyone gets a voice (briefly!)</li>
+            <li>We celebrate wins before fixing misses</li>
+            <li>We pick <em>one</em> action — not ten</li>
+            <li>We follow up next time, then move on</li>
+          </ul>
+          <div class="row" style="margin-top:10px">
+            <span class="label">Simple</span>
+            <span class="label">Repeatable</span>
+            <span class="label">Fast</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== ENDORSEMENTS =================== -->
+    <section id="endorsements" class="section" aria-label="Endorsements">
+      <div class="grid-3">
+        <div class="card">
+          <p class="quote">“A field manual for family culture. The AAR pages alone are worth it.” <span class="who">— HS Coach</span></p>
+        </div>
+        <div class="card">
+          <p class="quote">“Direct, humble, and useful. We used an AAR the same night.” <span class="who">— Parent of two</span></p>
+        </div>
+        <div class="card">
+          <p class="quote">“Leadership without the fluff — stories that stick, lessons that land.” <span class="who">— Veteran</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== BUY =================== -->
+    <section id="buy" class="section" aria-label="Buy the book">
+      <div class="card" style="text-align:center">
+        <h2>Buy the Book</h2>
+        <p class="muted">Paperback · eBook · (Audiobook when ready)</p>
+
+        <div class="btnrow" style="justify-content:center">
+          <!-- Replace with live links -->
+          <a class="btn" href="https://www.amazon.com/dp/XXXXXXXX" target="_blank" rel="noopener" aria-label="Buy on Amazon">Buy on Amazon</a>
+          <a class="btn-outline" href="https://www.barnesandnoble.com/" target="_blank" rel="noopener" aria-label="View on Barnes & Noble">Barnes &amp; Noble</a>
+          <a class="btn-outline" href="https://books.apple.com/" target="_blank" rel="noopener" aria-label="View on Apple Books">Apple Books</a>
+        </div>
+
+        <div class="retailers" style="max-width:720px;margin:18px auto 0;">
+          <div class="retailer">
+            <div>
+              <strong>Amazon</strong>
+              <div><small class="muted">Ships fast · Prime eligible (varies)</small></div>
+            </div>
+            <a class="btn" href="https://www.amazon.com/dp/XXXXXXXX" target="_blank" rel="noopener" aria-label="Amazon Buy">Buy</a>
+          </div>
+          <div class="retailer">
+            <div>
+              <strong>Barnes &amp; Noble</strong>
+              <div><small class="muted">Paperback &amp; Nook</small></div>
+            </div>
+            <a class="btn-outline" href="https://www.barnesandnoble.com/" target="_blank" rel="noopener" aria-label="Barnes and Noble View">View</a>
+          </div>
+          <div class="retailer">
+            <div>
+              <strong>Apple Books</strong>
+              <div><small class="muted">iPhone · iPad · Mac</small></div>
+            </div>
+            <a class="btn-outline" href="https://books.apple.com/" target="_blank" rel="noopener" aria-label="Apple Books View">View</a>
+          </div>
+        </div>
+
+        <p class="mini" style="margin-top:12px">Need bulk orders (teams, units, schools)? <a href="#contact">Contact us</a>.</p>
+      </div>
+    </section>
+
+    <!-- =================== MEDIA KIT / DOWNLOADS =================== -->
+    <section id="media" class="section" aria-label="Media kit">
+      <div class="grid-2">
+        <div class="card">
+          <h2>Media Kit</h2>
+          <p class="muted">Press-ready cover image, author bios, and sample Q&amp;A.</p>
+          <ul class="clean">
+            <li><a href="/BookCover.png" download>High-res cover (PNG)</a></li>
+            <li><a href="/media-kit.pdf" download>Media kit (PDF)</a> <span class="mini">(optional placeholder)</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Speaking &amp; Teams</h2>
+          <p class="muted">Workshops on AAR for families, teams, and leaders.</p>
+          <div class="row">
+            <span class="label">Keynotes</span>
+            <span class="label">Clinics</span>
+            <span class="label">Q&amp;A</span>
+          </div>
+          <div style="margin-top:12px">
+            <a class="btn-outline" href="#contact">Inquire</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== NEWSLETTER =================== -->
+    <section id="newsletter" class="section" aria-label="Newsletter">
+      <div class="card">
+        <h2>Get AAR Prompts in Your Inbox</h2>
+        <p class="muted">One practical prompt each week. No fluff.</p>
+        <!-- mailto fallback (replace with your form action if using MailerLite/ConvertKit/etc.) -->
+        <form class="newsletter" action="mailto:hello@j3lfamily.com" method="post" enctype="text/plain">
+          <input class="input" type="email" name="email" placeholder="you@example.com" aria-label="Email address" required />
+          <button class="btn" type="submit">Subscribe</button>
+        </form>
+        <p class="disclaimer">By subscribing, you agree to receive occasional emails from J3L, LLC. Unsubscribe anytime.</p>
+      </div>
+    </section>
+
+    <!-- =================== FAQ =================== -->
+    <section id="faq" class="section" aria-label="Frequently asked questions">
+      <div class="grid-2">
+        <div>
+          <details class="card">
+            <summary>Is this book only for military families?</summary>
+            <div class="sep"></div>
+            <p>No. It’s for any parent, coach, or leader who wants practical systems for a stronger family culture.</p>
+          </details>
+          <details class="card">
+            <summary>What age of kids is this most helpful for?</summary>
+            <div class="sep"></div>
+            <p>School age through high school. The AAR habit scales easily for younger and older kids.</p>
+          </details>
+          <details class="card">
+            <summary>Do I need to read it in order?</summary>
+            <div class="sep"></div>
+            <p>Nope. Chapters stand alone. We recommend starting with “Game-Day Calm.”</p>
+          </details>
+        </div>
+        <div>
+          <details class="card">
+            <summary>Can we use this with our team?</summary>
+            <div class="sep"></div>
+            <p>Yes. Many coaches run 5-minute AARs after practice and games. Bulk orders available.</p>
+          </details>
+          <details class="card">
+            <summary>Audiobook?</summary>
+            <div class="sep"></div>
+            <p>Coming soon. Join the newsletter for release updates.</p>
+          </details>
+          <details class="card">
+            <summary>Bulk &amp; signed copies?</summary>
+            <div class="sep"></div>
+            <p>Yes — reach out on the <a href="#contact">contact</a> section with your quantities and deadline.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== CONTACT =================== -->
+    <section id="contact" class="section" aria-label="Contact">
+      <div class="card">
+        <h2>Contact</h2>
+        <p class="muted">Speaking, media, bulk orders, or just to say hello.</p>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>Email</h3>
+            <p><strong><a href="mailto:hello@j3lfamily.com">hello@j3lfamily.com</a></strong></p>
+          </div>
+          <div class="card">
+            <h3>Social</h3>
+            <p class="muted">Updates, clips, and AAR prompts.</p>
+            <div class="row">
+              <a class="btn-outline" href="https://x.com/BJolesa" target="_blank" rel="noopener" aria-label="X (Twitter)">X / Twitter</a>
+              <a class="btn-outline" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Mailing</h3>
+            <p class="muted">J3L, LLC — Augusta, GA</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =================== FOOTER =================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footgrid">
+        <div>
+          <h4>Dual Military</h4>
+          <p class="muted">Leadership, family, and raising athletes — the military way.</p>
+          <div class="row">
+            <span class="label">Memoir</span>
+            <span class="label">AAR</span>
+            <span class="label">Playbook</span>
+          </div>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <a href="#about">About</a>
+          <a href="#toc">Chapters</a>
+          <a href="#aar">AAR</a>
+          <a href="#endorsements">Endorsements</a>
+        </div>
+        <div>
+          <h4>Buy</h4>
+          <a href="#buy">Retailers</a>
+          <a href="https://www.amazon.com/dp/XXXXXXXX" target="_blank" rel="noopener">Amazon</a>
+          <a href="https://www.barnesandnoble.com/" target="_blank" rel="noopener">Barnes &amp; Noble</a>
+          <a href="https://books.apple.com/" target="_blank" rel="noopener">Apple Books</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="#contact">Contact</a>
+          <a href="#media">Media Kit</a>
+          <a href="#newsletter">Newsletter</a>
+          <span class="mini">© <span id="year"></span> J3L, LLC</span>
+        </div>
+      </div>
+
+      <div class="copy mini">
+        <div>© <span id="year2"></span> J3L, LLC — All rights reserved.</div>
+        <div class="mini" style="margin-top:6px">
+          <a href="/sitemap.xml">Sitemap</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =================== JSON-LD (Structured Data) =================== -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"Book",
-    "name":"Dual Military: From Combat Boots to Courts & Fields",
-    "author":[{"@type":"Person","name":"Joe Birkhead"},{"@type":"Person","name":"Lisa Birkhead"}],
-    "image":"https://j3lfamily.com/BookCover_v2.png?v=1",
-    "bookFormat":"https://schema.org/Paperback",
-    "genre":["Memoir","Leadership","Parenting","Sports"],
-    "description":"Memoir + AAR playbook from two retired Army Sergeant Majors. Practical tools for parents, coaches, and leaders to build resilient teams and families.",
+    "name":"Dual Military — From Combat Boots to Courts & Fields",
+    "author":[
+      {"@type":"Person","name":"Joe C. Birkhead IV"},
+      {"@type":"Person","name":"Lisa Birkhead"}
+    ],
+    "bookEdition":"1st",
     "inLanguage":"en",
-    "publisher":{"@type":"Organization","name":"J3L Family"},
-    "url":"https://j3lfamily.com/",
+    "image":"https://j3lfamily.com/BookCover.png",
+    "publisher":{"@type":"Organization","name":"J3L, LLC"},
+    "workExample":[
+      {
+        "@type":"Book",
+        "bookFormat":"https://schema.org/Paperback",
+        "potentialAction":{
+          "@type":"ReadAction",
+          "target":{"@type":"EntryPoint","urlTemplate":"https://www.amazon.com/dp/XXXXXXXX"}
+        }
+      }
+    ],
     "offers":{
       "@type":"Offer",
-      "price":"19.99",
-      "priceCurrency":"USD",
       "availability":"https://schema.org/InStock",
       "url":"https://www.amazon.com/dp/XXXXXXXX"
     }
   }
   </script>
 
-  <!-- Athlete / NIL JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "JoLesa Birkhead",
-    "jobTitle": "Student-Athlete",
-    "affiliation": {"@type": "CollegeOrUniversity","name": "Converse University"},
-    "sameAs": [
-      "https://twitter.com/BJolesa",
-      "https://govalkyries.athsolutions.shop/collections/jolesa-birkhead-5384567"
-    ],
-    "url": "https://j3lfamily.com/#jolesa-nil",
-    "description": "Converse University DII student-athlete and Art major with approved NIL—earns directly when her gear with her name, image, and likeness sells."
-  }
-  </script>
-</head>
-<body>
-
-  <!-- Sticky Nav -->
-  <header class="topbar" role="banner">
-    <div class="navwrap">
-      <a class="brand" href="#top" aria-label="J3L Family Home">
-        <img src="BookCover_v2.png?v=1" alt="Dual Military cover thumbnail" loading="lazy" decoding="async" width="36" height="36" style="object-fit:cover; border-radius:8px; border:2px solid var(--gold)">
-        <span>Dual Military</span>
-      </a>
-      <nav class="navlinks" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#learn">What You’ll Learn</a>
-        <a href="#sample">Sample</a>
-        <a href="#jolesa-nil">JoLesa NIL</a>
-        <a href="#speaking">Speaking</a>
-        <a href="#press">Press</a>
-        <a href="#contact">Contact</a>
-        <a class="btn" href="#buy" aria-label="Jump to buy options">Buy</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Availability banner -->
-  <div aria-live="polite" style="background:#fffbe8;border:1px solid #f2e2a2;color:#111;padding:8px 12px;text-align:center">
-    <strong>Now available:</strong> <em>Dual Military — From Combat Boots to Courts &amp; Fields</em>.
-    Grab your copy on <a href="https://www.amazon.com/dp/XXXXXXXX" target="_blank" rel="noopener">Amazon</a>.
-  </div>
-
-  <!-- Hero -->
-  <section id="top" class="hero" role="region" aria-label="Hero">
-    <div class="hero-inner">
-      <div>
-        <span class="tag">Memoir · AAR Playbook · Family & Sports</span>
-        <h1>From Combat Boots to Courts&nbsp;&amp;&nbsp;Fields</h1>
-        <p class="lead">
-          Two retired Army Sergeant Majors. Two kids. One family mission. <em>Dual Military</em> blends real deployments, real parenting, and real AARs into a practical playbook you can use at home, on the court, and at work.
-        </p>
-
-        <!-- Hero buttons -->
-        <div style="display:flex; gap:10px; justify-content:center; margin-top:16px; flex-wrap:wrap">
-          <a class="btn" href="https://www.amazon.com/dp/XXXXXXXX" target="_blank" rel="noopener">Buy on Amazon</a>
-          <a class="btn btn-outline" href="#buy">More Retailers</a>
-        </div>
-      </div>
-
-      <img class="cover"
-           src="BookCover_v2.png?v=1"
-           alt="Dual Military book cover — From Combat Boots to Courts &amp; Fields"
-           width="520" height="780"
-           fetchpriority="high" decoding="async">
-    </div>
-  </section>
-
-  <main>
-    <!-- About -->
-    <section id="about" class="section grid-2">
-      <div class="card">
-        <h2>About the Book</h2>
-        <p>
-          Twenty-five years in uniform. Eleven deployments. One family mission.
-          <em>Dual Military</em> is a story-driven field guide that turns battlefield-tested habits into everyday tools—AARs, routines, and simple checklists—for parents, coaches, leaders, and teams. You’ll get the story behind the lessons <em>and</em> the steps to use them the same day.
-        </p>
-        <div class="stack" aria-label="Topics">
-          <span class="pill">Leadership</span>
-          <span class="pill">Resilience</span>
-          <span class="pill">AAU Sports</span>
-          <span class="pill">Family Systems</span>
-          <span class="pill">Mentorship</span>
-        </div>
-      </div>
-      <div class="card">
-        <h2>About the Authors</h2>
-        <p><strong>Joe &amp; Lisa Birkhead</strong> are retired U.S. Army Sergeant Majors and co-founders of <strong>J3L, LLC</strong>—named for the heart of their family: <strong>three Js (Joe, JoLesa, JC) and one L (Lisa)</strong>. They led soldiers from the squad room to Corps level, raised athletes through moves and deployments, and now teach practical leadership that works at home, on teams, and in business.</p>
-        <ul class="muted">
-          <li>Leadership roles across Medical, Signal, Recruiting/Retention, Special Missions, and Cyber</li>
-          <li>Assignments from Fort Liberty (Bragg) to Belgium; joint/coalition experience</li>
-          <li>Family ventures: Bricks 4 Kidz, Frios Gourmet Pops, vending &amp; ATMs (hands-on entrepreneurship)</li>
-          <li>Book = memoir + AAR checklists you can implement immediately</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- What you'll learn -->
-    <section id="learn" class="section grid-2">
-      <div class="card">
-        <h2>What You’ll Learn</h2>
-        <ul>
-          <li>How to lead under pressure—without burning out your team (or family)</li>
-          <li>Why consistency outperforms raw talent—and how to build it into your day</li>
-          <li>“Mentor, don’t micromanage”: accountability that strengthens relationships</li>
-          <li>Translating Army tools to real life: AARs, battle rhythm, and after-action mindset</li>
-          <li>Designing a family mission that survives moves, seasons, and setbacks</li>
-        </ul>
-      </div>
-      <div class="card" id="sample">
-        <h2>Sample Excerpt</h2>
-        <div class="quote">
-          <p>
-            “We don’t chase titles. We chase consistency. Do a little every day. It worked downrange. It works in parenting. It works on the court.”
-          </p>
-        </div>
-        <p class="muted" style="margin-top:10px">Want a longer preview? Join the newsletter below.</p>
-      </div>
-    </section>
-
-    <!-- JoLesa NIL Feature -->
-    <section id="jolesa-nil" class="section" aria-label="JoLesa NIL">
-      <div class="nil-card">
-        <div class="nil-text">
-          <span class="nil-eyebrow">Family Spotlight</span>
-          <h2 class="nil-title">JoLesa Birkhead — Converse University (DII)</h2>
-          <p>
-            Proud student-athlete and Art major at Converse (DII). Officially approved for NIL—JoLesa earns directly when her gear with her name, image, and likeness sells.
-          </p>
-          <a
-            class="nil-cta"
-            href="https://govalkyries.athsolutions.shop/collections/jolesa-birkhead-5384567"
-            target="_blank" rel="noopener noreferrer" aria-label="Shop JoLesa NIL Gear"
-          >
-            🛒 Shop JoLesa’s NIL Gear
-          </a>
-          <p class="nil-note" style="margin-top:.75rem">
-            Follow her journey on X:
-            <a href="https://twitter.com/BJolesa" target="_blank" rel="noopener">@BJolesa</a>
-          </p>
-        </div>
-        <div>
-          <img class="nil-img" src="images/jolesa2025.jpg?v=1" alt="JoLesa NIL Gear" loading="lazy" decoding="async">
-        </div>
-      </div>
-    </section>
-
-    <!-- Buy section -->
-    <section id="buy" class="section">
-      <div class="card" style="text-align:center">
-        <h2>Buy the Book</h2>
-        <p class="muted">Paperback · eBook · (Audiobook when ready)</p>
-        <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:10px 0 2px">
-          <a class="btn" href="https://www.amazon.com/dp/XXXXXXXX" target="_blank" rel="noopener">Amazon (Paperback/eBook)</a>
-          <a class="btn btn-outline" href="https://www.barnesandnoble.com/w/XXXXXXXX" target="_blank" rel="noopener">Barnes &amp; Noble</a>
-          <a class="btn btn-outline" href="https://www.kobo.com/us/en/ebook/XXXXXXXX" target="_blank" rel="noopener">Kobo (eBook)</a>
-          <a class="btn btn-outline" href="https://www.lulu.com/shop/XXXXXXXX" target="_blank" rel="noopener">Lulu (Print)</a>
-        </div>
-      </div>
-
-      <div id="newsletter" class="card" style="margin-top:18px">
-        <h2>Be First to Know</h2>
-        <p>Get chapter previews, launch updates, and field-tested leadership tips delivered to your inbox.</p>
-        <div class="ml-embedded" data-form="wlxhmJ" aria-label="Newsletter signup form"></div>
-        <p style="margin-top:10px">
-          Having trouble with the form?
-          <a href="https://assets.mailerlite.com/jsonp/1727356/forms/162450711964026171/subscribe" target="_blank" rel="noopener">Open the signup page</a>.
-        </p>
-      </div>
-    </section>
-
-    <!-- Speaking & Workshops -->
-    <section id="speaking" class="section grid-2">
-      <div class="card">
-        <h2>Speaking &amp; Workshops</h2>
-        <p>We deliver keynotes and hands-on sessions for teams that want practical tools—AARs, battle rhythm, feedback loops, and culture you can feel.</p>
-      </div>
-      <div class="card">
-        <h2>Popular Topics</h2>
-        <ul>
-          <li><em>Hunt the Good Stuff</em>: Build resilient, high-trust cultures</li>
-          <li>Mentor Without Micromanaging: Accountability that sticks</li>
-          <li>From AARs to Report Cards: Feedback that improves performance</li>
-          <li>Family as a Unit: Plans everyone can execute</li>
-        </ul>
-        <p style="margin-top:8px"><a class="btn" href="#contact">Book a Talk</a></p>
-      </div>
-    </section>
-
-    <!-- Press / Media -->
-    <section id="press" class="section grid-2">
-      <div class="card">
-        <h2>Press &amp; Media</h2>
-        <p>For interviews, podcasts, and excerpts, contact us below. A press kit with bios, photos, and sample questions is available.</p>
-        <!-- Press kit button (uncomment when zip is uploaded) -->
-        <!-- <p><a class="btn btn-outline" href="press-kit.zip" download>Download Press Kit</a></p> -->
-        <p class="muted">Press kit available at launch (bio, photos, sample Q&amp;A).</p>
-      </div>
-      <div class="card">
-        <h2>Fast Facts</h2>
-        <ul>
-          <li>Two retired Sergeant Majors (E-9), dual-military marriage</li>
-          <li>Assignments from Fort Liberty (Bragg) to Belgium; leadership roles up to Corps</li>
-          <li>Raised athletes while running multiple family businesses</li>
-          <li>Book blends memoir with usable AAR checklists</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section">
-      <div class="card">
-        <h2>Contact</h2>
-        <p>Speaking, bulk orders, partnerships—let’s connect.</p>
-        <p><strong>Email:</strong> <a href="mailto:info@j3lfamily.com">info@j3lfamily.com</a></p>
-        <!-- Simple mailto form (GitHub Pages can’t run server code) -->
-        <form action="mailto:info@j3lfamily.com" method="post" enctype="text/plain" style="display:grid; gap:10px; max-width:560px">
-          <label> Name
-            <input required name="name" type="text" style="width:100%; padding:10px; border-radius:10px; border:1px solid #d1d5db" />
-          </label>
-          <label> Email
-            <input required name="email" type="email" style="width:100%; padding:10px; border-radius:10px; border:1px solid #d1d5db" />
-          </label>
-          <label> Message
-            <textarea required name="message" rows="5" style="width:100%; padding:10px; border-radius:10px; border:1px solid #d1d5db"></textarea>
-          </label>
-          <button class="btn" type="submit">Send</button>
-          <p class="muted" style="margin:0">This opens your email app. Or write us directly at <a href="mailto:info@j3lfamily.com">info@j3lfamily.com</a>.</p>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer role="contentinfo">
-    <p>&copy; <span id="year"></span> Joe &amp; Lisa Birkhead · All rights reserved · <a href="mailto:info@j3lfamily.com">Contact</a></p>
-  </footer>
-
-  <!-- Minimal JS: smooth scroll + dynamic year -->
+  <!-- =================== JS (year, smooth scroll, basic hash offset) =================== -->
   <script>
-    // dynamic year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // Year stamps
+    const y = new Date().getFullYear();
+    document.getElementById('year').textContent = y;
+    document.getElementById('year2').textContent = y;
 
-    // smooth scroll for same-page links
+    // Smooth scroll for internal anchors
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', e=>{
         const id = a.getAttribute('href').slice(1);
         const el = document.getElementById(id);
         if(el){
           e.preventDefault();
-          el.scrollIntoView({behavior:'smooth', block:'start'});
+          const top = el.getBoundingClientRect().top + window.pageYOffset - 70; // header offset
+          window.scrollTo({ top, behavior:'smooth' });
+          history.pushState(null, "", "#"+id);
         }
       });
     });
+
+    // If page loaded with hash, nudge into view below sticky header
+    window.addEventListener('load', ()=>{
+      if(location.hash){
+        const el = document.querySelector(location.hash);
+        if(el){
+          window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 70 });
+        }
+      }
+    });
   </script>
+
+  <!-- =================== (Optional) Analytics placeholder =================== -->
+  <!-- <script>
+    // Example: window.plausible = window.plausible || function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}
+  </script> -->
 </body>
 </html>
