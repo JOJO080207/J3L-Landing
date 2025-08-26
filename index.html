@@ -3,7 +3,7 @@
 <head>
   <!-- =========================================================
        Dual Military — From Combat Boots to Courts & Fields
-       Full single-file page (light theme + NIL links + retailers)
+       Full single-file page (MailerLite removed + reliable Contact link)
        ========================================================= -->
 
   <meta charset="UTF-8" />
@@ -58,6 +58,10 @@
     .shadow{box-shadow:0 12px 40px rgba(0,0,0,.15)}
     .rounded{border-radius:16px}
 
+    /* Native smooth scrolling + sticky header offset (ensures #contact works) */
+    html{scroll-behavior:smooth}
+    [id]{scroll-margin-top:80px}
+
     /* Top “Now Available” banner */
     .banner{background:#0f172a;color:#fff;text-align:center;padding:10px 14px;font-weight:800;letter-spacing:.3px}
     .banner a{color:#fff;text-decoration:underline}
@@ -104,10 +108,13 @@
     .kpi big{display:block;font-weight:900;font-size:28px;color:var(--accent-2)}
     .kpi small{color:var(--muted)}
 
-    /* Feature list / TOC */
-    ul.clean{list-style:none;padding:0;margin:0}
-    ul.clean li{padding-left:26px;position:relative;margin:10px 0;color:#202938}
-    ul.clean li:before{content:"✓";position:absolute;left:0;top:0.15rem;opacity:.7;color:var(--ok);font-weight:900}
+    /* TOC (dotted leaders) */
+    .toc-list{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:10px}
+    .toc-item{display:flex;align-items:baseline;gap:10px}
+    .toc-label{font-weight:800;color:var(--accent-2);white-space:nowrap}
+    .toc-title{color:#202938}
+    .toc-fill{flex:1;border-bottom:1px dotted #cbd5e1;transform:translateY(-2px)}
+    .toc-page{color:var(--muted);min-width:28px;text-align:right;font-variant-numeric:tabular-nums}
 
     /* Retailers list */
     .retailers{display:grid;gap:12px;margin-top:18px}
@@ -116,19 +123,7 @@
 
     /* Testimonials */
     .quote{font-size:18px;color:#202938}
-    .quote .who{display:block;color:var(--muted);font-size:14px;margin-top:8px}
-
-    /* Newsletter */
-    .newsletter{display:flex;gap:10px;flex-wrap:wrap}
-    .input{
-      background:#fff;border:1px solid var(--border);color:var(--fg);padding:12px 14px;border-radius:12px;min-width:240px;flex:1
-    }
-    .disclaimer{color:var(--muted);font-size:13px;margin-top:10px}
-
-    /* FAQ */
-    details{background:#fff;border:1px solid var(--border);border-radius:12px;padding:14px}
-    details+details{margin-top:10px}
-    summary{cursor:pointer;font-weight:700;color:var(--accent-2)}
+    .quote .who{display:block;color:#727a84;font-size:14px;margin-top:8px}
 
     /* Footer */
     footer.footer{padding:40px 0 70px;color:var(--muted);background:#f9fafb;border-top:1px solid var(--border)}
@@ -149,6 +144,7 @@
       .grid-3{grid-template-columns:1fr}
       .kpis{grid-template-columns:1fr 1fr}
       .footgrid{grid-template-columns:1fr}
+      .toc-label{display:none} /* save space on phones */
     }
 
     /* Floating NIL button */
@@ -199,26 +195,15 @@
         <p class="sub">Two Army Sergeant Majors raise athletes while leading troops. Real stories. Real AARs. Practical lessons for family, sport, and life.</p>
 
         <div class="btnrow" role="group" aria-label="Primary purchase">
-          <!-- Replace with real links -->
           <a class="btn" href="https://www.amazon.com/dp/XXXXXXXX" target="_blank" rel="noopener">Buy on Amazon</a>
           <a class="btn-outline" href="#buy">More Retailers</a>
           <a class="btn" id="hero-nil" href="#jolesa" target="_blank" rel="noopener">Shop JoLesa’s NIL</a>
         </div>
 
-        <!-- Quick KPIs -->
         <div class="kpis" aria-label="Highlights">
-          <div class="kpi">
-            <big>20+</big>
-            <small>Field-tested AARs</small>
-          </div>
-          <div class="kpi">
-            <big>300+</big>
-            <small>Pages of stories & tools</small>
-          </div>
-          <div class="kpi">
-            <big>2</big>
-            <small>Authors · 1 Family Playbook</small>
-          </div>
+          <div class="kpi"><big>20+</big><small>Field-tested AARs</small></div>
+          <div class="kpi"><big>300+</big><small>Pages of stories & tools</small></div>
+          <div class="kpi"><big>2</big><small>Authors · 1 Family Playbook</small></div>
         </div>
       </div>
 
@@ -257,25 +242,25 @@
       </div>
     </section>
 
-    <!-- =================== TABLE OF CONTENTS =================== -->
+    <!-- =================== TABLE OF CONTENTS (dotted leaders) =================== -->
     <section id="toc" class="section" aria-label="Chapters">
       <div class="card">
         <h2>Chapters</h2>
         <p class="muted">Every chapter ends with an AAR — a short debrief with actions you can use tonight.</p>
-        <div class="grid-3" style="margin-top:6px">
-          <div class="card"><h3>1. THE DECISION</h3><p class="muted">p. 2</p></div>
-          <div class="card"><h3>2. THE CALL TO SERVE</h3><p class="muted">p. 11</p></div>
-          <div class="card"><h3>3. BALANCING THE MISSION AND THE HOMEFRONT</h3><p class="muted">p. 19</p></div>
-          <div class="card"><h3>4. THE TEMPO NEVER SLOWS</h3><p class="muted">p. 28</p></div>
-          <div class="card"><h3>5. A NEW KIND OF TEAMWORK</h3><p class="muted">p. 35</p></div>
-          <div class="card"><h3>6. SETTLING IN TEXAS</h3><p class="muted">p. 43</p></div>
-          <div class="card"><h3>7. BELGIUM BOUND</h3><p class="muted">p. 49</p></div>
-          <div class="card"><h3>8. BACK TO GEORGIA</h3><p class="muted">p. 57</p></div>
-          <div class="card"><h3>9. COVID CURVEBALL</h3><p class="muted">p. 63</p></div>
-          <div class="card"><h3>10. LESSONS FROM THE GRIND</h3><p class="muted">p. 68</p></div>
-          <div class="card"><h3>11. FROM COURT TO CLASSROOM</h3><p class="muted">p. 75</p></div>
-          <div class="card"><h3>12. DEVELOPING OUR OWN</h3><p class="muted">p. 81</p></div>
-        </div>
+        <ul class="toc-list" role="list">
+          <li class="toc-item"><span class="toc-label">CHAPTER ONE</span><span class="toc-title">THE DECISION</span><span class="toc-fill" aria-hidden="true"></span><span class="toc-page">2</span></li>
+          <li class="toc-item"><span class="toc-label">CHAPTER TWO</span><span class="toc-title">THE CALL TO SERVE</span><span class="toc-fill" aria-hidden="true"></span><span class="toc-page">11</span></li>
+          <li class="toc-item"><span class="toc-label">CHAPTER THREE</span><span class="toc-title">BALANCING THE MISSION AND THE HOMEFRONT</span><span class="toc-fill" aria-hidden="true"></span><span class="toc-page">19</span></li>
+          <li class="toc-item"><span class="toc-label">CHAPTER FOUR</span><span class="toc-title">THE TEMPO NEVER SLOWS</span><span class="toc-fill" aria-hidden="true"></span><span class="toc-page">28</span></li>
+          <li class="toc-item"><span class="toc-label">CHAPTER FIVE</span><span class="toc-title">A NEW KIND OF TEAMWORK</span><span class="toc-fill" aria-hidden="true"></span><span class="toc-page">35</span></li>
+          <li class="toc-item"><span class="toc-label">CHAPTER SIX</span><span class="toc-title">SETTLING IN TEXAS</span><span class="toc-fill" aria-hidden="true"></span><span class="toc-page">43</span></li>
+          <li class="toc-item"><span class="toc-label">CHAPTER SEVEN</span><span class="toc-title">BELGIUM BOUND</span><span class="toc-fill" aria-hidden="true"></span><span class="toc-page">49</span></li>
+          <li class="toc-item"><span class="toc-label">CHAPTER EIGHT</span><span class="toc-title">BACK TO GEORGIA</span><span class="toc-fill" aria-hidden="true"></span><span class="toc-page">57</span></li>
+          <li class="toc-item"><span class="toc-label">CHAPTER NINE</span><span class="toc-title">COVID CURVEBALL</span><span class="toc-fill" aria-hidden="true"></span><span class="toc-page">63</span></li>
+          <li class="toc-item"><span class="toc-label">CHAPTER TEN</span><span class="toc-title">LESSONS FROM THE GRIND</span><span class="toc-fill" aria-hidden="true"></span><span class="toc-page">68</span></li>
+          <li class="toc-item"><span class="toc-label">CHAPTER ELEVEN</span><span class="toc-title">FROM COURT TO CLASSROOM</span><span class="toc-fill" aria-hidden="true"></span><span class="toc-page">75</span></li>
+          <li class="toc-item"><span class="toc-label">CHAPTER TWELVE</span><span class="toc-title">DEVELOPING OUR OWN</span><span class="toc-fill" aria-hidden="true"></span><span class="toc-page">81</span></li>
+        </ul>
       </div>
     </section>
 
@@ -319,7 +304,6 @@
         <h2>Buy the Book</h2>
         <p class="muted">Paperback · eBook · (Audiobook when ready)</p>
         <div class="btnrow" style="justify-content:center">
-          <!-- Replace with live links -->
           <a class="btn" href="https://www.amazon.com/dp/XXXXXXXX" target="_blank" rel="noopener" aria-label="Buy on Amazon">Buy on Amazon</a>
           <a class="btn-outline" href="https://www.barnesandnoble.com/" target="_blank" rel="noopener" aria-label="View on Barnes & Noble">Barnes &amp; Noble</a>
           <a class="btn-outline" href="https://books.apple.com/" target="_blank" rel="noopener" aria-label="View on Apple Books">Apple Books</a>
@@ -364,56 +348,28 @@
       </div>
     </section>
 
-    <!-- =================== NEWSLETTER =================== -->
-    <section id="newsletter" class="section" aria-label="Newsletter">
+    <!-- =================== CONTACT =================== -->
+    <section id="contact" class="section" aria-label="Contact">
       <div class="card">
-        <h2>Get AAR Prompts in Your Inbox</h2>
-        <p class="muted">One practical prompt each week. No fluff.</p>
-        <!-- mailto fallback (replace with your form action if using MailerLite/ConvertKit/etc.) -->
-        <form class="newsletter" action="mailto:info@j3lfamily.com" method="post" enctype="text/plain">
-          <input class="input" type="email" name="email" placeholder="you@example.com" aria-label="Email address" required />
-          <button class="btn" type="submit">Subscribe</button>
-        </form>
-        <p class="disclaimer">By subscribing, you agree to receive occasional emails from J3L, LLC. Unsubscribe anytime.</p>
-      </div>
-    </section>
-
-    <!-- =================== FAQ =================== -->
-    <section id="faq" class="section" aria-label="Frequently asked questions">
-      <div class="grid-2">
-        <div>
-          <details class="card">
-            <summary>Is this book only for military families?</summary>
-            <div style="height:1px;background:var(--border);margin:10px 0"></div>
-            <p>No. It’s for any parent, coach, or leader who wants practical systems for a stronger family culture.</p>
-          </details>
-          <details class="card">
-            <summary>What age of kids is this most helpful for?</summary>
-            <div style="height:1px;background:var(--border);margin:10px 0"></div>
-            <p>School age through high school. The AAR habit scales easily for younger and older kids.</p>
-          </details>
-          <details class="card">
-            <summary>Do I need to read it in order?</summary>
-            <div style="height:1px;background:var(--border);margin:10px 0"></div>
-            <p>Nope. Chapters stand alone. We recommend starting with “Game-Day Calm.”</p>
-          </details>
-        </div>
-        <div>
-          <details class="card">
-            <summary>Can we use this with our team?</summary>
-            <div style="height:1px;background:var(--border);margin:10px 0"></div>
-            <p>Yes. Many coaches run 5-minute AARs after practice and games. Bulk orders available.</p>
-          </details>
-          <details class="card">
-            <summary>Audiobook?</summary>
-            <div style="height:1px;background:var(--border);margin:10px 0"></div>
-            <p>Coming soon. Join the newsletter for release updates.</p>
-          </details>
-          <details class="card">
-            <summary>Bulk &amp; signed copies?</summary>
-            <div style="height:1px;background:var(--border);margin:10px 0"></div>
-            <p>Yes — reach out on the <a href="#contact">contact</a> section with your quantities and deadline.</p>
-          </details>
+        <h2>Contact</h2>
+        <p class="muted">Speaking, media, bulk orders, or just to say hello.</p>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Email</h3>
+            <p><strong><a href="mailto:info@j3lfamily.com">info@j3lfamily.com</a></strong></p>
+          </div>
+          <div class="card">
+            <h3>Social</h3>
+            <p class="muted">Updates, clips, and AAR prompts.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <a class="btn-outline" href="https://x.com/BJolesa" target="_blank" rel="noopener" aria-label="X (Twitter)">X / Twitter</a>
+              <a class="btn-outline" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Mailing</h3>
+            <p class="muted">J3L, LLC — Augusta, GA</p>
+          </div>
         </div>
       </div>
     </section>
@@ -488,28 +444,14 @@
   }
   </script>
 
-  <!-- =================== JS (year, smooth scroll, NIL wiring) =================== -->
+  <!-- =================== Minimal JS (year + NIL wiring only) =================== -->
   <script>
     // Year stamps
     const y = new Date().getFullYear();
     const y1 = document.getElementById('year'); if (y1) y1.textContent = y;
     const y2 = document.getElementById('year2'); if (y2) y2.textContent = y;
 
-    // Smooth scroll for internal anchors
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const id = a.getAttribute('href').slice(1);
-        const el = document.getElementById(id);
-        if(el){
-          e.preventDefault();
-          const top = el.getBoundingClientRect().top + window.pageYOffset - 70; // header offset
-          window.scrollTo({ top, behavior:'smooth' });
-          history.pushState(null, "", "#"+id);
-        }
-      });
-    });
-
-    // ✅ Set JoLesa's NIL URL ONCE here (provided by you)
+    // ✅ Set JoLesa's NIL URL ONCE here
     const JOLESA_NIL_URL = "https://govalkyries.athsolutions.shop/collections/jolesa-birkhead-5384567";
 
     // Wire all NIL links to the single URL
@@ -519,17 +461,8 @@
         el.href = JOLESA_NIL_URL;
       }
     }
-
-    // If page loaded with hash, nudge into view below sticky header
-    window.addEventListener('load', ()=>{
-      if(location.hash){
-        const el = document.querySelector(location.hash);
-        if(el){
-          window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 70 });
-        }
-      }
-    });
   </script>
 </body>
 </html>
+
 
