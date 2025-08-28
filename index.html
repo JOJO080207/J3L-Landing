@@ -155,6 +155,15 @@
       box-shadow: 0 10px 24px rgba(2,6,23,.25);
     }
     .nil-fab:hover{ transform: translateY(-1px); text-decoration:none }
+
+    /* ✅ Responsive 16:9 video embed for Throwback */
+    .video-16x9{
+      position:relative; padding-bottom:56.25%; height:0; overflow:hidden;
+      border-radius:16px; border:1px solid var(--border); background:#000;
+    }
+    .video-16x9 iframe{
+      position:absolute; top:0; left:0; width:100%; height:100%; border:0;
+    }
   </style>
 </head>
 <body>
@@ -211,7 +220,6 @@
         <figcaption id="covercaption" class="muted" style="padding:10px 12px">Front cover — early print shown</figcaption>
       </figure>
     </section>
-
     <!-- =================== ABOUT =================== -->
     <section id="about" class="section" aria-label="About the book">
       <div class="grid-2">
@@ -241,28 +249,54 @@
       </div>
     </section>
 
+    <!-- =================== THROWBACK (NEW) =================== -->
+    <section id="throwback" class="section" aria-label="Throwback">
+      <div class="card">
+        <h2>Throwback — From Service to Small Business</h2>
+        <p class="muted" style="margin-top:4px">
+          A look back at our first family venture after the Army — turning service and grit into a local business.
+        </p>
+
+        <div class="video-16x9" style="margin-top:14px">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/FjDfPzqu5vI?rel=0&modestbranding=1&playsinline=1"
+            title="Army veterans start family business with new ice cream truck"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <noscript>
+          <p>
+            Video: <a href="https://www.youtube.com/watch?v=FjDfPzqu5vI" target="_blank" rel="noopener">
+            Army veterans start family business with new ice cream truck</a>
+          </p>
+        </noscript>
+      </div>
+    </section>
+
     <!-- =================== TABLE OF CONTENTS (dotted leaders) =================== -->
     <section id="toc" class="section" aria-label="Chapters">
       <div class="card">
         <h2>Chapters</h2>
         <p class="muted">Every chapter ends with an AAR — a short debrief with actions you can use tonight.</p>
         <ul class="toc-list" role="list">
-          <li class="toc-item"><span class="toc-label">CHAPTER ONE</span><span class="toc-title">THE DECISION</span><span class="toc-fill" aria-hidden="true"></span><span class="toc-page">2</span></li>
-          <li class="toc-item"><span class="toc-label">CHAPTER TWO</span><span class="toc-title">THE CALL TO SERVE</span><span class="toc-fill" aria-hidden="true"></span><span class="toc-page">11</span></li>
-          <li class="toc-item"><span class="toc-label">CHAPTER THREE</span><span class="toc-title">BALANCING THE MISSION AND THE HOMEFRONT</span><span class="toc-fill" aria-hidden="true"></span><span class="toc-page">19</span></li>
-          <li class="toc-item"><span class="toc-label">CHAPTER FOUR</span><span class="toc-title">THE TEMPO NEVER SLOWS</span><span class="toc-fill" aria-hidden="true"></span><span class="toc-page">28</span></li>
-          <li class="toc-item"><span class="toc-label">CHAPTER FIVE</span><span class="toc-title">A NEW KIND OF TEAMWORK</span><span class="toc-fill" aria-hidden="true"></span><span class="toc-page">35</span></li>
-          <li class="toc-item"><span class="toc-label">CHAPTER SIX</span><span class="toc-title">SETTLING IN TEXAS</span><span class="toc-fill" aria-hidden="true"></span><span class="toc-page">43</span></li>
-          <li class="toc-item"><span class="toc-label">CHAPTER SEVEN</span><span class="toc-title">BELGIUM BOUND</span><span class="toc-fill" aria-hidden="true"></span><span class="toc-page">49</span></li>
-          <li class="toc-item"><span class="toc-label">CHAPTER EIGHT</span><span class="toc-title">BACK TO GEORGIA</span><span class="toc-fill" aria-hidden="true"></span><span class="toc-page">57</span></li>
-          <li class="toc-item"><span class="toc-label">CHAPTER NINE</span><span class="toc-title">COVID CURVEBALL</span><span class="toc-fill" aria-hidden="true"></span><span class="toc-page">63</span></li>
-          <li class="toc-item"><span class="toc-label">CHAPTER TEN</span><span class="toc-title">LESSONS FROM THE GRIND</span><span class="toc-fill" aria-hidden="true"></span><span class="toc-page">68</span></li>
-          <li class="toc-item"><span class="toc-label">CHAPTER ELEVEN</span><span class="toc-title">FROM COURT TO CLASSROOM</span><span class="toc-fill" aria-hidden="true"></span><span class="toc-page">75</span></li>
-          <li class="toc-item"><span class="toc-label">CHAPTER TWELVE</span><span class="toc-title">DEVELOPING OUR OWN</span><span class="toc-fill" aria-hidden="true"></span><span class="toc-page">81</span></li>
+          <li class="toc-item"><span class="toc-label">CHAPTER ONE</span><span class="toc-title">THE DECISION</span><span class="toc-fill"></span><span class="toc-page">2</span></li>
+          <li class="toc-item"><span class="toc-label">CHAPTER TWO</span><span class="toc-title">THE CALL TO SERVE</span><span class="toc-fill"></span><span class="toc-page">11</span></li>
+          <li class="toc-item"><span class="toc-label">CHAPTER THREE</span><span class="toc-title">BALANCING THE MISSION AND THE HOMEFRONT</span><span class="toc-fill"></span><span class="toc-page">19</span></li>
+          <li class="toc-item"><span class="toc-label">CHAPTER FOUR</span><span class="toc-title">THE TEMPO NEVER SLOWS</span><span class="toc-fill"></span><span class="toc-page">28</span></li>
+          <li class="toc-item"><span class="toc-label">CHAPTER FIVE</span><span class="toc-title">A NEW KIND OF TEAMWORK</span><span class="toc-fill"></span><span class="toc-page">35</span></li>
+          <li class="toc-item"><span class="toc-label">CHAPTER SIX</span><span class="toc-title">SETTLING IN TEXAS</span><span class="toc-fill"></span><span class="toc-page">43</span></li>
+          <li class="toc-item"><span class="toc-label">CHAPTER SEVEN</span><span class="toc-title">BELGIUM BOUND</span><span class="toc-fill"></span><span class="toc-page">49</span></li>
+          <li class="toc-item"><span class="toc-label">CHAPTER EIGHT</span><span class="toc-title">BACK TO GEORGIA</span><span class="toc-fill"></span><span class="toc-page">57</span></li>
+          <li class="toc-item"><span class="toc-label">CHAPTER NINE</span><span class="toc-title">COVID CURVEBALL</span><span class="toc-fill"></span><span class="toc-page">63</span></li>
+          <li class="toc-item"><span class="toc-label">CHAPTER TEN</span><span class="toc-title">LESSONS FROM THE GRIND</span><span class="toc-fill"></span><span class="toc-page">68</span></li>
+          <li class="toc-item"><span class="toc-label">CHAPTER ELEVEN</span><span class="toc-title">FROM COURT TO CLASSROOM</span><span class="toc-fill"></span><span class="toc-page">75</span></li>
+          <li class="toc-item"><span class="toc-label">CHAPTER TWELVE</span><span class="toc-title">DEVELOPING OUR OWN</span><span class="toc-fill"></span><span class="toc-page">81</span></li>
         </ul>
       </div>
     </section>
-
     <!-- =================== AAR SAMPLE =================== -->
     <section id="aar" class="section" aria-label="AAR sample">
       <div class="grid-2">
@@ -302,7 +336,7 @@
       <div class="card" style="text-align:center">
         <h2>Buy the Book</h2>
         <p class="muted">Paperback · eBook · (Audiobook when ready)</p>
-        <!-- ✅ FIX: Button row reordered to emphasize Amazon & B&N -->
+        <!-- ✅ Reordered: Amazon & B&N first -->
         <div class="btnrow" style="justify-content:center">
           <a class="btn" href="https://www.amazon.com/dp/XXXXXXXX" target="_blank" rel="noopener" aria-label="Buy on Amazon">Amazon</a>
           <a class="btn-outline" href="https://www.barnesandnoble.com/" target="_blank" rel="noopener" aria-label="View on Barnes & Noble">Barnes &amp; Noble</a>
@@ -348,14 +382,13 @@
               <strong>Barnes &amp; Noble</strong>
               <div><small class="muted">Paperback &amp; Nook</small></div>
             </div>
-              <a class="btn-outline" href="https://www.barnesandnoble.com/" target="_blank" rel="noopener" aria-label="Barnes and Noble View">View</a>
+            <a class="btn-outline" href="https://www.barnesandnoble.com/" target="_blank" rel="noopener" aria-label="Barnes and Noble View">View</a>
           </div>
         </div>
 
         <p class="muted" style="margin-top:12px">Need bulk orders (teams, units, schools)? <a href="#contact">Contact us</a>.</p>
       </div>
     </section>
-
     <!-- =================== JOLESA NIL =================== -->
     <section id="jolesa" class="section" aria-label="Support JoLesa’s NIL">
       <div class="card" style="text-align:center">
@@ -410,6 +443,7 @@
         <div>
           <h4>Explore</h4>
           <a href="#about">About</a>
+          <a href="#throwback">Throwback</a>
           <a href="#toc">Chapters</a>
           <a href="#aar">AAR</a>
           <a href="#endorsements">Endorsements</a>
@@ -417,11 +451,10 @@
         <div>
           <h4>Buy</h4>
           <a href="#buy">Retailers</a>
-          <!-- You can reorder these footer links if you want Amazon/B&N first; leaving original set for consistency -->
+          <a href="https://www.amazon.com/dp/XXXXXXXX" target="_blank" rel="noopener">Amazon</a>
+          <a href="https://www.barnesandnoble.com/" target="_blank" rel="noopener">Barnes &amp; Noble</a>
           <a href="https://www.lulu.com/shop/joe-and-lisa-birkhead/dual-military/paperback/product-yvg5ww8.html?page=1&pageSize=4" target="_blank" rel="noopener">Lulu</a>
           <a href="https://www.kobo.com/us/en/ebook/dual-military?sId=57b80b80-5b16-44c7-86ab-5ddc6166cac4" target="_blank" rel="noopener">Kobo Books</a>
-          <a href="https://www.barnesandnoble.com/" target="_blank" rel="noopener">Barnes &amp; Noble</a>
-          <a href="https://www.amazon.com/dp/XXXXXXXX" target="_blank" rel="noopener">Amazon (soon)</a>
           <a href="https://www.ingramspark.com/" target="_blank" rel="noopener">Everywhere (IngramSpark)</a>
         </div>
         <div>
@@ -468,15 +501,12 @@
 
   <!-- =================== Minimal JS (year + NIL wiring only) =================== -->
   <script>
-    // Year stamps
     const y = new Date().getFullYear();
     const y1 = document.getElementById('year'); if (y1) y1.textContent = y;
     const y2 = document.getElementById('year2'); if (y2) y2.textContent = y;
 
-    // ✅ Set JoLesa's NIL URL ONCE here
     const JOLESA_NIL_URL = "https://govalkyries.athsolutions.shop/collections/jolesa-birkhead-5384567";
 
-    // Wire all NIL links to the single URL
     for (const id of ["nav-nil","hero-nil","fab-nil","section-nil"]) {
       const el = document.getElementById(id);
       if (el && typeof JOLESA_NIL_URL === "string" && JOLESA_NIL_URL.startsWith("http")) {
@@ -486,5 +516,7 @@
   </script>
 </body>
 </html>
+
+
 
 
