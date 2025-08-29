@@ -171,7 +171,9 @@
   <!-- =================== NOW AVAILABLE BANNER =================== -->
   <div class="banner">
     NOW AVAILABLE — <span style="font-weight:900">Dual Military: From Combat Boots to Courts & Fields</span>
-    <small>Paperback · eBook · Audiobook (coming soon)</small>
+    <small>Paperback · eBook · Audiobook (coming soon) ·
+      <a id="banner-follow" href="#" target="_blank" rel="noopener">Follow on Amazon</a>
+    </small>
   </div>
 
   <!-- =================== HEADER =================== -->
@@ -189,6 +191,7 @@
           <a href="#endorsements">Endorsements</a>
           <a href="#buy">Buy</a>
           <a href="#contact">Contact</a>
+          <a id="nav-follow" class="btn-mini" href="#" target="_blank" rel="noopener" aria-label="Follow on Amazon">Follow on Amazon</a>
         </div>
       </nav>
     </div>
@@ -202,10 +205,11 @@
         <h1>Dual Military — From Combat Boots to Courts &amp; Fields</h1>
         <p class="sub">Two Army Sergeant Majors raise athletes while leading troops. Real stories. Real AARs. Practical lessons for family, sport, and life.</p>
 
-        <!-- ✅ FIX: Top two hero buttons are Amazon & Barnes & Noble -->
+        <!-- ✅ Primary buttons: Amazon, B&N, + Follow -->
         <div class="btnrow" role="group" aria-label="Primary purchase">
           <a class="btn" href="https://www.amazon.com/dp/B0FP62JGJ5" target="_blank" rel="noopener">Buy on Amazon</a>
           <a class="btn-outline" href="https://www.barnesandnoble.com/" target="_blank" rel="noopener">Buy on Barnes &amp; Noble</a>
+          <a id="hero-follow" class="btn-outline" href="#" target="_blank" rel="noopener">Follow on Amazon</a>
         </div>
 
         <div class="kpis" aria-label="Highlights">
@@ -220,6 +224,7 @@
         <figcaption id="covercaption" class="muted" style="padding:10px 12px">Front cover — early print shown</figcaption>
       </figure>
     </section>
+
     <!-- =================== ABOUT =================== -->
     <section id="about" class="section" aria-label="About the book">
       <div class="grid-2">
@@ -297,6 +302,7 @@
         </ul>
       </div>
     </section>
+
     <!-- =================== AAR SAMPLE =================== -->
     <section id="aar" class="section" aria-label="AAR sample">
       <div class="grid-2">
@@ -386,9 +392,12 @@
           </div>
         </div>
 
-        <p class="muted" style="margin-top:12px">Need bulk orders (teams, units, schools)? <a href="#contact">Contact us</a>.</p>
+        <p class="muted" style="margin-top:12px">
+          Prefer updates and deals? <a id="buy-follow" href="#" target="_blank" rel="noopener">Follow our Amazon Author Page</a>.
+        </p>
       </div>
     </section>
+
     <!-- =================== JOLESA NIL =================== -->
     <section id="jolesa" class="section" aria-label="Support JoLesa’s NIL">
       <div class="card" style="text-align:center">
@@ -460,6 +469,7 @@
         <div>
           <h4>Company</h4>
           <a href="#contact">Contact</a>
+          <a id="foot-follow" href="#" target="_blank" rel="noopener">Follow on Amazon</a>
           <a href="#newsletter">Newsletter</a>
           <span class="muted">© <span id="year"></span> J3L, LLC</span>
         </div>
@@ -499,12 +509,14 @@
   }
   </script>
 
-  <!-- =================== Minimal JS (year + NIL wiring only) =================== -->
+  <!-- =================== Minimal JS (year + links wiring) =================== -->
   <script>
+    // Year stamps
     const y = new Date().getFullYear();
     const y1 = document.getElementById('year'); if (y1) y1.textContent = y;
     const y2 = document.getElementById('year2'); if (y2) y2.textContent = y;
 
+    // ✅ NIL URL
     const JOLESA_NIL_URL = "https://govalkyries.athsolutions.shop/collections/jolesa-birkhead-5384567";
 
     for (const id of ["nav-nil","hero-nil","fab-nil","section-nil"]) {
@@ -512,6 +524,13 @@
       if (el && typeof JOLESA_NIL_URL === "string" && JOLESA_NIL_URL.startsWith("http")) {
         el.href = JOLESA_NIL_URL;
       }
+    }
+
+    // ✅ Amazon Author "Follow" CTA wiring
+    const AMAZON_AUTHOR_URL = "https://www.amazon.com/-/e/B0FP68BF8F";
+    for (const id of ["nav-follow","hero-follow","foot-follow","banner-follow","buy-follow"]) {
+      const el = document.getElementById(id);
+      if (el) el.href = AMAZON_AUTHOR_URL;
     }
   </script>
 </body>
