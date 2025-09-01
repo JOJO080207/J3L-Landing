@@ -16,15 +16,16 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Dual Military — Leadership, Family & Sports" />
-  <meta property="og:description" content="Memoir + AAR lessons from two Army Sergeant Majors raising athletes." />
+  <meta property="og:description" content="Memoir + AAR lessons from two Army Sergeants Major raising athletes." />
   <meta property="og:image" content="BookCover_v2.png" />
   <meta property="og:url" content="https://j3lfamily.com/" />
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="J3L Family" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Dual Military — Leadership, Family & Sports" />
-  <meta name="twitter:description" content="Memoir + AAR lessons from two Army Sergeant Majors raising athletes." />
+  <meta name="twitter:description" content="Memoir + AAR lessons from two Army Sergeants Major raising athletes." />
   <meta name="twitter:image" content="BookCover_v2.png" />
 
   <!-- Icons -->
@@ -47,6 +48,7 @@
       --accent:#0f172a;    /* primary buttons */
       --accent-2:#1f2937;  /* headings/links */
       --ok:#15803d;        /* green dot */
+      --warn:#92400e;      /* note color */
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;line-height:1.55}
@@ -57,17 +59,15 @@
     .muted{color:var(--muted)}
     .shadow{box-shadow:0 12px 40px rgba(0,0,0,.15)}
     .rounded{border-radius:16px}
+    .note{font-size:13px;color:var(--warn)}
 
-    /* Native smooth scrolling + sticky header offset (ensures #contact works) */
     html{scroll-behavior:smooth}
     [id]{scroll-margin-top:80px}
 
-    /* Top “Now Available” banner */
     .banner{background:#0f172a;color:#fff;text-align:center;padding:10px 14px;font-weight:800;letter-spacing:.3px}
     .banner a{color:#fff;text-decoration:underline}
     .banner small{display:block;font-weight:600;letter-spacing:0;opacity:.9}
 
-    /* Header / nav */
     header.site{position:sticky;top:0;z-index:50;background:var(--panel);border-bottom:1px solid var(--border)}
     .site-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 20px}
     .brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--accent-2)}
@@ -78,7 +78,6 @@
       font-weight:700;border:1px solid var(--border);background:#fff;color:var(--accent-2)
     }
 
-    /* Hero */
     .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center;padding:36px 0}
     .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);color:var(--muted);padding:6px 10px;border-radius:999px;font-size:12px;background:#fff}
     .badge .dot{width:8px;height:8px;background:var(--ok);border-radius:50%}
@@ -95,7 +94,6 @@
 
     .cover{border:1px solid var(--border);border-radius:16px;overflow:hidden;background:#fff}
 
-    /* Sections */
     .section{padding:56px 0;border-top:1px solid var(--border)}
     h2{font-size:clamp(22px,3vw,34px);margin:0 0 12px;color:var(--accent-2)}
     h3{font-size:clamp(18px,2.4vw,24px);margin:0 0 8px;color:var(--accent-2)}
@@ -108,7 +106,6 @@
     .kpi big{display:block;font-weight:900;font-size:28px;color:var(--accent-2)}
     .kpi small{color:var(--muted)}
 
-    /* TOC (dotted leaders) */
     .toc-list{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:10px}
     .toc-item{display:flex;align-items:baseline;gap:10px}
     .toc-label{font-weight:800;color:var(--accent-2);white-space:nowrap}
@@ -116,23 +113,30 @@
     .toc-fill{flex:1;border-bottom:1px dotted #cbd5e1;transform:translateY(-2px)}
     .toc-page{color:var(--muted);min-width:28px;text-align:right;font-variant-numeric:tabular-nums}
 
-    /* Retailers list */
     .retailers{display:grid;gap:12px;margin-top:18px}
     .retailer{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border:1px solid var(--border);border-radius:12px;background:#fff}
     .retailer small{color:var(--muted)}
 
-    /* Testimonials */
     .quote{font-size:18px;color:#202938}
     .quote .who{display:block;color:#727a84;font-size:14px;margin-top:8px}
 
-    /* Footer */
+    /* Forms */
+    .form-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px}
+    .form-row{display:flex;gap:10px;flex-wrap:wrap}
+    .input{flex:1;min-width:220px;padding:12px;border:1px solid var(--border);border-radius:12px;font-size:16px}
+    .legal{font-size:12px;color:var(--muted);margin-top:8px}
+
+    /* FAQ */
+    details{background:#fff;border:1px solid var(--border);border-radius:12px;padding:14px}
+    details+details{margin-top:10px}
+    summary{font-weight:800;color:var(--accent-2);cursor:pointer}
+
     footer.footer{padding:40px 0 70px;color:var(--muted);background:#f9fafb;border-top:1px solid var(--border)}
     .footgrid{display:grid;grid-template-columns:1.2fr .9fr .9fr .9fr;gap:26px}
     .footgrid h4{margin:0 0 10px;color:var(--accent-2)}
     .footgrid a{display:block;margin:6px 0}
     .copy{border-top:1px solid var(--border);margin-top:26px;padding-top:16px;text-align:center}
 
-    /* Responsive */
     @media (max-width: 980px){
       .hero{grid-template-columns:1fr;gap:22px}
       .grid-3{grid-template-columns:1fr 1fr}
@@ -144,10 +148,9 @@
       .grid-3{grid-template-columns:1fr}
       .kpis{grid-template-columns:1fr 1fr}
       .footgrid{grid-template-columns:1fr}
-      .toc-label{display:none} /* save space on phones */
+      .toc-label{display:none}
     }
 
-    /* Floating NIL button */
     .nil-fab{
       position: fixed; right: 18px; bottom: 18px; z-index: 9999;
       padding: 12px 16px; border-radius: 999px; font-weight: 800;
@@ -156,7 +159,6 @@
     }
     .nil-fab:hover{ transform: translateY(-1px); text-decoration:none }
 
-    /* ✅ Responsive 16:9 video embed for Throwback */
     .video-16x9{
       position:relative; padding-bottom:56.25%; height:0; overflow:hidden;
       border-radius:16px; border:1px solid var(--border); background:#000;
@@ -189,6 +191,8 @@
           <a href="#toc">Chapters</a>
           <a href="#aar">AAR</a>
           <a href="#endorsements">Endorsements</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#newsletter">Newsletter</a>
           <a href="#buy">Buy</a>
           <a href="#contact">Contact</a>
           <a id="nav-follow" class="btn-mini" href="#" target="_blank" rel="noopener" aria-label="Follow on Amazon">Follow on Amazon</a>
@@ -203,13 +207,13 @@
       <div>
         <span class="badge"><span class="dot" aria-hidden="true"></span> In Stock</span>
         <h1>Dual Military — From Combat Boots to Courts &amp; Fields</h1>
-        <p class="sub">Two Army Sergeant Majors raise athletes while leading troops. Real stories. Real AARs. Practical lessons for family, sport, and life.</p>
+        <p class="sub">Two Army Sergeants Major raise athletes while leading troops. Real stories. Real AARs. Practical lessons for family, sport, and life.</p>
 
-        <!-- ✅ Primary buttons: Amazon, B&N, + Follow -->
         <div class="btnrow" role="group" aria-label="Primary purchase">
           <a class="btn" href="https://www.amazon.com/dp/B0FP62JGJ5" target="_blank" rel="noopener">Buy on Amazon</a>
-          <a class="btn-outline" href="https://www.barnesandnoble.com/" target="_blank" rel="noopener">Buy on Barnes &amp; Noble</a>
+          <a class="btn-outline" href="https://www.barnesandnoble.com/" target="_blank" rel="noopener" data-utm="1">Buy on Barnes &amp; Noble</a>
           <a id="hero-follow" class="btn-outline" href="#" target="_blank" rel="noopener">Follow on Amazon</a>
+          <a class="btn-outline" href="#newsletter">Get the AAR Starter Kit (free)</a>
         </div>
 
         <div class="kpis" aria-label="Highlights">
@@ -238,12 +242,11 @@
           </ul>
         </div>
         <div class="card">
-          <h2>What You’ll Learn</h2>
+          <h2>Who It’s For</h2>
           <ul class="clean">
-            <li>Structure without crushing the spark</li>
-            <li>Turning setbacks into reps</li>
-            <li>Communicating clearly under stress</li>
-            <li>Leading from the front at home and on the field</li>
+            <li>Parents & coaches building confident, resilient kids</li>
+            <li>Leaders who want calm procedures under pressure</li>
+            <li>Military & first-responder families raising athletes</li>
           </ul>
           <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
             <span class="btn-mini">Parents</span>
@@ -254,13 +257,11 @@
       </div>
     </section>
 
-    <!-- =================== THROWBACK (NEW) =================== -->
+    <!-- =================== THROWBACK =================== -->
     <section id="throwback" class="section" aria-label="Throwback">
       <div class="card">
         <h2>Throwback — From Service to Small Business</h2>
-        <p class="muted" style="margin-top:4px">
-          A look back at our first family venture after the Army — turning service and grit into a local business.
-        </p>
+        <p class="muted" style="margin-top:4px">A look back at our first family venture after the Army — turning service and grit into a local business.</p>
 
         <div class="video-16x9" style="margin-top:14px">
           <iframe
@@ -271,17 +272,13 @@
             allowfullscreen
           ></iframe>
         </div>
-
         <noscript>
-          <p>
-            Video: <a href="https://www.youtube.com/watch?v=FjDfPzqu5vI" target="_blank" rel="noopener">
-            Army veterans start family business with new ice cream truck</a>
-          </p>
+          <p>Video: <a href="https://www.youtube.com/watch?v=FjDfPzqu5vI" target="_blank" rel="noopener">Army veterans start family business with new ice cream truck</a></p>
         </noscript>
       </div>
     </section>
 
-    <!-- =================== TABLE OF CONTENTS (dotted leaders) =================== -->
+    <!-- =================== TABLE OF CONTENTS =================== -->
     <section id="toc" class="section" aria-label="Chapters">
       <div class="card">
         <h2>Chapters</h2>
@@ -328,12 +325,78 @@
       </div>
     </section>
 
-    <!-- =================== ENDORSEMENTS =================== -->
-    <section id="endorsements" class="section" aria-label="Endorsements">
-      <div class="grid-3">
-        <div class="card"><p class="quote">“A field manual for family culture. The AAR pages alone are worth it.” <span class="who">— HS Coach</span></p></div>
-        <div class="card"><p class="quote">“Direct, humble, and useful. We used an AAR the same night.” <span class="who">— Parent of two</span></p></div>
-        <div class="card"><p class="quote">“Leadership without the fluff — stories that stick, lessons that land.” <span class="who">— Veteran</span></p></div>
+    <!-- =================== REVIEWS / SOCIAL PROOF =================== -->
+    <section id="reviews" class="section" aria-label="Reviews">
+      <div class="card">
+        <h2>Reviews & Social Proof</h2>
+        <p class="muted">Early feedback helps new readers jump in. If you’ve read the book, a short review goes a long way.</p>
+        <div class="btnrow" style="margin-top:8px">
+          <a class="btn" href="https://www.amazon.com/review/create-review?asin=B0FP62JGJ5" target="_blank" rel="noopener">Review the Paperback</a>
+          <a class="btn-outline" href="https://www.amazon.com/review/create-review?asin=B0FP5T6LW4" target="_blank" rel="noopener">Review the eBook</a>
+        </div>
+        <div class="grid-3" style="margin-top:18px">
+          <div class="card"><p class="quote">“A field manual for family culture. The AAR pages alone are worth it.” <span class="who">— HS Coach</span></p></div>
+          <div class="card"><p class="quote">“Direct, humble, and useful. We used an AAR the same night.” <span class="who">— Parent of two</span></p></div>
+          <div class="card"><p class="quote">“Leadership without the fluff — stories that stick, lessons that land.” <span class="who">— Veteran</span></p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== NEWSLETTER / LEAD MAGNET =================== -->
+    <section id="newsletter" class="section" aria-label="Newsletter">
+      <div class="grid-2">
+        <div class="form-card">
+          <h2>Get the AAR Starter Kit (free)</h2>
+          <p class="muted">One-page checklist + a monthly drill-down on leadership at home, on the court, and at work.</p>
+
+          <!-- NOTE:
+               GitHub Pages can't process forms. Use Formspree (replace action URL)
+               OR swap this for a Google Form link. Both options shown. -->
+          <form id="nl-form" class="form" method="POST" action="https://formspree.io/f/your-code">
+            <div class="form-row">
+              <input class="input" type="text" name="first_name" placeholder="First name" autocomplete="given-name" />
+              <input class="input" type="email" name="email" placeholder="Email address" autocomplete="email" required />
+              <button class="btn" type="submit">Send me the PDF</button>
+            </div>
+            <div class="legal">We’ll email you the PDF and a short monthly note. Unsubscribe anytime.</div>
+          </form>
+
+          <p class="note" style="margin-top:10px">Prefer Google Forms? <a id="nl-google" href="#" target="_blank" rel="noopener">Use the signup form</a>.</p>
+
+          <div style="margin-top:14px">
+            <a class="btn-outline" href="/downloads/AAR_Starter_Kit.pdf" target="_blank" rel="noopener">Or download the PDF directly</a>
+          </div>
+        </div>
+
+        <!-- ARC SIGNUP -->
+        <div class="form-card" id="arc">
+          <h2>Join the ARC Team (Advance Readers)</h2>
+          <p class="muted">Get a complimentary eBook and share an honest review on Amazon/Goodreads.</p>
+          <div class="btnrow">
+            <a id="arc-form" class="btn" href="#" target="_blank" rel="noopener">Request an ARC</a>
+            <a class="btn-outline" href="https://www.amazon.com/-/e/B0FP68BF8F" target="_blank" rel="noopener">Follow on Amazon</a>
+          </div>
+          <p class="legal">We’ll send simple instructions and a target date. Thank you for helping other readers find the book.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== FAQ (SEO CONTENT) =================== -->
+    <section id="faq" class="section" aria-label="FAQ">
+      <div class="card">
+        <h2>FAQ</h2>
+        <details>
+          <summary>What is an AAR and how do we use it at home?</summary>
+          <p>An After Action Review is a short debrief: what happened, what went well, what can improve, and one action for next time. It builds calm game-day routines, clear roles, and a stronger family culture.</p>
+        </details>
+        <details>
+          <summary>Who should read <em>Dual Military</em>?</summary>
+          <p>Parents, coaches, and leaders who want practical procedures for communication, resilience, and teamwork—especially military and first-responder families raising athletes.</p>
+        </details>
+        <details>
+          <summary>Where can I buy the book?</summary>
+          <p>Amazon (paperback + Kindle), Barnes &amp; Noble, Lulu (paperback), and Kobo (eBook). See the buttons below.</p>
+        </details>
       </div>
     </section>
 
@@ -342,70 +405,39 @@
       <div class="card" style="text-align:center">
         <h2>Buy the Book</h2>
         <p class="muted">Paperback · eBook · (Audiobook when ready)</p>
-        <!-- ✅ Reordered: Amazon & B&N first -->
         <div class="btnrow" style="justify-content:center">
           <a class="btn" href="https://www.amazon.com/dp/B0FP62JGJ5" target="_blank" rel="noopener" aria-label="Buy on Amazon">Amazon</a>
-          <a class="btn-outline" href="https://www.barnesandnoble.com/" target="_blank" rel="noopener" aria-label="View on Barnes & Noble">Barnes &amp; Noble</a>
-          <a class="btn-outline" href="https://www.lulu.com/shop/joe-and-lisa-birkhead/dual-military/paperback/product-yvg5ww8.html?page=1&pageSize=4" target="_blank" rel="noopener" aria-label="Buy on Lulu">Lulu</a>
-          <a class="btn-outline" href="https://www.kobo.com/us/en/ebook/dual-military?sId=57b80b80-5b16-44c7-86ab-5ddc6166cac4" target="_blank" rel="noopener" aria-label="View on Kobo Books">Kobo Books</a>
+          <a class="btn-outline" href="https://www.barnesandnoble.com/" target="_blank" rel="noopener" aria-label="View on Barnes & Noble" data-utm="1">Barnes &amp; Noble</a>
+          <a class="btn-outline" href="https://www.lulu.com/shop/joe-and-lisa-birkhead/dual-military/paperback/product-yvg5ww8.html?page=1&pageSize=4" target="_blank" rel="noopener" aria-label="Buy on Lulu" data-utm="1">Lulu</a>
+          <a class="btn-outline" href="https://www.kobo.com/us/en/ebook/dual-military?sId=57b80b80-5b16-44c7-86ab-5ddc6166cac4" target="_blank" rel="noopener" aria-label="View on Kobo Books" data-utm="1">Kobo Books</a>
         </div>
 
         <div class="retailers" style="max-width:720px;margin:18px auto 0;">
           <div class="retailer">
-            <div>
-              <strong>Lulu</strong>
-              <div><small class="muted">Paperback · Ships direct from Lulu</small></div>
-            </div>
-            <a class="btn" href="https://www.lulu.com/shop/joe-and-lisa-birkhead/dual-military/paperback/product-yvg5ww8.html?page=1&pageSize=4" target="_blank" rel="noopener" aria-label="Buy on Lulu">Buy</a>
+            <div><strong>Lulu</strong><div><small class="muted">Paperback · Ships direct from Lulu</small></div></div>
+            <a class="btn" href="https://www.lulu.com/shop/joe-and-lisa-birkhead/dual-military/paperback/product-yvg5ww8.html?page=1&pageSize=4" target="_blank" rel="noopener" aria-label="Buy on Lulu" data-utm="1">Buy</a>
           </div>
-
           <div class="retailer">
-            <div>
-              <strong>Kobo Books</strong>
-              <div><small class="muted">Global eBook · Kobo &amp; Rakuten</small></div>
-            </div>
-            <a class="btn-outline" href="https://www.kobo.com/us/en/ebook/dual-military?sId=57b80b80-5b16-44c7-86ab-5ddc6166cac4" target="_blank" rel="noopener" aria-label="Kobo Books View">View</a>
+            <div><strong>Kobo Books</strong><div><small class="muted">Global eBook · Kobo &amp; Rakuten</small></div></div>
+            <a class="btn-outline" href="https://www.kobo.com/us/en/ebook/dual-military?sId=57b80b80-5b16-44c7-86ab-5ddc6166cac4" target="_blank" rel="noopener" aria-label="Kobo Books View" data-utm="1">View</a>
           </div>
-
           <div class="retailer">
-            <div>
-              <strong>Available Everywhere</strong>
-              <div><small class="muted">Bookstores · Libraries · Online Retailers</small></div>
-            </div>
-            <a class="btn-outline" href="https://www.ingramspark.com/" target="_blank" rel="noopener" aria-label="IngramSpark Distribution">Via IngramSpark</a>
+            <div><strong>Available Everywhere</strong><div><small class="muted">Bookstores · Libraries · Online Retailers</small></div></div>
+            <a class="btn-outline" href="https://www.ingramspark.com/" target="_blank" rel="noopener" aria-label="IngramSpark Distribution" data-utm="1">Via IngramSpark</a>
           </div>
-
           <div class="retailer">
-            <div>
-              <strong>Amazon</strong>
-              <div><small class="muted">Prime eligible (coming soon)</small></div>
-            </div>
+            <div><strong>Amazon</strong><div><small class="muted">Prime eligible (coming soon)</small></div></div>
             <a class="btn-outline" href="https://www.amazon.com/dp/B0FP62JGJ5" target="_blank" rel="noopener" aria-label="Amazon Buy">View</a>
           </div>
-
           <div class="retailer">
-            <div>
-              <strong>Barnes &amp; Noble</strong>
-              <div><small class="muted">Paperback &amp; Nook</small></div>
-            </div>
-            <a class="btn-outline" href="https://www.barnesandnoble.com/" target="_blank" rel="noopener" aria-label="Barnes and Noble View">View</a>
+            <div><strong>Barnes &amp; Noble</strong><div><small class="muted">Paperback &amp; Nook</small></div></div>
+            <a class="btn-outline" href="https://www.barnesandnoble.com/" target="_blank" rel="noopener" aria-label="Barnes and Noble View" data-utm="1">View</a>
           </div>
         </div>
 
         <p class="muted" style="margin-top:12px">
           Prefer updates and deals? <a id="buy-follow" href="#" target="_blank" rel="noopener">Follow our Amazon Author Page</a>.
         </p>
-      </div>
-    </section>
-
-    <!-- =================== JOLESA NIL =================== -->
-    <section id="jolesa" class="section" aria-label="Support JoLesa’s NIL">
-      <div class="card" style="text-align:center">
-        <h2>Support JoLesa’s NIL</h2>
-        <p class="muted">College hooper, artist, and entrepreneur. Rep her gear & support her journey.</p>
-        <div class="btnrow" style="justify-content:center">
-          <a id="section-nil" class="btn" href="#" target="_blank" rel="noopener">Shop JoLesa’s NIL Store</a>
-        </div>
       </div>
     </section>
 
@@ -428,8 +460,9 @@
             </div>
           </div>
           <div class="card">
-            <h3>Mailing</h3>
-            <p class="muted">J3L, LLC — Augusta, GA</p>
+            <h3>Press Kit</h3>
+            <p class="muted">Cover art, author photo, book blurb.</p>
+            <a class="btn-outline" href="/press/press-kit.zip" target="_blank" rel="noopener">Download Press Kit</a>
           </div>
         </div>
       </div>
@@ -456,15 +489,16 @@
           <a href="#toc">Chapters</a>
           <a href="#aar">AAR</a>
           <a href="#endorsements">Endorsements</a>
+          <a href="#faq">FAQ</a>
         </div>
         <div>
           <h4>Buy</h4>
           <a href="#buy">Retailers</a>
           <a href="https://www.amazon.com/dp/B0FP62JGJ5" target="_blank" rel="noopener">Amazon</a>
-          <a href="https://www.barnesandnoble.com/" target="_blank" rel="noopener">Barnes &amp; Noble</a>
-          <a href="https://www.lulu.com/shop/joe-and-lisa-birkhead/dual-military/paperback/product-yvg5ww8.html?page=1&pageSize=4" target="_blank" rel="noopener">Lulu</a>
-          <a href="https://www.kobo.com/us/en/ebook/dual-military?sId=57b80b80-5b16-44c7-86ab-5ddc6166cac4" target="_blank" rel="noopener">Kobo Books</a>
-          <a href="https://www.ingramspark.com/" target="_blank" rel="noopener">Everywhere (IngramSpark)</a>
+          <a href="https://www.barnesandnoble.com/" target="_blank" rel="noopener" data-utm="1">Barnes &amp; Noble</a>
+          <a href="https://www.lulu.com/shop/joe-and-lisa-birkhead/dual-military/paperback/product-yvg5ww8.html?page=1&pageSize=4" target="_blank" rel="noopener" data-utm="1">Lulu</a>
+          <a href="https://www.kobo.com/us/en/ebook/dual-military?sId=57b80b80-5b16-44c7-86ab-5ddc6166cac4" target="_blank" rel="noopener" data-utm="1">Kobo Books</a>
+          <a href="https://www.ingramspark.com/" target="_blank" rel="noopener" data-utm="1">Everywhere (IngramSpark)</a>
         </div>
         <div>
           <h4>Company</h4>
@@ -503,30 +537,12 @@
     "publisher": {"@type":"Organization","name":"J3L, LLC"},
     "isbn": "979-8262543113",
     "workExample": [
-      {
-        "@type": "Book",
-        "bookFormat": "EBook",
-        "isbn": "B0FP5T6LW4",
-        "url": "https://www.amazon.com/dp/B0FP5T6LW4"
-      },
-      {
-        "@type": "Book",
-        "bookFormat": "Paperback",
-        "isbn": "B0FP62JGJ5",
-        "url": "https://www.amazon.com/dp/B0FP62JGJ5"
-      }
+      {"@type":"Book","bookFormat":"EBook","isbn":"B0FP5T6LW4","url":"https://www.amazon.com/dp/B0FP5T6LW4"},
+      {"@type":"Book","bookFormat":"Paperback","isbn":"B0FP62JGJ5","url":"https://www.amazon.com/dp/B0FP62JGJ5"}
     ],
     "offers": [
-      {
-        "@type": "Offer",
-        "url": "https://www.amazon.com/dp/B0FP62JGJ5",
-        "availability": "https://schema.org/InStock"
-      },
-      {
-        "@type": "Offer",
-        "url": "https://www.amazon.com/dp/B0FP5T6LW4",
-        "availability": "https://schema.org/InStock"
-      }
+      {"@type":"Offer","url":"https://www.amazon.com/dp/B0FP62JGJ5","availability":"https://schema.org/InStock"},
+      {"@type":"Offer","url":"https://www.amazon.com/dp/B0FP5T6LW4","availability":"https://schema.org/InStock"}
     ],
     "sameAs": [
       "https://www.amazon.com/-/e/B0FP68BF8F",
@@ -536,35 +552,53 @@
   }
   </script>
 
-  <!-- =================== Minimal JS (year + links wiring) =================== -->
+  <!-- =================== Minimal JS (year + links + UTMs) =================== -->
   <script>
     // Year stamps
     const y = new Date().getFullYear();
     const y1 = document.getElementById('year'); if (y1) y1.textContent = y;
     const y2 = document.getElementById('year2'); if (y2) y2.textContent = y;
 
-    // ✅ NIL URL
+    // NIL URL
     const JOLESA_NIL_URL = "https://govalkyries.athsolutions.shop/collections/jolesa-birkhead-5384567";
-
     for (const id of ["nav-nil","hero-nil","fab-nil","section-nil"]) {
       const el = document.getElementById(id);
-      if (el && typeof JOLESA_NIL_URL === "string" && JOLESA_NIL_URL.startsWith("http")) {
-        el.href = JOLESA_NIL_URL;
-      }
+      if (el && typeof JOLESA_NIL_URL === "string" && JOLESA_NIL_URL.startsWith("http")) el.href = JOLESA_NIL_URL;
     }
 
-    // ✅ Amazon Author "Follow" CTA wiring
+    // Amazon Author "Follow" CTA wiring
     const AMAZON_AUTHOR_URL = "https://www.amazon.com/-/e/B0FP68BF8F";
     for (const id of ["nav-follow","hero-follow","foot-follow","banner-follow","buy-follow"]) {
       const el = document.getElementById(id);
       if (el) el.href = AMAZON_AUTHOR_URL;
     }
+
+    // OPTIONAL: append UTM params to outbound retailer links (not Amazon)
+    const ENABLE_UTM = true;
+    const UTM_QUERY = "utm_source=j3l-site&utm_medium=button&utm_campaign=launch";
+    if (ENABLE_UTM) {
+      document.querySelectorAll('a[target="_blank"][rel~="noopener"][data-utm="1"]').forEach(a=>{
+        try{
+          const url = new URL(a.href);
+          if (!url.hostname.includes('amazon.com')) {
+            if (url.search) url.search += "&" + UTM_QUERY; else url.search = "?" + UTM_QUERY;
+            a.href = url.toString();
+          }
+        }catch(e){}
+      });
+    }
+
+    // Newsletter Google Form + ARC form placeholders (replace when ready)
+    document.getElementById('nl-google')?.setAttribute('href', 'https://forms.gle/REPLACE_ME');
+    document.getElementById('arc-form')?.setAttribute('href', 'https://forms.gle/REPLACE_ME');
+
+    // Formspree fallback notice
+    const nlForm = document.getElementById('nl-form');
+    nlForm?.addEventListener('submit', (e)=>{
+      if (nlForm.action.includes('your-code')) {
+        alert('Heads up: Replace the Formspree action URL or switch to a Google Form link in the Newsletter section.');
+      }
+    });
   </script>
 </body>
 </html>
-
-
-
-
-
-
