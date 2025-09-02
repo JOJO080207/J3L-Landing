@@ -194,7 +194,8 @@
           <a href="#reviews">Reviews</a>
           <a href="#newsletter">Newsletter</a>
           <a href="#buy">Buy</a>
-          <a href="#contact">Contact</a>
+          <!-- changed for Goodreads clarity -->
+          <a href="#contact">Contact Joe &amp; Lisa</a>
           <a id="nav-follow" class="btn-mini" href="#" target="_blank" rel="noopener" aria-label="Follow on Amazon">Follow on Amazon</a>
         </div>
       </nav>
@@ -382,7 +383,8 @@
             <a id="arc-form" class="btn" href="#" target="_blank" rel="noopener">Request an ARC</a>
             <a class="btn-outline" href="https://www.amazon.com/-/e/B0FP68BF8F" target="_blank" rel="noopener">Follow on Amazon</a>
           </div>
-          <p class="legal">We’ll send simple instructions and a target date. Thank you for helping other readers find the book.</p>
+          <p class="leg
+al">We’ll send simple instructions and a target date. Thank you for helping other readers find the book.</p>
         </div>
       </div>
     </section>
@@ -448,15 +450,20 @@
     </section>
 
     <!-- =================== CONTACT =================== -->
-    <section id="contact" class="section" aria-label="Contact">
+    <section id="contact" class="section" aria-label="Contact Joe & Lisa Birkhead">
       <div class="card">
-        <h2>Contact</h2>
-        <p class="muted">Speaking, media, bulk orders, or just to say hello.</p>
+        <h2>Contact Joe &amp; Lisa Birkhead</h2>
+        <p class="muted">Speaking, media, bulk orders, ARC inquiries, or just to say hello.</p>
+
         <div class="grid-3">
           <div class="card">
             <h3>Email</h3>
-            <p><strong><a href="mailto:info@j3lfamily.com">info@j3lfamily.com</a></strong></p>
+            <p class="muted" style="margin:0 0 6px">Authors: <strong>Joe C. Birkhead IV &amp; Lisa Birkhead</strong></p>
+            <p><strong>
+              <a href="mailto:info@j3lfamily.com?subject=Dual%20Military%20inquiry%20(Joe%20%26%20Lisa)">info@j3lfamily.com</a>
+            </strong></p>
           </div>
+
           <div class="card">
             <h3>Social</h3>
             <p class="muted">Updates, clips, and AAR prompts.</p>
@@ -465,6 +472,7 @@
               <a class="btn-outline" href="https://www.facebook.com/profile.php?id=61580040894001" target="_blank" rel="noopener" aria-label="Facebook">Facebook</a>
             </div>
           </div>
+
           <div class="card">
             <h3>Press Kit</h3>
             <p class="muted">Cover art, author photo, book blurb.</p>
@@ -508,18 +516,18 @@
         </div>
         <div>
           <h4>Company</h4>
-          <a href="#contact">Contact</a>
+          <a href="#contact">Contact Joe &amp; Lisa</a>
           <a id="foot-follow" href="#" target="_blank" rel="noopener">Follow on Amazon</a>
           <!-- Footer quick download -->
           <a class="btn-mini" href="/dual-military-aar-starter-kit.pdf" target="_blank" rel="noopener" download>
             AAR Kit (PDF)
           </a>
-          <span class="muted">© <span id="year"></span> J3L, LLC</span>
+          <span class="muted">© <span id="year"></span> Joe &amp; Lisa Birkhead (J3L, LLC)</span>
         </div>
       </div>
 
       <div class="copy">
-        <div>© <span id="year2"></span> J3L, LLC — All rights reserved.</div>
+        <div>© <span id="year2"></span> Joe &amp; Lisa Birkhead (J3L, LLC) — All rights reserved.</div>
         <div class="muted" style="margin-top:6px">
           <a href="/sitemap.xml">Sitemap</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a>
         </div>
@@ -557,6 +565,35 @@
       "https://www.amazon.com/-/e/B0FP68BF8F",
       "https://x.com/J3LFAMILY",
       "https://www.facebook.com/profile.php?id=61580040894001"
+    ]
+  }
+  </script>
+
+  <!-- Added explicit Person entities for Goodreads/identity clarity -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Joe C. Birkhead IV",
+    "email": "mailto:info@j3lfamily.com",
+    "url": "https://j3lfamily.com/",
+    "sameAs": [
+      "https://x.com/J3LFAMILY"
+      /* add Goodreads author URL here once live */
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Lisa Birkhead",
+    "email": "mailto:info@j3lfamily.com",
+    "url": "https://j3lfamily.com/",
+    "sameAs": [
+      "https://x.com/J3LFAMILY"
+      /* add Goodreads author URL here once live */
     ]
   }
   </script>
