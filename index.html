@@ -212,7 +212,7 @@
 
         <div class="btnrow" role="group" aria-label="Primary purchase">
           <a class="btn" href="https://www.amazon.com/dp/B0FP62JGJ5" target="_blank" rel="noopener">Buy on Amazon</a>
-          <a class="btn-outline" href="https://www.barnesandnoble.com/" target="_blank" rel="noopener" data-utm="1">Buy on Barnes &amp; Noble</a>
+          <a class="btn-outline" href="#" data-bn="1" target="_blank" rel="noopener" data-utm="1">Buy on Barnes &amp; Noble</a>
           <a id="hero-follow" class="btn-outline" href="#" target="_blank" rel="noopener">Follow on Amazon</a>
           <!-- ✅ CLEAR DOWNLOAD BUTTON -->
           <a class="btn-outline" href="/dual-military-aar-starter-kit.pdf" target="_blank" rel="noopener" download>
@@ -431,7 +431,7 @@
         <p class="muted">Paperback · eBook · (Audiobook when ready)</p>
         <div class="btnrow" style="justify-content:center">
           <a class="btn" href="https://www.amazon.com/dp/B0FP62JGJ5" target="_blank" rel="noopener" aria-label="Buy on Amazon">Amazon</a>
-          <a class="btn-outline" href="https://www.barnesandnoble.com/" target="_blank" rel="noopener" aria-label="View on Barnes & Noble" data-utm="1">Barnes &amp; Noble</a>
+          <a class="btn-outline" href="#" data-bn="1" target="_blank" rel="noopener" aria-label="View on Barnes & Noble" data-utm="1">Barnes &amp; Noble</a>
           <a class="btn-outline" href="https://www.lulu.com/shop/joe-and-lisa-birkhead/dual-military/paperback/product-yvg5ww8.html?page=1&pageSize=4" target="_blank" rel="noopener" aria-label="Buy on Lulu" data-utm="1">Lulu</a>
           <a class="btn-outline" href="https://www.kobo.com/us/en/ebook/dual-military?sId=57b80b80-5b16-44c7-86ab-5ddc6166cac4" target="_blank" rel="noopener" aria-label="View on Kobo Books" data-utm="1">Kobo Books</a>
           <!-- Goodreads buttons in Buy section -->
@@ -461,8 +461,8 @@
             <a class="btn-outline" href="https://www.amazon.com/dp/B0FP62JGJ5" target="_blank" rel="noopener" aria-label="Amazon Buy">View</a>
           </div>
           <div class="retailer">
-            <div><strong>Barnes &amp; Noble</strong><div><small class="muted">Paperback &amp; Nook</small></div></div>
-            <a class="btn-outline" href="https://www.barnesandnoble.com/" target="_blank" rel="noopener" aria-label="Barnes and Noble View" data-utm="1">View</a>
+            <div><strong>Barnes &amp; Noble</strong><div><small class="muted">Paperback · Nook · Hardcover</small></div></div>
+            <a class="btn-outline" href="#" data-bn="1" target="_blank" rel="noopener" aria-label="Barnes and Noble View" data-utm="1">View</a>
           </div>
         </div>
 
@@ -532,7 +532,7 @@
           <h4>Buy</h4>
           <a href="#buy">Retailers</a>
           <a href="https://www.amazon.com/dp/B0FP62JGJ5" target="_blank" rel="noopener">Amazon</a>
-          <a href="https://www.barnesandnoble.com/" target="_blank" rel="noopener" data-utm="1">Barnes &amp; Noble</a>
+          <a href="#" data-bn="1" target="_blank" rel="noopener" data-utm="1">Barnes &amp; Noble</a>
           <a href="https://www.lulu.com/shop/joe-and-lisa-birkhead/dual-military/paperback/product-yvg5ww8.html?page=1&pageSize=4" target="_blank" rel="noopener" data-utm="1">Lulu</a>
           <a href="https://www.kobo.com/us/en/ebook/dual-military?sId=57b80b80-5b16-44c7-86ab-5ddc6166cac4" target="_blank" rel="noopener" data-utm="1">Kobo Books</a>
           <a href="https://www.ingramspark.com/" target="_blank" rel="noopener" data-utm="1">Everywhere (IngramSpark)</a>
@@ -585,7 +585,9 @@
     ],
     "offers": [
       {"@type":"Offer","url":"https://www.amazon.com/dp/B0FP62JGJ5","availability":"https://schema.org/InStock"},
-      {"@type":"Offer","url":"https://www.amazon.com/dp/B0FP5T6LW4","availability":"https://schema.org/InStock"}
+      {"@type":"Offer","url":"https://www.amazon.com/dp/B0FP5T6LW4","availability":"https://schema.org/InStock"},
+      {"@type":"Offer","url":"https://www.barnesandnoble.com/w/dual-military-joe-and-lisa-birkhead/1148121230?ean=2940184392691","availability":"https://schema.org/InStock"},
+      {"@type":"Offer","url":"https://www.lulu.com/shop/joe-and-lisa-birkhead/dual-military/paperback/product-yvg5ww8.html?page=1&pageSize=4","availability":"https://schema.org/InStock"}
     ],
     "sameAs": [
       "https://www.amazon.com/-/e/B0FP68BF8F",
@@ -646,6 +648,11 @@
       const el = document.getElementById(id);
       if (el) el.href = AMAZON_AUTHOR_URL;
     }
+
+    // Barnes & Noble master URL (shows eBook + Paperback + Hardcover)
+    const BN_URL = "https://www.barnesandnoble.com/w/dual-military-joe-and-lisa-birkhead/1148121230?ean=2940184392691";
+    // Wire all B&N links in one shot
+    document.querySelectorAll('a[data-bn="1"]').forEach(a => a.href = BN_URL);
 
     // OPTIONAL: append UTM params to outbound retailer links (not Amazon)
     const ENABLE_UTM = true;
