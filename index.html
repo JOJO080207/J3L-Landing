@@ -213,6 +213,7 @@
         <div class="btnrow" role="group" aria-label="Primary purchase">
           <a class="btn" href="https://www.amazon.com/dp/B0FP62JGJ5" target="_blank" rel="noopener">Buy on Amazon</a>
           <a class="btn-outline" href="#" data-bn="1" target="_blank" rel="noopener" data-utm="1">Buy on Barnes &amp; Noble</a>
+          <a class="btn-outline" href="#" data-b2r="1" target="_blank" rel="noopener" data-utm="1">All Retailers (Books2Read)</a>
           <a id="hero-follow" class="btn-outline" href="#" target="_blank" rel="noopener">Follow on Amazon</a>
           <!-- ✅ CLEAR DOWNLOAD BUTTON -->
           <a class="btn-outline" href="/dual-military-aar-starter-kit.pdf" target="_blank" rel="noopener" download>
@@ -419,7 +420,7 @@
         </details>
         <details>
           <summary>Where can I buy the book?</summary>
-          <p>Amazon (paperback + Kindle), Barnes &amp; Noble, Lulu (paperback), and Kobo (eBook). See the buttons below.</p>
+          <p>Amazon (paperback + Kindle), Barnes &amp; Noble, Lulu (paperback), and Kobo (eBook). For a one-stop list of global retailers, use the Books2Read link found in the buttons above.</p>
         </details>
       </div>
     </section>
@@ -434,6 +435,7 @@
           <a class="btn-outline" href="#" data-bn="1" target="_blank" rel="noopener" aria-label="View on Barnes & Noble" data-utm="1">Barnes &amp; Noble</a>
           <a class="btn-outline" href="https://www.lulu.com/shop/joe-and-lisa-birkhead/dual-military/paperback/product-yvg5ww8.html?page=1&pageSize=4" target="_blank" rel="noopener" aria-label="Buy on Lulu" data-utm="1">Lulu</a>
           <a class="btn-outline" href="https://www.kobo.com/us/en/ebook/dual-military?sId=57b80b80-5b16-44c7-86ab-5ddc6166cac4" target="_blank" rel="noopener" aria-label="View on Kobo Books" data-utm="1">Kobo Books</a>
+          <a class="btn-outline" href="#" data-b2r="1" target="_blank" rel="noopener" aria-label="All Retailers via Books2Read" data-utm="1">All Retailers (Books2Read)</a>
           <!-- Goodreads buttons in Buy section -->
           <a class="btn-outline" href="https://www.goodreads.com/book/show/240925211-dual-military" target="_blank" rel="noopener" aria-label="Add to Goodreads">
             Add on Goodreads
@@ -453,8 +455,8 @@
             <a class="btn-outline" href="https://www.kobo.com/us/en/ebook/dual-military?sId=57b80b80-5b16-44c7-86ab-5ddc6166cac4" target="_blank" rel="noopener" aria-label="Kobo Books View" data-utm="1">View</a>
           </div>
           <div class="retailer">
-            <div><strong>Available Everywhere</strong><div><small class="muted">Bookstores · Libraries · Online Retailers</small></div></div>
-            <a class="btn-outline" href="https://www.ingramspark.com/" target="_blank" rel="noopener" aria-label="IngramSpark Distribution" data-utm="1">Via IngramSpark</a>
+            <div><strong>All Retailers</strong><div><small class="muted">Bookstores · Libraries · Online (Books2Read hub)</small></div></div>
+            <a class="btn-outline" href="#" data-b2r="1" target="_blank" rel="noopener" aria-label="Books2Read Retailer Hub" data-utm="1">Browse</a>
           </div>
           <div class="retailer">
             <div><strong>Amazon</strong><div><small class="muted">Prime eligible (coming soon)</small></div></div>
@@ -535,7 +537,7 @@
           <a href="#" data-bn="1" target="_blank" rel="noopener" data-utm="1">Barnes &amp; Noble</a>
           <a href="https://www.lulu.com/shop/joe-and-lisa-birkhead/dual-military/paperback/product-yvg5ww8.html?page=1&pageSize=4" target="_blank" rel="noopener" data-utm="1">Lulu</a>
           <a href="https://www.kobo.com/us/en/ebook/dual-military?sId=57b80b80-5b16-44c7-86ab-5ddc6166cac4" target="_blank" rel="noopener" data-utm="1">Kobo Books</a>
-          <a href="https://www.ingramspark.com/" target="_blank" rel="noopener" data-utm="1">Everywhere (IngramSpark)</a>
+          <a href="#" data-b2r="1" target="_blank" rel="noopener" data-utm="1">All Retailers (Books2Read)</a>
         </div>
         <div>
           <h4>Company</h4>
@@ -593,7 +595,8 @@
       "https://www.amazon.com/-/e/B0FP68BF8F",
       "https://x.com/J3LFAMILY",
       "https://www.facebook.com/profile.php?id=61580040894001",
-      "https://www.goodreads.com/book/show/240925211-dual-military"
+      "https://www.goodreads.com/book/show/240925211-dual-military",
+      "https://books2read.com/u/b58lMk"
     ]
   }
   </script>
@@ -651,8 +654,13 @@
 
     // Barnes & Noble master URL (shows eBook + Paperback + Hardcover)
     const BN_URL = "https://www.barnesandnoble.com/w/dual-military-joe-and-lisa-birkhead/1148121230?ean=2940184392691";
-    // Wire all B&N links in one shot
+    // Books2Read universal retailer hub (exact slug provided)
+    const B2R_URL = "https://books2read.com/u/b58lMk";
+
+    // Wire all B&N links
     document.querySelectorAll('a[data-bn="1"]').forEach(a => a.href = BN_URL);
+    // Wire all Books2Read links
+    document.querySelectorAll('a[data-b2r="1"]').forEach(a => a.href = B2R_URL);
 
     // OPTIONAL: append UTM params to outbound retailer links (not Amazon)
     const ENABLE_UTM = true;
@@ -683,3 +691,4 @@
   </script>
 </body>
 </html>
+
