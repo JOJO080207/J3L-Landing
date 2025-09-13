@@ -746,7 +746,7 @@
     const ENABLE_UTM = true;
     const UTM_QUERY = "utm_source=j3l-site&utm_medium=button&utm_campaign=launch";
     if (ENABLE_UTM) {
-      document.querySelectorAll('a[target="_blank"][rel~="noopener"][data-utm="1"]').forEach(a=>{
+      document.querySelectorAll('a[target=\"_blank\"][rel~=\"noopener\"][data-utm=\"1\"]').forEach(a=>{
         try{
           const url = new URL(a.href);
           if (!url.hostname.includes('amazon.com')) {
@@ -768,27 +768,54 @@
         alert('Heads up: Replace the Formspree action URL or switch to a Google Form link in the Newsletter section.');
       }
     });
+  </script>
 
-    // #2 Goodreads giveaway countdown (ends Sep 25, 2025 @ 11:59 PM ET)
-    (function(){
-      const end = new Date('2025-09-25T23:59:59-04:00');
+  <!-- ===== Bulletproof Goodreads countdown (independent script) ===== -->
+  <script>
+  (function(){
+    // Ensure badge exists (inject if not)
+    function ensureBadge(){
+      let badge = document.getElementById('gr-countdown');
+      if (!badge){
+        const sub = document.querySelector('.hero .sub');
+        badge = document.createElement('div');
+        badge.className = 'badge';
+        badge.id = 'gr-countdown';
+        badge.setAttribute('aria-live','polite');
+        badge.style.marginTop = '8px';
+        badge.innerHTML = 'Giveaway ends in <span id="gr-left">—</span>';
+        (sub && sub.parentNode)
+          ? sub.parentNode.insertBefore(badge, sub.nextSibling)
+          : document.body.appendChild(badge);
+      } else if (!document.getElementById('gr-left')){
+        const span = document.createElement('span');
+        span.id = 'gr-left';
+        badge.appendChild(span);
+      }
+    }
+
+    // End time: Sep 25, 2025 11:59:59 PM ET == 2025-09-26 03:59:59Z
+    const END_UTC_MS = Date.UTC(2025, 8, 26, 3, 59, 59); // months 0-based
+
+    function pad(n){ return String(n).padStart(2,'0'); }
+    function render(){
       const out = document.getElementById('gr-left');
       if (!out) return;
-      const pad = n => String(n).padStart(2,'0');
-      function tick(){
-        const now = new Date();
-        const diff = end - now;
-        if (diff <= 0){ out.textContent = '0d 00h 00m 00s'; return; }
-        let s = Math.floor(diff/1000);
-        const d = Math.floor(s/86400); s%=86400;
-        const h = Math.floor(s/3600); s%=3600;
-        const m = Math.floor(s/60); const sec = s%60;
-        out.textContent = `${d}d ${pad(h)}h ${pad(m)}m ${pad(sec)}s`;
-      }
-      tick();
-      setInterval(tick, 1000);
-    })();
+      const diff = END_UTC_MS - Date.now();
+      if (diff <= 0){ out.textContent = '0d 00h 00m 00s'; return; }
+      let s = Math.floor(diff/1000);
+      const d = Math.floor(s/86400); s%=86400;
+      const h = Math.floor(s/3600); s%=3600;
+      const m = Math.floor(s/60); const sec = s%60;
+      out.textContent = `${d}d ${pad(h)}h ${pad(m)}m ${pad(sec)}s`;
+    }
+
+    document.addEventListener('DOMContentLoaded', function(){
+      ensureBadge();
+      render();
+      setInterval(render, 1000);
+    });
+  })();
   </script>
 </body>
 </html>
-
