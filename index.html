@@ -210,7 +210,17 @@
         <h1>Dual Military — From Combat Boots to Courts &amp; Fields</h1>
         <p class="sub">Two Army Sergeants Major raise athletes while leading troops. Real stories. Real AARs. Practical lessons for family, sport, and life.</p>
 
+        <!-- #2 Countdown badge -->
+        <div class="badge" id="gr-countdown" aria-live="polite" style="margin-top:8px">
+          Giveaway ends in <span id="gr-left"></span>
+        </div>
+
         <div class="btnrow" role="group" aria-label="Primary purchase">
+          <!-- #1 Big Enter Giveaway button -->
+          <a class="btn" href="https://www.goodreads.com/giveaway/enter_choose_address/421953"
+             target="_blank" rel="nofollow noopener"
+             aria-label="Enter the Goodreads Giveaway">Enter Goodreads Giveaway</a>
+
           <a class="btn" href="https://www.amazon.com/dp/B0FP62JGJ5" target="_blank" rel="noopener">Buy on Amazon</a>
           <a class="btn-outline" href="#" data-bn="1" target="_blank" rel="noopener" data-utm="1">Buy on Barnes &amp; Noble</a>
           <a class="btn-outline" href="#" data-b2r="1" target="_blank" rel="noopener" data-utm="1">All Retailers (Books2Read)</a>
@@ -507,6 +517,14 @@
           </a>
         </div>
 
+        <!-- #3 Extra CTA above retailer grid -->
+        <div style="margin-top:12px">
+          <a class="btn" href="https://www.goodreads.com/giveaway/enter_choose_address/421953"
+             target="_blank" rel="nofollow noopener" aria-label="Enter the Goodreads Giveaway">
+            🎁 Enter the Goodreads Giveaway
+          </a>
+        </div>
+
         <div class="retailers" style="max-width:720px;margin:18px auto 0;">
           <div class="retailer">
             <div><strong>Lulu</strong><div><small class="muted">Paperback · Ships direct from Lulu</small></div></div>
@@ -750,6 +768,27 @@
         alert('Heads up: Replace the Formspree action URL or switch to a Google Form link in the Newsletter section.');
       }
     });
+
+    // #2 Goodreads giveaway countdown (ends Sep 25, 2025 @ 11:59 PM ET)
+    (function(){
+      const end = new Date('2025-09-25T23:59:59-04:00');
+      const out = document.getElementById('gr-left');
+      if (!out) return;
+      const pad = n => String(n).padStart(2,'0');
+      function tick(){
+        const now = new Date();
+        const diff = end - now;
+        if (diff <= 0){ out.textContent = '0d 00h 00m 00s'; return; }
+        let s = Math.floor(diff/1000);
+        const d = Math.floor(s/86400); s%=86400;
+        const h = Math.floor(s/3600); s%=3600;
+        const m = Math.floor(s/60); const sec = s%60;
+        out.textContent = `${d}d ${pad(h)}h ${pad(m)}m ${pad(sec)}s`;
+      }
+      tick();
+      setInterval(tick, 1000);
+    })();
   </script>
 </body>
 </html>
+
