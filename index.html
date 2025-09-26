@@ -4,6 +4,7 @@
   <!-- =========================================================
        Dual Military — From Combat Boots to Courts & Fields
        Full single-file page (no external deps; Contact link reliable)
+       (Giveaway removed; buttons + JSON-LD retained)
        ========================================================= -->
 
   <meta charset="UTF-8" />
@@ -167,38 +168,7 @@
       position:absolute; top:0; left:0; width:100%; height:100%; border:0;
     }
 
-    /* ====== POPPED COUNTDOWN BADGE ====== */
-    #gr-countdown{
-      position:relative;
-      background:linear-gradient(135deg,#0f172a,#1f2937);
-      color:#fff;
-      border-color:transparent;
-      padding:10px 14px;
-      border-radius:999px;
-      font-weight:900;
-      letter-spacing:.2px;
-      font-variant-numeric:tabular-nums;
-      box-shadow:0 10px 24px rgba(2,6,23,.25), inset 0 0 0 1px rgba(255,255,255,.10);
-    }
-    #gr-countdown::before{ content:"⏳"; margin-right:8px; }
-    #gr-countdown::after{
-      content:"";
-      position:absolute; inset:-3px; border-radius:999px;
-      box-shadow:0 0 0 3px rgba(234,179,8,.55);
-      animation:grPulse 2s ease-out infinite;
-      pointer-events:none;
-    }
-    @keyframes grPulse{
-      0%{transform:scale(1);opacity:.6}
-      100%{transform:scale(1.15);opacity:0}
-    }
-    /* urgent state for last 48h */
-    #gr-countdown.urgent{
-      background:linear-gradient(135deg,#b91c1c,#dc2626);
-    }
-    #gr-countdown.urgent::after{
-      box-shadow:0 0 0 3px rgba(239,68,68,.55);
-    }
+    /* (Giveaway countdown styles removed) */
   </style>
 </head>
 <body>
@@ -227,7 +197,6 @@
           <a href="#reviews">Reviews</a>
           <a href="#newsletter">Newsletter</a>
           <a href="#buy">Buy</a>
-          <!-- changed for Goodreads clarity -->
           <a href="#contact">Contact Joe &amp; Lisa</a>
           <a id="nav-follow" class="btn-mini" href="#" target="_blank" rel="noopener" aria-label="Follow on Amazon">Follow on Amazon</a>
         </div>
@@ -243,17 +212,9 @@
         <h1>Dual Military — From Combat Boots to Courts &amp; Fields</h1>
         <p class="sub">Two Army Sergeants Major raise athletes while leading troops. Real stories. Real AARs. Practical lessons for family, sport, and life.</p>
 
-        <!-- #2 Countdown badge -->
-        <div class="badge" id="gr-countdown" aria-live="polite" style="margin-top:8px">
-          Giveaway ends in <span id="gr-left"></span>
-        </div>
+        <!-- (Giveaway countdown badge removed) -->
 
         <div class="btnrow" role="group" aria-label="Primary purchase">
-          <!-- #1 Big Enter Giveaway button -->
-          <a class="btn" href="https://www.goodreads.com/giveaway/enter_choose_address/421953"
-             target="_blank" rel="nofollow noopener"
-             aria-label="Enter the Goodreads Giveaway">Enter Goodreads Giveaway</a>
-
           <a class="btn" href="https://www.amazon.com/dp/B0FP62JGJ5" target="_blank" rel="noopener">Buy on Amazon</a>
           <a class="btn-outline" href="#" data-bn="1" target="_blank" rel="noopener" data-utm="1">Buy on Barnes &amp; Noble</a>
           <a class="btn-outline" href="#" data-b2r="1" target="_blank" rel="noopener" data-utm="1">All Retailers (Books2Read)</a>
@@ -262,7 +223,7 @@
           <a class="btn-outline" href="/dual-military-aar-starter-kit.pdf" target="_blank" rel="noopener" download>
             Download the 1-Page AAR Starter Kit (PDF)
           </a>
-          <!-- Goodreads buttons -->
+          <!-- Goodreads links remain -->
           <a class="btn-outline" href="https://www.goodreads.com/book/show/240925211-dual-military" target="_blank" rel="noopener" aria-label="Add to Goodreads">
             Add on Goodreads
           </a>
@@ -299,9 +260,9 @@
         <div class="card">
           <h2>Who It’s For</h2>
           <ul class="clean">
-            <li>Parents & coaches building confident, resilient kids</li>
+            <li>Parents &amp; coaches building confident, resilient kids</li>
             <li>Leaders who want calm procedures under pressure</li>
-            <li>Military & first-responder families raising athletes</li>
+            <li>Military &amp; first-responder families raising athletes</li>
           </ul>
           <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
             <span class="btn-mini">Parents</span>
@@ -383,7 +344,7 @@
     <!-- =================== REVIEWS / SOCIAL PROOF =================== -->
     <section id="reviews" class="section" aria-label="Reviews">
       <div class="card">
-        <h2>Reviews & Social Proof</h2>
+        <h2>Reviews &amp; Social Proof</h2>
         <p class="muted">Early feedback helps new readers jump in. If you’ve read the book, a short review goes a long way.</p>
         <div class="btnrow" style="margin-top:8px">
           <a class="btn" href="https://www.amazon.com/review/create-review?asin=B0FP62JGJ5" target="_blank" rel="noopener">Review the Paperback</a>
@@ -394,72 +355,12 @@
         <div style="margin-top:18px">
           <iframe
             title="Goodreads reviews"
-            src="https://www.goodreads.com/api/reviews_widget_iframe?did=0&format=html&isbn=9798262543113&links=660&review_back=ffffff&stars=000000"
+            src="https://www.goodreads.com/api/reviews_widget_iframe?did=0&amp;format=html&amp;isbn=9798262543113&amp;links=660&amp;review_back=ffffff&amp;stars=000000"
             width="100%" height="420" frameborder="0" style="border:1px solid var(--border); border-radius:12px; background:#fff">
           </iframe>
         </div>
 
-        <!-- Goodreads Giveaway Widget (full block, all lines included) -->
-        <div id="goodreadsGiveawayWidget421953" style="margin-top:18px">
-          <!-- Show static html as a placeholder in case js is not enabled -->
-          <div class="goodreadsGiveawayWidget" style="max-width: 350px; margin: 10px auto; padding: 10px 15px; border: 2px solid #EBE8D5; border-radius: 10px;">
-            <style>
-              .goodreadsGiveawayWidget { color: #555; font-family: georgia, serif; font-weight: normal; text-align: left; font-size: 14px;
-                font-style: normal; background: white; }
-              .goodreadsGiveawayWidget p { margin: 0 0 .5em !important; padding: 0; }
-              .goodreadsGiveawayWidgetEnterLink {
-                display: inline-block;
-                color: #181818;
-                background-color: #F6F6EE;
-                border: 1px solid #9D8A78;
-                border-radius: 3px;
-                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-                font-weight: bold;
-                text-decoration: none;
-                outline: none;
-                font-size: 13px;
-                padding: 8px 12px;
-              }
-              .goodreadsGiveawayWidgetEnterLink:hover {
-                  color: #181818;
-                  background-color: #F7F2ED;
-                  border: 1px solid #AFAFAF;
-                  text-decoration: none;
-              }
-            </style>
-            <h2 style="margin: 0 0 10px !important; padding: 0 !important; font-style: italic; font-size: 20px; line-height: 20px; font-weight: normal; text-align: center; color: #555;">
-              <a href="https://www.goodreads.com" target="_new" rel="nofollow noopener">Goodreads</a> Book Giveaway
-            </h2>
-
-              <div style="float: left;">
-                  <a rel="nofollow" href="https://www.goodreads.com/book/show/240925211"><img alt="Dual Military by Joe Birkhead" title="Dual Military by Joe Birkhead" width="100" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1756490104l/240925211._SY475_.jpg" /></a>
-              </div>
-
-              <div style="margin: 0 0 0 110px !important; padding: 0 0 0 0 !important;">
-                <h3 style="margin: 0; padding: 0; font-size: 16px; line-height: 20px; font-weight: normal; font-style: normal;">
-                    <a rel="nofollow" href="https://www.goodreads.com/book/show/240925211">Dual Military</a>
-                </h3>
-                <h4 style="margin: 0 0 10px; padding: 0; font-style: normal; font-weight: normal;">
-                    by <a style="text-decoration: none;" rel="nofollow" href="https://www.goodreads.com/author/show/58775731.Joe_Birkhead">Joe Birkhead</a>
-                </h4>
-
-                <div class="giveaway_details">
-                    <p>
-                      Giveaway ends September 25, 2025.
-                    </p>
-                    <p>
-                      See the <a style="text-decoration: none;" rel="nofollow" href="https://www.goodreads.com/giveaway/show/421953">giveaway details</a>
-                      at Goodreads.
-                    </p>
-                </div>
-              </div>
-              <div style="clear: both;"></div>
-
-              <a class="goodreadsGiveawayWidgetEnterLink" rel="nofollow" href="https://www.goodreads.com/giveaway/enter_choose_address/421953">Enter Giveaway</a>
-
-          </div>
-        </div>
-        <script src="https://www.goodreads.com/giveaway/widget/421953" type="text/javascript" charset="utf-8"></script>
+        <!-- (Giveaway widget removed) -->
 
         <div class="grid-3" style="margin-top:18px">
           <div class="card"><p class="quote">“A field manual for family culture. The AAR pages alone are worth it.” <span class="who">— HS Coach</span></p></div>
@@ -537,8 +438,8 @@
         <p class="muted">Paperback · eBook · (Audiobook when ready)</p>
         <div class="btnrow" style="justify-content:center">
           <a class="btn" href="https://www.amazon.com/dp/B0FP62JGJ5" target="_blank" rel="noopener" aria-label="Buy on Amazon">Amazon</a>
-          <a class="btn-outline" href="#" data-bn="1" target="_blank" rel="noopener" aria-label="View on Barnes & Noble" data-utm="1">Barnes &amp; Noble</a>
-          <a class="btn-outline" href="https://www.lulu.com/shop/joe-and-lisa-birkhead/dual-military/paperback/product-yvg5ww8.html?page=1&pageSize=4" target="_blank" rel="noopener" aria-label="Buy on Lulu" data-utm="1">Lulu</a>
+          <a class="btn-outline" href="#" data-bn="1" target="_blank" rel="noopener" aria-label="View on Barnes &amp; Noble" data-utm="1">Barnes &amp; Noble</a>
+          <a class="btn-outline" href="https://www.lulu.com/shop/joe-and-lisa-birkhead/dual-military/paperback/product-yvg5ww8.html?page=1&amp;pageSize=4" target="_blank" rel="noopener" aria-label="Buy on Lulu" data-utm="1">Lulu</a>
           <a class="btn-outline" href="https://www.kobo.com/us/en/ebook/dual-military?sId=57b80b80-5b16-44c7-86ab-5ddc6166cac4" target="_blank" rel="noopener" aria-label="View on Kobo Books" data-utm="1">Kobo Books</a>
           <a class="btn-outline" href="#" data-b2r="1" target="_blank" rel="noopener" aria-label="All Retailers via Books2Read" data-utm="1">All Retailers (Books2Read)</a>
           <!-- Goodreads buttons in Buy section -->
@@ -550,18 +451,12 @@
           </a>
         </div>
 
-        <!-- #3 Extra CTA above retailer grid -->
-        <div style="margin-top:12px">
-          <a class="btn" href="https://www.goodreads.com/giveaway/enter_choose_address/421953"
-             target="_blank" rel="nofollow noopener" aria-label="Enter the Goodreads Giveaway">
-            🎁 Enter the Goodreads Giveaway
-          </a>
-        </div>
+        <!-- (Giveaway CTA removed) -->
 
         <div class="retailers" style="max-width:720px;margin:18px auto 0;">
           <div class="retailer">
             <div><strong>Lulu</strong><div><small class="muted">Paperback · Ships direct from Lulu</small></div></div>
-            <a class="btn" href="https://www.lulu.com/shop/joe-and-lisa-birkhead/dual-military/paperback/product-yvg5ww8.html?page=1&pageSize=4" target="_blank" rel="noopener" aria-label="Buy on Lulu" data-utm="1">Buy</a>
+            <a class="btn" href="https://www.lulu.com/shop/joe-and-lisa-birkhead/dual-military/paperback/product-yvg5ww8.html?page=1&amp;pageSize=4" target="_blank" rel="noopener" aria-label="Buy on Lulu" data-utm="1">Buy</a>
           </div>
           <div class="retailer">
             <div><strong>Kobo Books</strong><div><small class="muted">Global eBook · Kobo &amp; Rakuten</small></div></div>
@@ -648,7 +543,7 @@
           <a href="#buy">Retailers</a>
           <a href="https://www.amazon.com/dp/B0FP62JGJ5" target="_blank" rel="noopener">Amazon</a>
           <a href="#" data-bn="1" target="_blank" rel="noopener" data-utm="1">Barnes &amp; Noble</a>
-          <a href="https://www.lulu.com/shop/joe-and-lisa-birkhead/dual-military/paperback/product-yvg5ww8.html?page=1&pageSize=4" target="_blank" rel="noopener" data-utm="1">Lulu</a>
+          <a href="https://www.lulu.com/shop/joe-and-lisa-birkhead/dual-military/paperback/product-yvg5ww8.html?page=1&amp;pageSize=4" target="_blank" rel="noopener" data-utm="1">Lulu</a>
           <a href="https://www.kobo.com/us/en/ebook/dual-military?sId=57b80b80-5b16-44c7-86ab-5ddc6166cac4" target="_blank" rel="noopener" data-utm="1">Kobo Books</a>
           <a href="#" data-b2r="1" target="_blank" rel="noopener" data-utm="1">All Retailers (Books2Read)</a>
         </div>
@@ -744,7 +639,7 @@
   }
   </script>
 
-  <!-- =================== Minimal JS (year + links + UTMs + countdown) =================== -->
+  <!-- =================== Minimal JS (year + links + UTMs) =================== -->
   <script>
     // Year stamps
     const y = new Date().getFullYear();
@@ -802,37 +697,7 @@
       }
     });
 
-    // ===== Goodreads giveaway countdown (ends Sep 25, 2025 @ 11:59 PM ET) =====
-    (function(){
-      const END = new Date('2025-09-25T23:59:59-04:00');        // EDT/EST aware via offset
-      const END_UTC_MS = END.getTime();
-      const out = document.getElementById('gr-left');
-      const badge = document.getElementById('gr-countdown');
-      if (!out) return;
-
-      const pad = n => String(n).padStart(2,'0');
-
-      function render(){
-        const now = Date.now();
-        const diff = END_UTC_MS - now;
-        if (diff <= 0){ out.textContent = '0d 00h 00m 00s'; badge?.classList.add('urgent'); return; }
-
-        let s = Math.floor(diff/1000);
-        const d = Math.floor(s/86400); s%=86400;
-        const h = Math.floor(s/3600); s%=3600;
-        const m = Math.floor(s/60); const sec = s%60;
-        out.textContent = `${d}d ${pad(h)}h ${pad(m)}m ${pad(sec)}s`;
-
-        // flip to urgent style for the last 48 hours
-        const FORTY_EIGHT_HOURS = 48*60*60*1000;
-        if (badge){
-          (diff <= FORTY_EIGHT_HOURS) ? badge.classList.add('urgent') : badge.classList.remove('urgent');
-        }
-      }
-
-      render();
-      setInterval(render, 1000);
-    })();
+    // (Giveaway countdown JS removed)
   </script>
 </body>
 </html>
